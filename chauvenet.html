@@ -11,7 +11,7 @@
 
 
 
-<title>Metrologia</title>
+<title>Técnica de Descarte (critério Chauvenet)</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,51 +221,92 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Metrologia</h1>
+<h1 class="title toc-ignore">Técnica de Descarte (critério Chauvenet)</h1>
 
 </div>
 
 
-<p>Material relativo as disciplinas de <em>Medidas Eletromecânicas e Metrologia e Controle de Processos e Medidas Elétricas e Metrologia</em> ministradas nos cursos de Engenharia Mecânica e Engenharia Elétrica da UNIOESTE, Campus de Foz do Iguaçu/PTI, Paraná, Brasil.</p>
-<p><strong>Programas:</strong></p>
-<ul>
-<li><a href="http://www.r-project.org/">R Project</a> e <a href="http://www.rstudio.com/">RStudio</a></li>
-<li><a href="http://people.cs.aau.dk/~marius/stratego/">UPPAAL Stratego</a></li>
-<li><a href="https://www.gnu.org/software/octave/">GNU Octave</a></li>
-<li><a href="http://www.elipse.com.br/">Elipse SCADA</a></li>
-</ul>
-<p><strong>Dicas de Programação:</strong></p>
-<ul>
-<li><a href="https://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf">Conversão R / Matlab</a></li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a></li>
-<li><a href="http://www.wolframalpha.com/calculators/derivative-calculator/">Derivadas</a></li>
-</ul>
-<p><strong>Tabelas:</strong></p>
-<ul>
-<li><a href="http://srdata.nist.gov/its90/download/all.tab">Coeficientes t-student</a></li>
-<li><a href="http:///guiok.github.io/download/formulario.pdf">Critério de Chauvenet (formulário prova)</a></li>
-<li><a href="/download/dixon_q_test.pdf">Teste de Dixon</a></li>
-<li><a href="http://srdata.nist.gov/its90/download/all.tab">Termopares</a> <a href="http://srdata.nist.gov/its90/download/all.tab">(Coeficientes)</a></li>
-</ul>
-<p><strong>Relatórios de Laboratório:</strong></p>
-<ul>
-<li><a href="http:///guiok.github.io/download/relatorio.docx">Modelo de Relatório (doc)</a></li>
-<li><a href="http:///guiok.github.io/download/relatorio.pdf">Modelo de Relatório (pdf)</a></li>
-</ul>
-<p><strong>Normas:</strong></p>
-<ul>
-<li><a href="http://www.inmetro.gov.br/inovacao/publicacoes/vim_2012.pdf">Vocabulário Internacional de Metrologia</a></li>
-</ul>
-<p><strong>Manuais:</strong></p>
-<ul>
-<li><a href="http://www.digimess.com.br/Administrativo/Files/20120504095642__5.pdf">Paquímetro Digital</a></li>
-<li><a href="http://tmi.yokogawa.com/files/uploaded/Bulltin202700_E_030_3.pdf">Década Resistiva</a></li>
-<li><a href="http://tmi.yokogawa.com/files/uploaded/CA71_Catalog_2.pdf">Handy Calibrator</a></li>
-<li><a href="http://www.testequipmentdepot.com/instek/pdf/GPC-1850D3020D3030D-DQ.pdf">Fonte GPC-1850D</a></li>
-<li><a href="http://portal.if.usp.br/labdid/sites/portal.if.usp.br.labdid/files/Et-2042-1101%282%29.pdf">Multímetro Digital ET-2042</a></li>
-<li><a href="http://mastechturkiye.com/wp-content/uploads/2016/07/MS6520C-Manual.pdf">Multímetro Digital HM-1000</a></li>
-<li><a href="http://mastechturkiye.com/wp-content/uploads/2016/07/MS6520C-Manual.pdf">Termômetro Infravermelho</a></li>
-</ul>
+<p>O critério de Chauvenet visa identificar medidas para descarte de modo a não permitir a influência de dados, por exemplo, resultantes de erros de registro e que não representam o processo em observação. A técnica de descarte deve ser aplicada uma única vez quando há indícios de erros grosseiros no processo de medição.</p>
+<p>A aplicação consiste na identificação e descarte das amostras onde <span class="math inline">\(Chauvenet &gt; R_c\)</span>.</p>
+<p><span class="math display">\[Chauvenet = \frac{|x-\bar{x}|}{\sigma}\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">N</th>
+<th align="center">Rc</th>
+<th align="center">N</th>
+<th align="center">Rc</th>
+<th align="center">N</th>
+<th align="center">Rc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">1.15</td>
+<td align="center">10</td>
+<td align="center">1.96</td>
+<td align="center">18</td>
+<td align="center">2.20</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="center">1.38</td>
+<td align="center">11</td>
+<td align="center">2.00</td>
+<td align="center">19</td>
+<td align="center">2.22</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">1.53</td>
+<td align="center">12</td>
+<td align="center">2.04</td>
+<td align="center">20</td>
+<td align="center">2.24</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">1.64</td>
+<td align="center">13</td>
+<td align="center">2.07</td>
+<td align="center">21</td>
+<td align="center">2.26</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="center">1.73</td>
+<td align="center">14</td>
+<td align="center">2.10</td>
+<td align="center">22</td>
+<td align="center">2.28</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="center">1.80</td>
+<td align="center">15</td>
+<td align="center">2.13</td>
+<td align="center">23</td>
+<td align="center">2.30</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="center">1.86</td>
+<td align="center">16</td>
+<td align="center">2.15</td>
+<td align="center">24</td>
+<td align="center">2.31</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="center">1.91</td>
+<td align="center">17</td>
+<td align="center">2.18</td>
+<td align="center">25</td>
+<td align="center">2.33</td>
+</tr>
+</tbody>
+</table>
 
 <p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
 

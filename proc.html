@@ -11,7 +11,7 @@
 
 
 
-<title>Metrologia</title>
+<title>Método Analítico (Law of Propagation of Uncertainty - LPU)</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,50 +221,87 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Metrologia</h1>
+<h1 class="title toc-ignore">Método Analítico (<em>Law of Propagation of Uncertainty</em> - LPU)</h1>
 
 </div>
 
 
-<p>Material relativo as disciplinas de <em>Medidas Eletromecânicas e Metrologia e Controle de Processos e Medidas Elétricas e Metrologia</em> ministradas nos cursos de Engenharia Mecânica e Engenharia Elétrica da UNIOESTE, Campus de Foz do Iguaçu/PTI, Paraná, Brasil.</p>
-<p><strong>Programas:</strong></p>
+<p>Segue a sequência de passos necessários para cálculo experimental de incertezas de medições diretas e indiretas e detalhadas nas seções e exemplos apresentados posteriormente.</p>
 <ul>
-<li><a href="http://www.r-project.org/">R Project</a> e <a href="http://www.rstudio.com/">RStudio</a></li>
-<li><a href="http://people.cs.aau.dk/~marius/stratego/">UPPAAL Stratego</a></li>
-<li><a href="https://www.gnu.org/software/octave/">GNU Octave</a></li>
-<li><a href="http://www.elipse.com.br/">Elipse SCADA</a></li>
-</ul>
-<p><strong>Dicas de Programação:</strong></p>
+<li>Definição do Modelo Matemático:
 <ul>
-<li><a href="https://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf">Conversão R / Matlab</a></li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a></li>
-<li><a href="http://www.wolframalpha.com/calculators/derivative-calculator/">Derivadas</a></li>
-</ul>
-<p><strong>Tabelas:</strong></p>
+<li><span class="math inline">\(y=f_{a}(x_1,x_2,\dots,x_n\)</span>)</li>
+</ul></li>
+<li>Cálculo das incertezas tipo A de <span class="math inline">\(n\)</span> amostras:
 <ul>
-<li><a href="http://srdata.nist.gov/its90/download/all.tab">Coeficientes t-student</a></li>
-<li><a href="http:///guiok.github.io/download/formulario.pdf">Critério de Chauvenet (formulário prova)</a></li>
-<li><a href="/download/dixon_q_test.pdf">Teste de Dixon</a></li>
-<li><a href="http://srdata.nist.gov/its90/download/all.tab">Termopares</a> <a href="http://srdata.nist.gov/its90/download/all.tab">(Coeficientes)</a></li>
-</ul>
-<p><strong>Relatórios de Laboratório:</strong></p>
+<li>Cálculo da Média: <span class="math inline">\(\bar{q} = \frac{1}{n}\cdot\sum_{i=1}^n{q_k}\)</span></li>
+<li>Reprodutibilidade:
 <ul>
-<li><a href="http:///guiok.github.io/download/relatorio.docx">Modelo de Relatório (doc)</a></li>
-<li><a href="http:///guiok.github.io/download/relatorio.pdf">Modelo de Relatório (pdf)</a></li>
-</ul>
-<p><strong>Normas:</strong></p>
+<li>Desvio Padrão Experimental: <span class="math inline">\(s^2(q_k) = \frac{1}{n-1} \sum_{j=1}^n (q_j - \overline{q})^2\)</span></li>
+<li>Incerteza Padrão: <span class="math inline">\(u=s(q_k)\)</span></li>
+</ul></li>
+<li>Repetibilidade
 <ul>
-<li><a href="http://www.inmetro.gov.br/inovacao/publicacoes/vim_2012.pdf">Vocabulário Internacional de Metrologia</a></li>
-</ul>
-<p><strong>Manuais:</strong></p>
+<li>Desvio Padrão Experimental da Média: <span class="math inline">\(s^2(\bar{q}) = \frac{s^2(q_k)}{n}\)</span></li>
+<li>Incerteza Padrão: <span class="math inline">\(u=s(\bar{q})\)</span></li>
+</ul></li>
+</ul></li>
+<li>Identificação dos limites e das funções de distribuição das incertezas tipo B:
 <ul>
-<li><a href="http://www.digimess.com.br/Administrativo/Files/20120504095642__5.pdf">Paquímetro Digital</a></li>
-<li><a href="http://tmi.yokogawa.com/files/uploaded/Bulltin202700_E_030_3.pdf">Década Resistiva</a></li>
-<li><a href="http://tmi.yokogawa.com/files/uploaded/CA71_Catalog_2.pdf">Handy Calibrator</a></li>
-<li><a href="http://www.testequipmentdepot.com/instek/pdf/GPC-1850D3020D3030D-DQ.pdf">Fonte GPC-1850D</a></li>
-<li><a href="http://portal.if.usp.br/labdid/sites/portal.if.usp.br.labdid/files/Et-2042-1101%282%29.pdf">Multímetro Digital ET-2042</a></li>
-<li><a href="http://mastechturkiye.com/wp-content/uploads/2016/07/MS6520C-Manual.pdf">Multímetro Digital HM-1000</a></li>
-<li><a href="http://mastechturkiye.com/wp-content/uploads/2016/07/MS6520C-Manual.pdf">Termômetro Infravermelho</a></li>
+<li>Normal. ex.: certificados de calibração.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> é a meia largura de um intervalo tendo um nível da confiança de <span class="math inline">\(95\%\)</span> tem uma variância de <span class="math inline">\(a^2/4\)</span>.</li>
+<li>Sendo <span class="math inline">\(a\)</span> é a meia largura de um intervalo tendo um nível da confiança de <span class="math inline">\(99.73\%\)</span> tem uma variância de <span class="math inline">\(a^2/9\)</span>.</li>
+</ul></li>
+<li>Uniforme. ex.: resolução do dispositivo mostrador.
+<ul>
+<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/3\)</span></li>
+</ul></li>
+<li>Triangular. ex.: indicador em instrumentos analógicos.
+<ul>
+<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/6\)</span>.</li>
+</ul></li>
+<li>Tipo “U”. ex.: temperatura ambiental contralada por termostato.
+<ul>
+<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/2\)</span>.</li>
+</ul></li>
+<li><em>t-student</em>. ex.: quando conhecidos o fator de abrangência <span class="math inline">\(k_p\)</span>, os graus de liberdade efetivos <span class="math inline">\(\nu_{eff}\)</span> e a incerteza expandida <span class="math inline">\(U_p\)</span>.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> a meia largura de um determinado nível da confiança tem uma variância de <span class="math inline">\((a/k_p)^2\)</span>.</li>
+</ul></li>
+</ul></li>
+<li>Identificação dos graus de liberdade das incertezas:
+<ul>
+<li>tipo A: <span class="math inline">\(\nu = n - 1\)</span></li>
+<li>tipo B: <span class="math inline">\(\nu = \infty\)</span> ou <span class="math inline">\(\nu = \nu_{eff}\)</span> (no caso de haver o conhecimento prévio dos graus de liberdade)</li>
+</ul></li>
+<li>Cálculo das derivadas parciais para cada variável de <span class="math inline">\(f_a\)</span>
+<ul>
+<li><span class="math inline">\(c_i=\frac{\partial f}{\partial x_i}\)</span></li>
+</ul></li>
+<li>Cálculo da correlação entre as variáveis:
+<ul>
+<li><span class="math inline">\(s(y_i,z_i)=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span></li>
+<li><span class="math inline">\(s(\bar{y}_i,\bar{z}_i)=\frac{1}{n(n-1)}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span></li>
+<li><span class="math inline">\(r(y_i,z_i) = \frac{s(y_i,z_i)}{s(y_i)s(z_i)} = r(\bar{y}_i,\bar{z}_i) = \frac{s(\bar{y}_i,\bar{z}_i)}{s(\bar{y}_i)s(\bar{z}_i)}\)</span></li>
+</ul></li>
+<li>Cálculo da incerteza combinada:
+<ul>
+<li><span class="math inline">\(u_c^2(y) = \sum_{i=1}^n{\left(\frac{\partial f}{\partial x_i}\right)^2}u^2(x_i)+2\sum_{i=1}^{n-1}{\sum_{j=i+1}^{n}{\frac{\partial f}{\partial x_i}\frac{\partial f}{\partial x_j}u(x_i)u(x_j)r(x_i,x_j)}}\)</span></li>
+</ul></li>
+<li>Cálculo dos graus de liberdade efetivos (obs.: este valor deve ser truncado e não arrendondado):
+<ul>
+<li><span class="math inline">\(\nu_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{n}\frac{u_i^4(y)}{\nu_i}},~onde~u_i^2(y)=c_i^2u^2(x_i)\)</span></li>
+</ul></li>
+<li>Seleção do coeficiente de t-student (fator de abrangência) para o grau de confiança desejado:
+<ul>
+<li>Ver tabela <em>t-student</em>, ou</li>
+<li><span class="math inline">\(t=qt(1-(1-\%)/2, \nu_{eff})\)</span>, para uso no R.</li>
+</ul></li>
+<li>Cálculo da Incerteza expandida:
+<ul>
+<li><span class="math inline">\(U_{exp} = U_c.t\)</span></li>
+</ul></li>
 </ul>
 
 <p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>

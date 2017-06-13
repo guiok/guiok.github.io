@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Método Numérico (Monte Carlo Simulation - MCS)</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dr. Guilherme Kunz</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Principal</a>
+</li>
+<li>
+  <a href="conf.html">Confiabilidade</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Metrologia
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Procedimento</a>
+    </li>
+    <li>
+      <a href="proc.html">Law of Propagation of Uncertainty</a>
+    </li>
+    <li>
+      <a href="proc_mc.html">Monte Carlo</a>
+    </li>
+    <li>
+      <a href="apresentacao.html">Resultado de Medição</a>
+    </li>
+    <li>
+      <a href="chauvenet.html">Técnica de Descarte</a>
+    </li>
+    <li>
+      <a href="tstud.html">Tabela t-student</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Método Numérico (<em>Monte Carlo Simulation</em> - MCS)</h1>
+
+</div>
+
+
+<p>Segue a sequência de passos necessários para simulação numérica visando a identificação da qualidade do resultado do método analítico.</p>
+<ul>
+<li>Definição do Modelo Matemático (<span class="math inline">\(f_{mc}=f_a\)</span>)</li>
+<li>Cálculo da quantidade de valores aleatórios (<span class="math inline">\(M=\frac{10^4}{1-\%}\)</span>) de acordo com o grau de confiança desejado.</li>
+<li>Cálculo das incertezas tipo A e identificação dos limites e das funções de distribuição para as incertezas tipo B tal qual:
+<ul>
+<li>Função Densidade de Probabilidade Normal. ex.: certificados de calibração.
+<ul>
+<li>Sendo <span class="math inline">\(x\)</span> a média e <span class="math inline">\(s\)</span> o desvio padrão, tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>rnorm(M, mean=x, sd=s)</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade Uniforme. ex.: resolução do dispositivo mostrador.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> os valores limites, tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>runif(M, min=a, max=b)</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade Triangular. ex.: indicador em instrumentos analógicos.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> os valores limites tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>rtrng &lt;- function(M, a=0, b=1) {
+  x &lt;- a + (b - a) / 2 * (runif(M) + runif(M))
+  return(x)
+}</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade do Tipo “U”. ex.: temperatura ambiental contralada por termostato.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> os limites tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>rtypu &lt;- function(M, a=0, b=1) {
+  x &lt;- (a + b) / 2 + (b - a) / 2 * sin(2 * pi * runif(M))
+  return(x)
+}</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade <em>t-student</em>. ex.: conhecidos valor médio <span class="math inline">\(\bar{x}\)</span>, incerteza expandida <span class="math inline">\(U_p\)</span>, fator de brangência <span class="math inline">\(k_p\)</span> graus de liberdade efetivos <span class="math inline">\(\nu_{eff}\)</span>.
+<ul>
+<li>Sendo <span class="math inline">\(\nu=\infty\)</span> deve-se utilizar a função normal para representação da incerteza.</li>
+<li>Sendo <span class="math inline">\(\nu=n-1\)</span> os graus de liberdade <span class="math inline">\(a\)</span> a média <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(b\)</span> o desvio padrão experimental <span class="math inline">\(s^2/n\)</span>, ou</li>
+<li>Sendo <span class="math inline">\(\nu=n-1\)</span> os graus de liberdade <span class="math inline">\(a\)</span> a média <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(b\)</span> o desvio padrão experimental <span class="math inline">\(U_{p}/k_p\)</span>, onde <span class="math inline">\(U_{p}\)</span> é a incerteza expandida e <span class="math inline">\(k_p\)</span> o fator de abrangência, tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>rtstu &lt;- function(M, nu, a=0, b=1) {
+  x &lt;- a + b * rt(M, nu)
+  return(x)
+}</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade Trapezoidal Curvilínea. ex.: limites superior e inferior inexatos.
+<ul>
+<li>Sendo <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> os limites e <span class="math inline">\(d\)</span> a incerteza destes limites tem-se:</li>
+</ul></li>
+</ul>
+<pre class="r"><code>rctrp &lt;- function(M, a=0, b=1, d=0.1) {
+  as = (a - d) + 2 * d * runif(M)
+  bs = (a + b) - as
+  x &lt;- as + (bs - as) * runif(M)
+  return(x)
+}</code></pre>
+<ul>
+<li>Função Densidade de Probabilidade Normal Multivariada. ex.: aplicação para variáveis correlacionadas.
+<ul>
+<li>Sendo a matriz de correlação onde <span class="math inline">\(r(x_i,x_i) = 1\)</span>: <span class="math display">\[ R_{x} = 
+\begin{bmatrix}
+r(x_1,x_1) &amp; \cdots &amp; r(x_1, x_N)\\
+\vdots  &amp; \ddots &amp; \vdots  \\
+r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
+\end{bmatrix} \]</span></li>
+<li>Sendo <span class="math inline">\(D_x\)</span> uma matriz diagonal de dimensões <span class="math inline">\(NxN\)</span> com elementos <span class="math inline">\(u(x_1), \cdots, u(x_n)\)</span>.</li>
+<li>Tem-se <span class="math inline">\(U_x = D_x R_x D_x\)</span> e <span class="math inline">\(U_y = C_x U_x C_x^T\)</span>, onde: <span class="math display">\[ C_{x} = 
+\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
+\vdots  &amp; \ddots &amp; \vdots  \\
+\frac{\partial f_n}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_n}{\partial x_n}
+\end{bmatrix}
+\]</span></li>
+<li>Sendo <span class="math inline">\(U_{y}\)</span> a matriz de covariância, <span class="math inline">\(z = (z_1, \cdots, z_N )^T\)</span> valores aleatórios de acordo com uma distribuição normal e <span class="math inline">\(R\)</span> a matriz resultante da fatoração de Cholesky (<span class="math inline">\(U_y = R^TR\)</span>), tem-se: <span class="math display">\[\xi = x + R^T z\]</span></li>
+</ul></li>
+</ul>
+<pre class="r"><code>rmult &lt;- function(M, Ux, x) {
+  R &lt;- chol(Ux)
+  a &lt;- dim(Ux)[1]
+  z &lt;- matrix(rnorm(M*a),a)
+  xi &lt;- x + t(R) %*% z
+  return (xi)
+}</code></pre>
+<p><img src="proc_mc_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p></li>
+<li>Geração dos vetores de valores aleatório para as variáveis de <span class="math inline">\(f_{mc}\)</span> com base em seus valores médios e limites de incerteza.</li>
+<li>Cálculo do vetor <span class="math inline">\(f_{mc}\)</span>.</li>
+<li>Identificação dos limites para o % desejado (quantil):
+<ul>
+<li>Se <span class="math inline">\(95\%\)</span>: <span class="math inline">\(y_{baixo}=quantile(f_{mc}, 0.025)\)</span> e <span class="math inline">\(y_{alto}=quantile(f_{mc}, 0.975)\)</span> (para uso no R).</li>
+<li>Se <span class="math inline">\(99\%\)</span>: <span class="math inline">\(y_{baixo}=quantile(f_{mc}, 0.005)\)</span> e <span class="math inline">\(y_{alto}=quantile(f_{mc}, 0.995)\)</span> (para uso no R).</li>
+</ul></li>
+<li>Cálculo de <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>:
+<ul>
+<li>expressando <span class="math inline">\(z\)</span> na forma <span class="math inline">\(c\times 10^l\)</span>, onde <span class="math inline">\(c\)</span> é um <span class="math inline">\(n_{dig}\)</span> decimal inteiro e <span class="math inline">\(l\)</span> é um inteiro</li>
+<li><span class="math inline">\(\delta=\frac{1}{2}\times 10^l\)</span> sendo:</li>
+<li><span class="math inline">\(\delta_1\)</span>: Erro de arrendondamento (resolução) no <span class="math inline">\(U_c\)</span> quando apresentado com 1 Algarismo Significativo</li>
+<li><span class="math inline">\(\delta_2\)</span>: Erro de arrendondamento (resolução) no <span class="math inline">\(U_c\)</span> quando apresentado com 2 Algarismo Significativo</li>
+</ul></li>
+<li>Cálculo das diferenças:
+<ul>
+<li><span class="math inline">\(D_{baixo}=|f_a - U_{exp} - y_{baixo}|\)</span></li>
+<li><span class="math inline">\(D_{alto} = | f_a + U_{exp} - y_{alto}|\)</span></li>
+</ul></li>
+<li>Comparação entre <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> e <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>
+<ul>
+<li>Se <span class="math inline">\(\delta_2\)</span> for superior a <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> pode apresentar o resultado com 2 Algarismos Significativos</li>
+<li>Se <span class="math inline">\(\delta_1\)</span> for superior a <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> pode apresentar o resultado com 1 Algarismos Significativos</li>
+<li>Se <span class="math inline">\(\delta_1\)</span> for inferior a <span class="math inline">\(D_{baixo}\)</span> ou <span class="math inline">\(D_{alto}\)</span> é necessária a substituição de sensores para melhorar a simetria da função de distribuição <span class="math inline">\(f_{mc}\)</span></li>
+</ul></li>
+</ul>
+
+<p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
