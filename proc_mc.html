@@ -298,15 +298,8 @@ r(x_1,x_1) &amp; \cdots &amp; r(x_1, x_N)\\
 \vdots  &amp; \ddots &amp; \vdots  \\
 r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
 \end{bmatrix} \]</span></li>
-<li>Sendo <span class="math inline">\(D_x\)</span> uma matriz diagonal de dimensões <span class="math inline">\(NxN\)</span> com elementos <span class="math inline">\(u(x_1), \cdots, u(x_n)\)</span>.</li>
-<li>Tem-se <span class="math inline">\(U_x = D_x R_x D_x\)</span> e <span class="math inline">\(U_y = C_x U_x C_x^T\)</span>, onde: <span class="math display">\[ C_{x} = 
-\begin{bmatrix}
-\frac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
-\vdots  &amp; \ddots &amp; \vdots  \\
-\frac{\partial f_n}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_n}{\partial x_n}
-\end{bmatrix}
-\]</span></li>
-<li>Sendo <span class="math inline">\(U_{y}\)</span> a matriz de covariância, <span class="math inline">\(z = (z_1, \cdots, z_N )^T\)</span> valores aleatórios de acordo com uma distribuição normal e <span class="math inline">\(R\)</span> a matriz resultante da fatoração de Cholesky (<span class="math inline">\(U_y = R^TR\)</span>), tem-se: <span class="math display">\[\xi = x + R^T z\]</span></li>
+<li>Sendo <span class="math inline">\(D_x\)</span> uma matriz diagonal de dimensões <span class="math inline">\(N x N\)</span> com elementos <span class="math inline">\(u(x_1), \cdots, u(x_n)\)</span>.</li>
+<li>Tem-se <span class="math inline">\(U_x = D_x R_x D_x\)</span> e, sendo <span class="math inline">\(z = (z_1, \cdots, z_N )^T\)</span> valores aleatórios de acordo com uma distribuição normal e <span class="math inline">\(R\)</span> a matriz resultante da fatoração de Cholesky (<span class="math inline">\(U_x = R^TR\)</span>), tem-se: <span class="math display">\[\xi = x + R^T z\]</span></li>
 </ul></li>
 </ul>
 <pre class="r"><code>rmult &lt;- function(M, Ux, x) {
