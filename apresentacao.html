@@ -226,7 +226,21 @@ $(document).ready(function () {
 </div>
 
 
-<p>Apresentação do Resultado de Medição: * <span class="math inline">\(RM=f_a \pm U_{exp}\)</span> unidade com % de confiança, onde: + <span class="math inline">\(U_{exp}\)</span> deve estar com a quantidade de <span class="math inline">\(n_{dig}\)</span> significativos de acordo com a análise de Monte Carlo. + <span class="math inline">\(f_a\)</span> deve estar com a quantidade de casas decimais de acordo com as apresentadas na <span class="math inline">\(U_{exp}\)</span>. * Deve se levar em consideração as regras de arrendondamento: + se menor que 5 há o truncamento do valor. ex.: 0.153 -&gt; 0.15; + se maior que 5 há o aumento do valor. ex.: 0.156 -&gt; 0.16; + se igual a 5 seguido de zeros, dependerá o valor a esquerda: + Se for par há o truncamento do valor. ex.: 0.155 -&gt; 0.16; + Se for ímpar há o aumento do valor. ex.: 0.165 -&gt; 0.16;</p>
+<p>A apresentalção da incerteza do resultado de medição deve ser na forma <span class="math inline">\(RM=(f_a \pm U_{exp})\)</span> [unidade] com % de confiança, onde:</p>
+<ul>
+<li><p><span class="math inline">\(U_{exp}\)</span> deve estar com a quantidade de <span class="math inline">\(n_{dig}\)</span> significativos de acordo com a análise de Monte Carlo.</p></li>
+<li><p><span class="math inline">\(f_a\)</span> deve estar com a quantidade de casas decimais de acordo com as apresentadas na <span class="math inline">\(U_{exp}\)</span>.</p></li>
+<li><p>Deve-se levar em consideração as seguintes regras de arrendondamento:</p>
+<ul>
+<li>se menor que 5 há o truncamento do valor. ex.: 0.153 -&gt; 0.15;</li>
+<li>se maior que 5 há o aumento do valor. ex.: 0.156 -&gt; 0.16;</li>
+<li>se igual a 5 seguido de zeros, dependerá o valor a esquerda:
+<ul>
+<li>Se for par há o truncamento do valor. ex.: 0.155 -&gt; 0.16;</li>
+<li>Se for ímpar há o aumento do valor. ex.: 0.165 -&gt; 0.16;</li>
+</ul></li>
+</ul></li>
+</ul>
 
 <p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
 
