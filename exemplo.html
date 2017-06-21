@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Guilherme Kunz" />
+
+<meta name="date" content="2017-06-14" />
+
+<title>Exemplo</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dr. Guilherme Kunz</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Principal</a>
+</li>
+<li>
+  <a href="conf.html">Confiabilidade</a>
+</li>
+<li>
+  <a href="metr.html">Metrologia</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    GUM
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Procedimento</a>
+    </li>
+    <li>
+      <a href="proc.html">Law of Propagation of Uncertainty (LPU)</a>
+    </li>
+    <li>
+      <a href="proc_mc.html">Monte Carlo Method (MCM)</a>
+    </li>
+    <li>
+      <a href="apresentacao.html">Resultado de Medição</a>
+    </li>
+    <li>
+      <a href="chauvenet.html">Técnica de Descarte</a>
+    </li>
+    <li>
+      <a href="tstud.html">Tabela t-student</a>
+    </li>
+    <li>
+      <a href="exemplo.html">Exemplo</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Exemplo</h1>
+<h4 class="author"><em>Guilherme Kunz</em></h4>
+<h4 class="date"><em>June 14, 2017</em></h4>
+
+</div>
+
+
+<div id="medidas-correlacionadas" class="section level2">
+<h2>Medidas Correlacionadas</h2>
+<p>Exemplo de solução pelos método LPU e MC (não correlacionadas e correlacionadas):</p>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(R=\frac{(Va+Vbg+Vbu)}{(Ia+Ibg+Ibu)}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Va\)</span></td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Vbg\)</span></td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center">±(0.5%+2D)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Vbu\)</span></td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center">Display de 3 1/2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Ia\)</span></td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Ibg\)</span></td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center">±(0.8%+3D)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Ibu\)</span></td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center">Display de 3 1/2</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>val_v &lt;- c(9.28, 9.00, 9.51, 9.01, 9.06, 9.95, 9.09, 9.29, 9.88, 9.12, 9.18, 9.44, 9.91, 9.85, 9.73) #Volts
+val_i &lt;- c(4.64, 4.50, 4.75, 4.49, 4.53, 4.97, 4.55, 4.64, 4.93, 4.54, 4.59, 4.72, 4.93, 4.91, 4.86)/1e3 #Amperes</code></pre>
+<pre class="r"><code>#Cálculo sem considerar Correlação
+r &lt;- plot_GUM(lpu, mcs)</code></pre>
+<p><img src="exemplo_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>kable(r[2], digits=6, caption = &quot;Law of propagation of uncertainty (LPU)&quot;)</code></pre>
+<table class="kable_wrapper">
+<caption>
+Law of propagation of uncertainty (LPU)
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right"><span class="math inline">\(\bar{x_i}\)</span></th>
+<th align="right"><span class="math inline">\(\pm a(x_i)\)</span></th>
+<th align="right"><span class="math inline">\(k\)</span></th>
+<th align="right"><span class="math inline">\(u(x_i)=\frac{a(x_i)}{k}\)</span></th>
+<th align="right"><span class="math inline">\(c_i=\frac{\partial f}{\partial x_i}\)</span></th>
+<th align="right"><span class="math inline">\(c_i.u(x_i)\)</span></th>
+<th align="right"><span class="math inline">\(\nu\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(v_a\)</span></td>
+<td align="right">9.420000</td>
+<td align="right">0.092304</td>
+<td align="right">1.000000</td>
+<td align="right">0.092304</td>
+<td align="right">212.615167</td>
+<td align="right">19.625198</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_c\)</span></td>
+<td align="right">0.000000</td>
+<td align="right">0.067100</td>
+<td align="right">2.000000</td>
+<td align="right">0.033550</td>
+<td align="right">212.615167</td>
+<td align="right">7.133239</td>
+<td align="right">Inf</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(v_r\)</span></td>
+<td align="right">0.000000</td>
+<td align="right">0.005000</td>
+<td align="right">1.732051</td>
+<td align="right">0.002887</td>
+<td align="right">212.615167</td>
+<td align="right">0.613767</td>
+<td align="right">Inf</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(i_a\)</span></td>
+<td align="right">0.004703</td>
+<td align="right">0.000045</td>
+<td align="right">1.000000</td>
+<td align="right">0.000045</td>
+<td align="right">-425833.069218</td>
+<td align="right">-19.303538</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(i_c\)</span></td>
+<td align="right">0.000000</td>
+<td align="right">0.000068</td>
+<td align="right">2.000000</td>
+<td align="right">0.000034</td>
+<td align="right">-425833.069218</td>
+<td align="right">-14.398836</td>
+<td align="right">Inf</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(i_r\)</span></td>
+<td align="right">0.000000</td>
+<td align="right">0.000005</td>
+<td align="right">1.732051</td>
+<td align="right">0.000003</td>
+<td align="right">-425833.069218</td>
+<td align="right">-1.229274</td>
+<td align="right">Inf</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(u_c(y)\)</span></td>
+<td align="right">2002.834869</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">31.904112</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}(y)\)</span></td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">2.051251</td>
+<td align="right">65.443334</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kable(r[3], caption = &quot;Monte Carlo simulation (MCS)&quot;)</code></pre>
+<table class="kable_wrapper">
+<caption>
+Monte Carlo simulation (MCS)
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\bar{MC}\)</span></td>
+<td align="left">2003.24571116757</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{MC}\)</span>-LEP</td>
+<td align="left">63.0139099676053</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\bar{MC}\)</span>-HEP</td>
+<td align="left">-64.4775974112306</td>
+</tr>
+<tr class="even">
+<td>LowEndPoint</td>
+<td align="left">1940.23180119996</td>
+</tr>
+<tr class="odd">
+<td>HighEndPoint</td>
+<td align="left">2067.7233085788</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(D_{high}\)</span></td>
+<td align="left">0.554894266256724</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(D_{low}\)</span></td>
+<td align="left">2.84026627039202</td>
+</tr>
+<tr class="even">
+<td>1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td>2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td>RM</td>
+<td align="left">2000 <span class="math inline">\(\pm\)</span> 70 <span class="math inline">\(\Omega\)</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kable(res)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(r(v,i)\)</span></td>
+<td align="right">0.998985</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_c(y)\)</span></td>
+<td align="right">16.154563</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(t_{stdudent}\)</span></td>
+<td align="right">2.000000</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}(y)\)</span></td>
+<td align="right">32.309126</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kable(df)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">2 Algarismos Significativos</th>
+<th align="left">1 Algarismo Significativo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 2.003 <span class="math inline">\(\pm\)</span> 0.032 <span class="math inline">\(k\Omega\)</span> com 95.45% de confiança</td>
+<td align="left">RM = 2.00 <span class="math inline">\(\pm\)</span> 0.03 <span class="math inline">\(k\Omega\)</span> com 95.45% de confiança</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>par(mfrow=c(1,1))
+plot(m_v+xi[1,], m_i+xi[2,], main =&quot;Normal multivariada&quot;, xlab = &quot;Volts&quot;, ylab = &quot;Amperes&quot;)</code></pre>
+<p><img src="exemplo_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>par(mfrow=c(2,2))
+hist(mcs$mc[1,], 100, main=&quot;Voltagem não-correlacionada&quot;, xlab = &quot;volts&quot;)
+hist(m_v+xi[1,], 100, main=&quot;Voltagem correlacionada&quot;, xlab = &quot;volts&quot;)
+
+hist(mcs$mc[4,], 100, main=&quot;Corrente não-correlacionada&quot;, xlab = &quot;amperes&quot;)
+hist(m_i+xi[2,], 100, main=&quot;Corrente correlacionada&quot;, xlab = &quot;amperes&quot;)</code></pre>
+<p><img src="exemplo_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<pre class="r"><code>#Cálculo considerando a correlação
+r &lt;- plot_GUM(lpu, mcs, r2=rvi, tstd=2)</code></pre>
+<p><img src="exemplo_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>kable(r[3], caption = &quot;Monte Carlo simulation (MCS)&quot;)</code></pre>
+<table class="kable_wrapper">
+<caption>
+Monte Carlo simulation (MCS)
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\bar{MC}\)</span></td>
+<td align="left">2002.99504616197</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{MC}\)</span>-LEP</td>
+<td align="left">32.0714341938583</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\bar{MC}\)</span>-HEP</td>
+<td align="left">-32.7036023512533</td>
+</tr>
+<tr class="even">
+<td>LowEndPoint</td>
+<td align="left">1970.92361196811</td>
+</tr>
+<tr class="odd">
+<td>HighEndPoint</td>
+<td align="left">2035.69864851322</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(D_{high}\)</span></td>
+<td align="left">0.554653755784329</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(D_{low}\)</span></td>
+<td align="left">0.397868950924931</td>
+</tr>
+<tr class="even">
+<td>1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td>2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td>RM</td>
+<td align="left">2000 <span class="math inline">\(\pm\)</span> 30 <span class="math inline">\(\Omega\)</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

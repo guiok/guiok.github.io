@@ -196,10 +196,10 @@ $(document).ready(function () {
       <a href="intro.html">Procedimento</a>
     </li>
     <li>
-      <a href="proc.html">Law of Propagation of Uncertainty</a>
+      <a href="proc.html">Law of Propagation of Uncertainty (LPU)</a>
     </li>
     <li>
-      <a href="proc_mc.html">Monte Carlo</a>
+      <a href="proc_mc.html">Monte Carlo Method (MCM)</a>
     </li>
     <li>
       <a href="apresentacao.html">Resultado de Medição</a>
@@ -209,6 +209,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="tstud.html">Tabela t-student</a>
+    </li>
+    <li>
+      <a href="exemplo.html">Exemplo</a>
     </li>
   </ul>
 </li>
@@ -292,10 +295,11 @@ $(document).ready(function () {
 <ul>
 <li><span class="math inline">\(u_c^2(y) = \sum_{i=1}^n{\left(\frac{\partial f}{\partial x_i}\right)^2}u^2(x_i)+2\sum_{i=1}^{n-1}{\sum_{j=i+1}^{n}{\frac{\partial f}{\partial x_i}\frac{\partial f}{\partial x_j}u(x_i)u(x_j)r(x_i,x_j)}}\)</span></li>
 </ul></li>
-<li>Cálculo dos graus de liberdade efetivos (obs.: este valor deve ser truncado e não arrendondado):
+<li>Cálculo dos graus de liberdade efetivos (obs.: este valor deve ser truncado e não arrendondado e é válido somente para dados não-correlacionados):
 <ul>
 <li><span class="math inline">\(\nu_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{n}\frac{u_i^4(y)}{\nu_i}},~onde~u_i^2(y)=c_i^2u^2(x_i)\)</span></li>
 </ul></li>
+<li>Para dados correlacionados deve-se verificar se a resultante é uma função normal de acordo com o método de Monte Carlo e aplicar os valores de fator de abrangência correpondentes.</li>
 <li>Seleção do coeficiente de t-student (fator de abrangência) para o grau de confiança desejado:
 <ul>
 <li>Ver tabela <em>t-student</em>, ou</li>
