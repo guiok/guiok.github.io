@@ -1,25 +1,25 @@
-// ====================================================
-//  MODELOS DE DISTRIBUI«√O
+Ôªø// ====================================================
+//  MODELOS DE DISTRIBUI√á√ÉO
 // ====================================================
 const double PI =  3.14159265358979323846;
-// DistribuiÁ„o Uniforme
+// Distribui√ß√£o Uniforme
 double runif() {
     return random(1.0);
 }
-// DistribuiÁ„o Normal
+// Distribui√ß√£o Normal
 double rnorm(double mean, double standardDeviation){
     double r = sqrt(-2.0*ln(random(1.0)));
     double theta = 2.0*PI*random(1.0);
     return mean + standardDeviation*r*cos(theta);
 }
-// DistribuiÁ„o LogNormal
+// Distribui√ß√£o LogNormal
 double rlnorm(double mu, double sigma) {
     double m = ln(pow(mu,2)/sqrt(sigma + pow(mu,2)));
     double s = sqrt(ln(sigma/(pow(mu,2))+1));
     double r = exp(rnorm(m,s));
     return r;  
 }
-// DistribuiÁ„o Weibull
+// Distribui√ß√£o Weibull
 double rweibull(double scale, double shape) {
     double a = pow(shape,-1);
     double b = -ln(runif());
