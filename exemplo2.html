@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -221,6 +223,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="tstud.html">Tabela t-student</a>
+    </li>
+    <li>
+      <a href="limitecentral.html">Limite Central</a>
     </li>
     <li>
       <a href="exemplo2.html">Exemplo</a>
@@ -511,19 +516,19 @@ Monte Carlo simulation (MCS)
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_c(y)\)</span></td>
-<td align="right">3.2155321</td>
+<td align="right">0.6572629</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\nu_{eff}\)</span></td>
-<td align="right">257905.0000000</td>
+<td align="right">450.0000000</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(t_{student}\)</span></td>
-<td align="right">2.5758484</td>
+<td align="right">2.5867987</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(U_{exp}(y)\)</span></td>
-<td align="right">8.2827231</td>
+<td align="right">1.7002069</td>
 </tr>
 </tbody>
 </table>
@@ -537,8 +542,8 @@ Monte Carlo simulation (MCS)
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">RM = 0.435 <span class="math inline">\(\pm\)</span> 0.008 <span class="math inline">\(k\Omega\)</span> com 99 % de confiança</td>
-<td align="left">RM = 0.4350 <span class="math inline">\(\pm\)</span> 0.0083 <span class="math inline">\(k\Omega\)</span> com 99 % de confiança</td>
+<td align="left">RM = 0.435 <span class="math inline">\(\pm\)</span> 0.002 <span class="math inline">\(k\Omega\)</span> com 99 % de confiança</td>
+<td align="left">RM = 0.4350 <span class="math inline">\(\pm\)</span> 0.0017 <span class="math inline">\(k\Omega\)</span> com 99 % de confiança</td>
 </tr>
 </tbody>
 </table>

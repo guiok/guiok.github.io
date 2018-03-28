@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -223,6 +225,9 @@ $(document).ready(function () {
       <a href="tstud.html">Tabela t-student</a>
     </li>
     <li>
+      <a href="limitecentral.html">Limite Central</a>
+    </li>
+    <li>
       <a href="exemplo2.html">Exemplo</a>
     </li>
   </ul>
@@ -244,7 +249,7 @@ $(document).ready(function () {
 </div>
 
 
-<p>A apresentalção da incerteza do resultado de medição deve ser na forma <span class="math inline">\(RM=(f_a \pm U_{exp})\)</span> [unidade] com % de confiança, onde:</p>
+<p>A apresentação da incerteza do resultado de medição deve ser na forma <span class="math inline">\(RM=(f_a \pm U_{exp})\)</span> [unidade] com % de confiança, onde:</p>
 <ul>
 <li><p><span class="math inline">\(U_{exp}\)</span> deve estar com a quantidade de <span class="math inline">\(n_{dig}\)</span> significativos de acordo com a análise de Monte Carlo.</p></li>
 <li><p><span class="math inline">\(f_a\)</span> deve estar com a quantidade de casas decimais de acordo com as apresentadas na <span class="math inline">\(U_{exp}\)</span>.</p></li>

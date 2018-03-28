@@ -11,7 +11,7 @@
 
 
 
-<title>Procedimento de Cáculo</title>
+<title>Procedimento de Cálculo</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -223,6 +225,9 @@ $(document).ready(function () {
       <a href="tstud.html">Tabela t-student</a>
     </li>
     <li>
+      <a href="limitecentral.html">Limite Central</a>
+    </li>
+    <li>
       <a href="exemplo2.html">Exemplo</a>
     </li>
   </ul>
@@ -239,13 +244,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Procedimento de Cáculo</h1>
+<h1 class="title toc-ignore">Procedimento de Cálculo</h1>
 
 </div>
 
 
 <p>Este documento foi desenvolvido para uso na disciplina de Metrologia e Medias Eletromecânicas para os cursos de Engenharia Mecânica e Engenharia Elétrica da Universidade Estadual do Oeste do Paraná - UNIOESTE<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, Campus Foz do Iguaçu<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Os exemplos foram fundamentados nos experimentos realizados em sala de aula e no Laboratório de Metrologia (Unioeste/Foz).</p>
-<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.0), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
+<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.2), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
 <p>Todos os cálculos descritos seguem a orientação do <em>Guide to the Expression of Uncertainty in Measurement (GUM)</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
 <div class="footnotes">
 <hr />

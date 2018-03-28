@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -223,6 +225,9 @@ $(document).ready(function () {
       <a href="tstud.html">Tabela t-student</a>
     </li>
     <li>
+      <a href="limitecentral.html">Limite Central</a>
+    </li>
+    <li>
       <a href="exemplo2.html">Exemplo</a>
     </li>
   </ul>
@@ -253,8 +258,8 @@ $(document).ready(function () {
 </ul>
 <p>Exemplos de deformação:</p>
 <ul>
-<li>1N: extensômetro na posição 1 diminuindo (neg) a resistência.</li>
-<li>2N: extensômetro na posição 2 aumentando (pos) a resistência.</li>
+<li>1N: extensômetro na posição 1 diminuindo (neg) a resist?ncia.</li>
+<li>2N: extensômetro na posição 2 aumentando (pos) a resist?ncia.</li>
 </ul>
 <p><span class="math inline">\(e = \frac{(-\frac{\Delta R1}{R}+\frac{\Delta R2}{R}+\frac{\Delta R3}{R}-\frac{\Delta R4}{R})}{(4+2*(\frac{\Delta R1}{R}+\frac{\Delta R2}{R}+\frac{\Delta R3}{R}+\frac{\Delta R4}{R}))*V}\)</span></p>
 <p><span class="math inline">\(-\varepsilon_1+\varepsilon_2+\varepsilon_3-\varepsilon_4 = \frac{4e}{KV}\)</span></p>
