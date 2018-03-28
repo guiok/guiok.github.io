@@ -278,15 +278,18 @@ for(i in 1:length(k)) {
     y = x[x&gt;=mean(x)-sdk[i] &amp; x&lt;=mean(x)+sdk[i]]
     cat(&quot;Para&quot;, k[i], &quot;desvio padrão&quot;, length(y)/N*100, &quot;\n&quot;)
 }</code></pre>
-<pre><code>## Para 1 desvio padrão 67.663 
-## Para 1.96 desvio padrão 95.126 
-## Para 2 desvio padrão 95.634 
-## Para 3 desvio padrão 99.813 
-## Para 4 desvio padrão 99.998</code></pre>
+<pre><code>## Para 1 desvio padrão 67.841 
+## Para 1.96 desvio padrão 95.08 
+## Para 2 desvio padrão 95.522 
+## Para 3 desvio padrão 99.784 
+## Para 4 desvio padrão 99.996</code></pre>
 </div>
 <div id="amostra" class="section level1">
 <h1>Amostra</h1>
-<p><span class="math display">\[s^2(q_k) = \frac{1}{n-1} \sum_{j=1}^n (q_j - \overline{q})^2\]</span> # População</p>
+<p><span class="math display">\[s^2(q_k) = \frac{1}{n-1} \sum_{j=1}^n (q_j - \overline{q})^2\]</span></p>
+</div>
+<div id="populacao" class="section level1">
+<h1>População</h1>
 <p><span class="math display">\[\sigma^2(q_k) = \frac{1}{n} \sum_{j=1}^n (q_j - \overline{q})^2\]</span></p>
 </div>
 
