@@ -22,6 +22,15 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462411-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-462411-4');
+</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -227,9 +236,6 @@ $(document).ready(function () {
     <li>
       <a href="limitecentral.html">Limite Central</a>
     </li>
-    <li>
-      <a href="exemplo2.html">Exemplo</a>
-    </li>
   </ul>
 </li>
       </ul>
@@ -268,26 +274,6 @@ $(document).ready(function () {
 <img src="wheat.png" />
 
 </div>
-<pre class="r"><code>rm (list=ls())
-par(mfrow=c(2, 4))
-
-prc &lt;- 50/100
-Rs &lt;- 120 #ohms
-E &lt;- 24000 #mV
-
-P &lt;- seq(-Rs*prc,Rs*prc,by=0.01)
-N &lt;- seq(Rs*prc,-Rs*prc,by=-0.01)
-wheat &lt;- function(E, DR1,DR2,DR3,DR4) {
-  return((-DR1/Rs+DR2/Rs+DR3/Rs-DR4/Rs)/(4+2*(DR1/Rs+DR2/Rs+DR3/Rs+DR4/Rs))*E)
-}
-plot(N, wheat(E, N, 0, 0, 0), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;1/4, 1N&quot;)
-plot(N, wheat(E, 0, N, 0, 0), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;1/4, 2N&quot;)
-plot(N, wheat(E, N, P, 0, 0), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;2/4, 1N 2P&quot;)
-plot(N, wheat(E, N, N, 0, 0), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;2/4, 1N 2N&quot;)
-plot(N, wheat(E, N, 0, P, 0), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;2/4, 1N 3P&quot;)
-plot(N, wheat(E, N, 0, 0, N), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;2/4, 1N 4N&quot;)
-plot(N, wheat(E, N, P, P, N), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;4/4, 1N 2P 3P 4N&quot;)
-plot(N, wheat(E, N, P, P, P), type=&#39;l&#39;, xlab=expression(Omega), ylab=&quot;mV&quot;, main=&quot;4/4, 1N 2P 3P 4P&quot;)</code></pre>
 <p><img src="wheatstone_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 
 <p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>

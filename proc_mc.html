@@ -22,6 +22,15 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462411-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-462411-4');
+</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -227,9 +236,6 @@ $(document).ready(function () {
     <li>
       <a href="limitecentral.html">Limite Central</a>
     </li>
-    <li>
-      <a href="exemplo2.html">Exemplo</a>
-    </li>
   </ul>
 </li>
       </ul>
@@ -325,13 +331,6 @@ r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
 <li>Tem-se <span class="math inline">\(U_x = D_x R_x D_x\)</span> e, sendo <span class="math inline">\(z = (z_1, \cdots, z_N )^T\)</span> valores aleatórios de acordo com uma distribuição normal e <span class="math inline">\(R\)</span> a matriz resultante da fatoração de Cholesky (<span class="math inline">\(U_x = R^TR\)</span>), tem-se: <span class="math display">\[\xi = x + R^T z\]</span></li>
 </ul></li>
 </ul>
-<pre class="r"><code>rmult &lt;- function(M, Ux, x) {
-  R &lt;- chol(Ux)
-  a &lt;- dim(Ux)[1]
-  z &lt;- matrix(rnorm(M*a),a)
-  xi &lt;- x + t(R) %*% z
-  return (xi)
-}</code></pre>
 <p><img src="proc_mc_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p></li>
 <li>Geração dos vetores de valores aleatório para as variáveis de <span class="math inline">\(f_{mc}\)</span> com base em seus valores médios e limites de incerteza.</li>
 <li>Cálculo do vetor <span class="math inline">\(f_{mc}\)</span>.</li>
