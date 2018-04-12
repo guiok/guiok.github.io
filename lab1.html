@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Laboratório 1: Incerteza em Medidas Diretas</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462411-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-462411-4');
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dr. Guilherme Kunz</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Principal</a>
+</li>
+<li>
+  <a href="conf.html">Confiabilidade</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Metrologia
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="metr.html">Laboratório</a>
+    </li>
+    <li>
+      <a href="wheatstone.html">Extensometria</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    GUM
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Procedimento</a>
+    </li>
+    <li>
+      <a href="proc.html">Law of Propagation of Uncertainty (LPU)</a>
+    </li>
+    <li>
+      <a href="proc_mc.html">Monte Carlo Method (MCM)</a>
+    </li>
+    <li>
+      <a href="apresentacao.html">Resultado de Medição</a>
+    </li>
+    <li>
+      <a href="chauvenet.html">Técnica de Descarte</a>
+    </li>
+    <li>
+      <a href="tstud.html">Tabela t-student</a>
+    </li>
+    <li>
+      <a href="limitecentral.html">Limite Central</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Laboratório 1: Incerteza em Medidas Diretas</h1>
+<h4 class="date"><em>12 de abril de 2018</em></h4>
+
+</div>
+
+
+<div id="procedimento-1-calibracao-da-balanca" class="section level2">
+<h2>Procedimento 1: Calibração da Balança</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{balança}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Calibração da Massa Padrão</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(\pm 2g\)</span>, <span class="math inline">\(v=4\)</span></td>
+</tr>
+<tr class="odd">
+<td>Resolução da Balança</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(1g\)</span></td>
+</tr>
+<tr class="even">
+<td>Correção da Massa-Padrão</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center"><span class="math inline">\(+1g\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab1_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="right">0.6970304</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="right">0.2905933</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="right">0.2886751</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">0.8084734</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">7.0000000</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">1.9636275</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_c\)</span></td>
+<td align="right">5.2000000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cb = 5 <span class="math inline">\(\pm\)</span> 2 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">Cb = 5.2 <span class="math inline">\(\pm\)</span> 2.0 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="procedimento-2-calibracao-da-massa-desconhecida" class="section level2">
+<h2>Procedimento 2: Calibração da Massa Desconhecida</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{massa}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Calibração da Balança</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center">ver Procedimento 1</td>
+</tr>
+<tr class="odd">
+<td>Resolução da Balança</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(1g\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab1_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="right">0.8084734</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="right">0.2333333</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="right">0.2886751</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">0.8896106</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">8.7555602</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">2.0728621</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\bar{M}+C_c\)</span></td>
+<td align="right">119.1000000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 119 <span class="math inline">\(\pm\)</span> 2 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 119.1 <span class="math inline">\(\pm\)</span> 2.1 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="procedimento-3-calibracao-pt100" class="section level2">
+<h2>Procedimento 3: Calibração PT100</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{PT100}=U_{calibração}+U_{resolução}+U_{repetividade}+U_{temperatura}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Calibração do CA71</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(\pm (0.05\%+0.6^oC)\)</span> para <span class="math inline">\((23\pm5)^oC\)</span></td>
+</tr>
+<tr class="odd">
+<td>Resolução do CA71</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(0.1^oC\)</span></td>
+</tr>
+<tr class="even">
+<td>Temperatura do CA71</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(Calibração*(1/5)/^oC\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Outras informações:</p>
+<ul>
+<li>Temperatura ambiente (máxima) considerada para fins de cálculo da incerteza <span class="math inline">\(T_{amb}=24^oC\)</span>.</li>
+</ul>
+<p><img src="lab1_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="right">0.3250350</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="right">0.2432192</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="right">0.0288675</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{temp}\)</span></td>
+<td align="right">0.0650070</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">0.4121438</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">74.0000000</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">0.8384460</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Correção=V_{nominal}-\bar{M}\)</span></td>
+<td align="right">-0.1400000</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 100.1 <span class="math inline">\(\pm\)</span> 0.8 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 100.14 <span class="math inline">\(\pm\)</span> 0.84 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="procedimento-4-ohmimetro" class="section level2">
+<h2>Procedimento 4: Ohmímetro</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{ohmímetro}=U_{calibração}+U_{resolução~multímetro}+U_{resolução~década}+U_{temperatura}+U_{repetividade}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Calibração da Década</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(\pm(0.01\%+2m\Omega)\)</span> para <span class="math inline">\((23\pm2)^oC\)</span></td>
+</tr>
+<tr class="odd">
+<td>Resolução da Década</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(0.001\Omega\)</span></td>
+</tr>
+<tr class="even">
+<td>Resolução do Multímetro</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(1\Omega\)</span> (na escala de <span class="math inline">\(2k\Omega\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Outras informações:</p>
+<ul>
+<li>Temperatura ambiente (máxima) considerada para fins de cálculo da incerteza <span class="math inline">\(T_{amb}=23^oC\)</span>.</li>
+<li>Valor selecionado na década resistíva: <span class="math inline">\(999.999\Omega\)</span>.</li>
+</ul>
+<table style="width:76%;">
+<colgroup>
+<col width="20%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Coeficiente de Temperatura</th>
+<th align="center">Passo de <span class="math inline">\(100\Omega\)</span></th>
+<th align="center">Passo de <span class="math inline">\(10\Omega\)</span></th>
+<th align="center">Passo de <span class="math inline">\(1\Omega\)</span></th>
+<th align="center">Passo de <span class="math inline">\(0.1\Omega\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\alpha_{20}\)</span></td>
+<td align="center"><span class="math inline">\(-5~\\~+10\)</span></td>
+<td align="center"><span class="math inline">\(-5~\\~+20\)</span></td>
+<td align="center"><span class="math inline">\(+20~\\~+90\)</span></td>
+<td align="center"><span class="math inline">\(+90~\\~+900\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta\)</span></td>
+<td align="center"><span class="math inline">\(-0.3~\\~-0.7\)</span></td>
+<td align="center"><span class="math inline">\(-0.3~\\~-0.7\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(R_t=R_{20}(1+\alpha_{20}(t-20)+\beta(t-20)^2)\)</span></li>
+<li><span class="math inline">\(R_t\)</span>: resistência <span class="math inline">\(t^oC\)</span></li>
+<li><span class="math inline">\(R_{20}\)</span>: resistência <span class="math inline">\(20^oC\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Menor Resistência para <span class="math inline">\(23^oC\)</span></th>
+<th align="left">Maior Resistência para <span class="math inline">\(23^oC\)</span></th>
+<th align="left">Correção Resultante</th>
+<th align="left">Incerteza Resultante</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">999.978696 <span class="math inline">\(\Omega\)</span></td>
+<td align="left">1000.033587 <span class="math inline">\(\Omega\)</span></td>
+<td align="left">-0.00714149999998881 <span class="math inline">\(\Omega\)</span></td>
+<td align="left"><span class="math inline">\(\pm\)</span> 0.0158456668130432 <span class="math inline">\(\Omega\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab1_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="right">0.0510000</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res mult}\)</span></td>
+<td align="right">0.2886751</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{res dec}\)</span></td>
+<td align="right">0.0002887</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{temp}\)</span></td>
+<td align="right">0.0158457</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">0.2935737</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">Inf</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">0.5871480</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_c\)</span></td>
+<td align="right">-0.0071415</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 0.0 <span class="math inline">\(\pm\)</span> 0.6 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = -0.01 <span class="math inline">\(\pm\)</span> 0.59 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="procedimento-5-conjunto-de-resistencias" class="section level2">
+<h2>Procedimento 5: Conjunto de Resistências</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{resistências}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Calibração do Multímetro</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center">ver Procedimento 4</td>
+</tr>
+<tr class="odd">
+<td>Resolução do Multímetro</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(1\Omega\)</span> (na escala de <span class="math inline">\(2k\Omega\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab1_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="right">0.2935737</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="right">1.1595018</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="right">0.2886751</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">1.2304321</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">11.0000000</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">2.7744596</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_c\)</span></td>
+<td align="right">-0.0071415</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 1000 <span class="math inline">\(\pm\)</span> 3 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 1000.3 <span class="math inline">\(\pm\)</span> 2.8 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
