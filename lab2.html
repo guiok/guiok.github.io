@@ -100,8 +100,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -117,7 +123,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -137,6 +142,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -158,18 +200,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -345,11 +446,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>LEP</td>
-<td align="left">0.493449618564411</td>
+<td align="left">0.493452016601167</td>
 </tr>
 <tr class="odd">
 <td>HEP</td>
-<td align="left">0.494783065981462</td>
+<td align="left">0.494778765922779</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -361,11 +462,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>DH</td>
-<td align="left">0.0000145240945467751</td>
+<td align="left">0.0000188241532305677</td>
 </tr>
 <tr class="odd">
 <td>DL</td>
-<td align="left">0.0000160945735016016</td>
+<td align="left">0.0000184926102576588</td>
 </tr>
 <tr class="even">
 <td>1 Algarismo Significativo</td>
@@ -472,11 +573,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>LEP</td>
-<td align="left">700.097759045237</td>
+<td align="left">700.097773388733</td>
 </tr>
 <tr class="odd">
 <td>HEP</td>
-<td align="left">700.108661044649</td>
+<td align="left">700.10867351983</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -488,11 +589,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>DH</td>
-<td align="left">0.000174274653772954</td>
+<td align="left">0.000186749834711009</td>
 </tr>
 <tr class="odd">
 <td>DL</td>
-<td align="left">0.00019599922541147</td>
+<td align="left">0.000181655728965779</td>
 </tr>
 <tr class="even">
 <td>1 Algarismo Significativo</td>
@@ -597,11 +698,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>LEP</td>
-<td align="left">699.937759406722</td>
+<td align="left">699.937762704805</td>
 </tr>
 <tr class="odd">
 <td>HEP</td>
-<td align="left">700.271819351086</td>
+<td align="left">700.271785287271</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -613,11 +714,11 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td>DH</td>
-<td align="left">0.0351234928816666</td>
+<td align="left">0.0351575566961628</td>
 </tr>
 <tr class="odd">
 <td>DL</td>
-<td align="left">0.0351099646494504</td>
+<td align="left">0.0351132627320112</td>
 </tr>
 <tr class="even">
 <td>1 Algarismo Significativo</td>
@@ -733,11 +834,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>LEP</td>
-<td align="left">1001.04445272225</td>
+<td align="left">1001.05443106697</td>
 </tr>
 <tr class="even">
 <td>HEP</td>
-<td align="left">1004.3509497861</td>
+<td align="left">1004.35191394758</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -749,11 +850,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>DH</td>
-<td align="left">0.0209081421211295</td>
+<td align="left">0.0199439806320925</td>
 </tr>
 <tr class="even">
 <td>DL</td>
-<td align="left">0.0168706504642842</td>
+<td align="left">0.0268489951905622</td>
 </tr>
 <tr class="odd">
 <td>1 Algarismo Significativo</td>
@@ -849,11 +950,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>LEP</td>
-<td align="left">396.747084933528</td>
+<td align="left">396.705225848658</td>
 </tr>
 <tr class="even">
 <td>HEP</td>
-<td align="left">433.290063330864</td>
+<td align="left">433.199928094651</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -865,11 +966,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>DH</td>
-<td align="left">1.04271723152459</td>
+<td align="left">0.952581995311846</td>
 </tr>
 <tr class="even">
 <td>DL</td>
-<td align="left">0.0485889700017879</td>
+<td align="left">0.0067298851315627</td>
 </tr>
 <tr class="odd">
 <td>1 Algarismo Significativo</td>
@@ -930,11 +1031,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>LEP</td>
-<td align="left">401.155906901887</td>
+<td align="left">401.23096023275</td>
 </tr>
 <tr class="even">
 <td>HEP</td>
-<td align="left">428.188461547295</td>
+<td align="left">428.255136214766</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\delta_1\)</span></td>
@@ -946,11 +1047,11 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td>DH</td>
-<td align="left">0.420538168082942</td>
+<td align="left">0.487212835554089</td>
 </tr>
 <tr class="even">
 <td>DL</td>
-<td align="left">0.02201178176648</td>
+<td align="left">0.0530415490969176</td>
 </tr>
 <tr class="odd">
 <td>1 Algarismo Significativo</td>
@@ -970,7 +1071,7 @@ $(document).ready(function () {
 </div>
 </div>
 
-<p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 

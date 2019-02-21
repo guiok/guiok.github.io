@@ -100,8 +100,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -117,7 +123,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -137,6 +142,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -158,18 +200,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -256,7 +357,7 @@ $(document).ready(function () {
 
 
 <p>Este documento foi desenvolvido para uso na disciplina de Metrologia e Medias Eletromecânicas para os cursos de Engenharia Mecânica e Engenharia Elétrica da Universidade Estadual do Oeste do Paraná - UNIOESTE<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, Campus Foz do Iguaçu<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Os exemplos foram fundamentados nos experimentos realizados em sala de aula e no Laboratório de Metrologia (Unioeste/Foz).</p>
-<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.2), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
+<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.4), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
 <p>Todos os cálculos descritos seguem a orientação do <em>Guide to the Expression of Uncertainty in Measurement (GUM)</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
 <div class="footnotes">
 <hr />
@@ -270,7 +371,7 @@ $(document).ready(function () {
 </ol>
 </div>
 
-<p>Copyright &copy; 2017 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
