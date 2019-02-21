@@ -100,8 +100,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -117,7 +123,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -137,6 +142,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -158,18 +200,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -286,56 +387,57 @@ $(document).ready(function () {
 <li><a href="http://www.barringer1.com/wdbase.htm">Banco de Dados de Valores de Weibull</a> <!--- * [Application of Monte Carlo Simulations to System Realibility Analysis](http://turbolab.tamu.edu/proc/pumpproc/P20/10.pdf) --></li>
 <li><a href="https://guiok.github.io/download/aulas.zip">Exemplos de Aula</a></li>
 </ul>
-<p><strong>Download dos Trabalhos - Matrícula:</strong></p>
-<ul>
-<li><a href="./download/trabalhos/conf/12866_40211a69ed66.pdf">12866</a></li>
-<li><a href="./download/trabalhos/conf/12939_40217a42ef59.pdf">12939</a></li>
-<li><a href="./download/trabalhos/conf/12944_4021637d5f4b.pdf">12944</a></li>
-<li><a href="./download/trabalhos/conf/14347_40213f0b8b76.pdf">14347</a></li>
-<li><a href="./download/trabalhos/conf/1754_4021360b0303.pdf">1754</a></li>
-<li><a href="./download/trabalhos/conf/186968_40214496ee6.pdf">186968</a></li>
-<li><a href="./download/trabalhos/conf/186988_40217dbf2894.pdf">186988</a></li>
-<li><a href="./download/trabalhos/conf/187096_40215744b772.pdf">187096</a></li>
-<li><a href="./download/trabalhos/conf/187190_40217f85289.pdf">187190</a></li>
-<li><a href="./download/trabalhos/conf/189198_40217ddd5226.pdf">189198</a></li>
-<li><a href="./download/trabalhos/conf/190322_40215b8e2c2a.pdf">190322</a></li>
-<li><a href="./download/trabalhos/conf/193073_402159b99ee6.pdf">193073</a></li>
-<li><a href="./download/trabalhos/conf/193640_40213a25ed86.pdf">193640</a></li>
-<li><a href="./download/trabalhos/conf/197645_40215db0da04.pdf">197645</a></li>
-<li><a href="./download/trabalhos/conf/198395_4021707d5082.pdf">198395</a></li>
-<li><a href="./download/trabalhos/conf/198398_4021267a7122.pdf">198398</a></li>
-<li><a href="./download/trabalhos/conf/29904_402131147803.pdf">29904</a></li>
-<li><a href="./download/trabalhos/conf/30296_40214437ec56.pdf">30296</a></li>
-<li><a href="./download/trabalhos/conf/30305_40217d26b82c.pdf">30305</a></li>
-<li><a href="./download/trabalhos/conf/30365_4021763a6129.pdf">30365</a></li>
-<li><a href="./download/trabalhos/conf/30389_402161d08f04.pdf">30389</a></li>
-<li><a href="./download/trabalhos/conf/30419_40214289c579.pdf">30419</a></li>
-<li><a href="./download/trabalhos/conf/30425_40213a9cf2b3.pdf">30425</a></li>
-<li><a href="./download/trabalhos/conf/30427_40217cb8ae6a.pdf">30427</a></li>
-<li><a href="./download/trabalhos/conf/30517_40216f900459.pdf">30517</a></li>
-<li><a href="./download/trabalhos/conf/30533_40213e6f421e.pdf">30533</a></li>
-<li><a href="./download/trabalhos/conf/30562_402165b1e881.pdf">30562</a></li>
-<li><a href="./download/trabalhos/conf/30577_40211aa09bba.pdf">30577</a></li>
-<li><a href="./download/trabalhos/conf/30585_402151d5aa8c.pdf">30585</a></li>
-<li><a href="./download/trabalhos/conf/30587_402162c3280d.pdf">30587</a></li>
-<li><a href="./download/trabalhos/conf/31036_4021bec34b5.pdf">31036</a></li>
-<li><a href="./download/trabalhos/conf/31140_40212974d05b.pdf">31140</a></li>
-<li><a href="./download/trabalhos/conf/32333_40216b978dc1.pdf">32333</a></li>
-<li><a href="./download/trabalhos/conf/40998_40213eb084b4.pdf">40998</a></li>
-<li><a href="./download/trabalhos/conf/5948_402160e6acb8.pdf">5948</a></li>
-<li><a href="./download/trabalhos/conf/6016_402122776a9a.pdf">6016</a></li>
-<li><a href="./download/trabalhos/conf/6019_402122062f63.pdf">6019</a></li>
-<li><a href="./download/trabalhos/conf/6031_4021377e4b52.pdf">6031</a></li>
-<li><a href="./download/trabalhos/conf/6274_40215340788f.pdf">6274</a></li>
-<li><a href="./download/trabalhos/conf/6598_402154a4c695.pdf">6598</a></li>
-<li><a href="./download/trabalhos/conf/6607_40212423b33f.pdf">6607</a></li>
-<li><a href="./download/trabalhos/conf/6612_402124b84205.pdf">6612</a></li>
-<li><a href="./download/trabalhos/conf/7587_40215c92e6ba.pdf">7587</a></li>
-<li><a href="./download/trabalhos/conf/7659_4021505b57af.pdf">7659</a></li>
-<li><a href="./download/trabalhos/conf/8027_40212231bcf2.pdf">8027</a></li>
-</ul>
+<!---
+**Download dos Trabalhos - Matrícula:**
 
-<p>Copyright &copy; 2018 Guilherme Kunz, Inc. All rights reserved.</p>
+* [12866](./download/trabalhos/conf/12866_40211a69ed66.pdf)
+* [12939](./download/trabalhos/conf/12939_40217a42ef59.pdf)
+* [12944](./download/trabalhos/conf/12944_4021637d5f4b.pdf)
+* [14347](./download/trabalhos/conf/14347_40213f0b8b76.pdf)
+* [1754](./download/trabalhos/conf/1754_4021360b0303.pdf)
+* [186968](./download/trabalhos/conf/186968_40214496ee6.pdf)
+* [186988](./download/trabalhos/conf/186988_40217dbf2894.pdf)
+* [187096](./download/trabalhos/conf/187096_40215744b772.pdf)
+* [187190](./download/trabalhos/conf/187190_40217f85289.pdf)
+* [189198](./download/trabalhos/conf/189198_40217ddd5226.pdf)
+* [190322](./download/trabalhos/conf/190322_40215b8e2c2a.pdf)
+* [193073](./download/trabalhos/conf/193073_402159b99ee6.pdf)
+* [193640](./download/trabalhos/conf/193640_40213a25ed86.pdf)
+* [197645](./download/trabalhos/conf/197645_40215db0da04.pdf)
+* [198395](./download/trabalhos/conf/198395_4021707d5082.pdf)
+* [198398](./download/trabalhos/conf/198398_4021267a7122.pdf)
+* [29904](./download/trabalhos/conf/29904_402131147803.pdf)
+* [30296](./download/trabalhos/conf/30296_40214437ec56.pdf)
+* [30305](./download/trabalhos/conf/30305_40217d26b82c.pdf)
+* [30365](./download/trabalhos/conf/30365_4021763a6129.pdf)
+* [30389](./download/trabalhos/conf/30389_402161d08f04.pdf)
+* [30419](./download/trabalhos/conf/30419_40214289c579.pdf)
+* [30425](./download/trabalhos/conf/30425_40213a9cf2b3.pdf)
+* [30427](./download/trabalhos/conf/30427_40217cb8ae6a.pdf)
+* [30517](./download/trabalhos/conf/30517_40216f900459.pdf)
+* [30533](./download/trabalhos/conf/30533_40213e6f421e.pdf)
+* [30562](./download/trabalhos/conf/30562_402165b1e881.pdf)
+* [30577](./download/trabalhos/conf/30577_40211aa09bba.pdf)
+* [30585](./download/trabalhos/conf/30585_402151d5aa8c.pdf)
+* [30587](./download/trabalhos/conf/30587_402162c3280d.pdf)
+* [31036](./download/trabalhos/conf/31036_4021bec34b5.pdf)
+* [31140](./download/trabalhos/conf/31140_40212974d05b.pdf)
+* [32333](./download/trabalhos/conf/32333_40216b978dc1.pdf)
+* [40998](./download/trabalhos/conf/40998_40213eb084b4.pdf)
+* [5948](./download/trabalhos/conf/5948_402160e6acb8.pdf)
+* [6016](./download/trabalhos/conf/6016_402122776a9a.pdf)
+* [6019](./download/trabalhos/conf/6019_402122062f63.pdf)
+* [6031](./download/trabalhos/conf/6031_4021377e4b52.pdf)
+* [6274](./download/trabalhos/conf/6274_40215340788f.pdf)
+* [6598](./download/trabalhos/conf/6598_402154a4c695.pdf)
+* [6607](./download/trabalhos/conf/6607_40212423b33f.pdf)
+* [6612](./download/trabalhos/conf/6612_402124b84205.pdf)
+* [7587](./download/trabalhos/conf/7587_40215c92e6ba.pdf)
+* [7659](./download/trabalhos/conf/7659_4021505b57af.pdf)
+* [8027](./download/trabalhos/conf/8027_40212231bcf2.pdf)
+-->
+
+<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
