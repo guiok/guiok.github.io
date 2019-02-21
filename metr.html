@@ -106,6 +106,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -120,7 +123,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -140,6 +142,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -161,18 +200,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -303,113 +401,115 @@ $(document).ready(function () {
 <li><a href="lab2.html">Incerteza em Medidas Indiretas (MC)</a></li>
 <li><a href="lab3.html">Incerteza em Medidas Indiretas (MC) - Resistência</a></li>
 </ul>
-<p><strong>Download dos Trabalhos - Matrícula:</strong></p>
-<p>Obs.: Considere, para questão 1, que as medições estão em milímetros e que a tolerância da peça é de <span class="math inline">\(\pm0.5mm\)</span>.</p>
-<ul>
-<li><a href="./download/trabalhos/12866_38ec207d34f7.pdf">12866</a></li>
-<li><a href="./download/trabalhos/12948_38ec4af9cd14.pdf">12948</a></li>
-<li><a href="./download/trabalhos/14347_38ec30d2bd8f.pdf">14347</a></li>
-<li><a href="./download/trabalhos/1754_38ec2672b959.pdf">1754</a></li>
-<li><a href="./download/trabalhos/186601_38ec545a129.pdf">186601</a></li>
-<li><a href="./download/trabalhos/186607_38ec14d03364.pdf">186607</a></li>
-<li><a href="./download/trabalhos/186677_38ec6218e508.pdf">186677</a></li>
-<li><a href="./download/trabalhos/186925_38ec1fd0b0e.pdf">186925</a></li>
-<li><a href="./download/trabalhos/186948_38ec4784b2ed.pdf">186948</a></li>
-<li><a href="./download/trabalhos/186988_38ec453349eb.pdf">186988</a></li>
-<li><a href="./download/trabalhos/187190_38ec5c04fc70.pdf">187190</a></li>
-<li><a href="./download/trabalhos/189198_38ec45731a0b.pdf">189198</a></li>
-<li><a href="./download/trabalhos/190322_38ecb90651b.pdf">190322</a></li>
-<li><a href="./download/trabalhos/193073_38ec7d2b43ba.pdf">193073</a></li>
-<li><a href="./download/trabalhos/193640_38ec28e0e849.pdf">193640</a></li>
-<li><a href="./download/trabalhos/193902_38ec461d4b0f.pdf">193902</a></li>
-<li><a href="./download/trabalhos/197124_38ec2e568264.pdf">197124</a></li>
-<li><a href="./download/trabalhos/197435_38ecf2409.pdf">197435</a></li>
-<li><a href="./download/trabalhos/197440_38ec3e7d9fc1.pdf">197440</a></li>
-<li><a href="./download/trabalhos/197619_38ecdb79937.pdf">197619</a></li>
-<li><a href="./download/trabalhos/197645_38ec296cef25.pdf">197645</a></li>
-<li><a href="./download/trabalhos/197651_38ec2c897535.pdf">197651</a></li>
-<li><a href="./download/trabalhos/197676_38ec7f644de.pdf">197676</a></li>
-<li><a href="./download/trabalhos/198395_38ec7e5d567.pdf">198395</a></li>
-<li><a href="./download/trabalhos/29890_38ec4e323502.pdf">29890</a></li>
-<li><a href="./download/trabalhos/29904_38ec5d3ebd02.pdf">29904</a></li>
-<li><a href="./download/trabalhos/30011_38ec6ccb420f.pdf">30011</a></li>
-<li><a href="./download/trabalhos/30043_38ec67ad89dc.pdf">30043</a></li>
-<li><a href="./download/trabalhos/30296_38ec52d46812.pdf">30296</a></li>
-<li><a href="./download/trabalhos/30305_38ec5a7cc655.pdf">30305</a></li>
-<li><a href="./download/trabalhos/30361_38ec5c15459.pdf">30361</a></li>
-<li><a href="./download/trabalhos/30365_38ec18879dab.pdf">30365</a></li>
-<li><a href="./download/trabalhos/30420_38ec1987f3eb.pdf">30420</a></li>
-<li><a href="./download/trabalhos/30425_38ec35ffea6b.pdf">30425</a></li>
-<li><a href="./download/trabalhos/30427_38ec71329dc1.pdf">30427</a></li>
-<li><a href="./download/trabalhos/30428_38ec3d4233dd.pdf">30428</a></li>
-<li><a href="./download/trabalhos/30433_38ec133ea76d.pdf">30433</a></li>
-<li><a href="./download/trabalhos/30444_38ec331a2568.pdf">30444</a></li>
-<li><a href="./download/trabalhos/30517_38ec59faedfb.pdf">30517</a></li>
-<li><a href="./download/trabalhos/30526_38ec16b337a5.pdf">30526</a></li>
-<li><a href="./download/trabalhos/30562_38ec465d5d64.pdf">30562</a></li>
-<li><a href="./download/trabalhos/30577_38ec5e88e745.pdf">30577</a></li>
-<li><a href="./download/trabalhos/31134_38ec5ee4fb0f.pdf">31134</a></li>
-<li><a href="./download/trabalhos/31406_38ec5106f148.pdf">31406</a></li>
-<li><a href="./download/trabalhos/32041_38ec49d1b8d8.pdf">32041</a></li>
-<li><a href="./download/trabalhos/32333_38ec4ea4a61e.pdf">32333</a></li>
-<li><a href="./download/trabalhos/32335_38ec56c5ea7f.pdf">32335</a></li>
-<li><a href="./download/trabalhos/32540_38ec23bc3130.pdf">32540</a></li>
-<li><a href="./download/trabalhos/39442_38ec33bbdc65.pdf">39442</a></li>
-<li><a href="./download/trabalhos/39449_38ec4734c90c.pdf">39449</a></li>
-<li><a href="./download/trabalhos/39454_38ec1d8b2234.pdf">39454</a></li>
-<li><a href="./download/trabalhos/39456_38ec45a74a9c.pdf">39456</a></li>
-<li><a href="./download/trabalhos/39458_38ec701bbed9.pdf">39458</a></li>
-<li><a href="./download/trabalhos/39459_38ec6a726c91.pdf">39459</a></li>
-<li><a href="./download/trabalhos/39465_38ec401255.pdf">39465</a></li>
-<li><a href="./download/trabalhos/39466_38ec17a5571b.pdf">39466</a></li>
-<li><a href="./download/trabalhos/39467_38ec7c0e7d93.pdf">39467</a></li>
-<li><a href="./download/trabalhos/39473_38ec159cb778.pdf">39473</a></li>
-<li><a href="./download/trabalhos/39475_38ec61186fa4.pdf">39475</a></li>
-<li><a href="./download/trabalhos/39491_38ec2ada2eeb.pdf">39491</a></li>
-<li><a href="./download/trabalhos/39507_38ec7260d74e.pdf">39507</a></li>
-<li><a href="./download/trabalhos/39513_38ec1bff2694.pdf">39513</a></li>
-<li><a href="./download/trabalhos/39564_38ecc566e91.pdf">39564</a></li>
-<li><a href="./download/trabalhos/39565_38ec64e56ca8.pdf">39565</a></li>
-<li><a href="./download/trabalhos/39747_38ec57aaa9d6.pdf">39747</a></li>
-<li><a href="./download/trabalhos/39789_38ec61896ff9.pdf">39789</a></li>
-<li><a href="./download/trabalhos/40975_38ec191dd567.pdf">40975</a></li>
-<li><a href="./download/trabalhos/40979_38ec1a591aff.pdf">40979</a></li>
-<li><a href="./download/trabalhos/40988_38ec51edc27f.pdf">40988</a></li>
-<li><a href="./download/trabalhos/40998_38ec7fcbcf6f.pdf">40998</a></li>
-<li><a href="./download/trabalhos/41000_38ec496f6755.pdf">41000</a></li>
-<li><a href="./download/trabalhos/41219_38ec49f56590.pdf">41219</a></li>
-<li><a href="./download/trabalhos/41222_38ec2be2e1b.pdf">41222</a></li>
-<li><a href="./download/trabalhos/47210_38ec6fe12886.pdf">47210</a></li>
-<li><a href="./download/trabalhos/47216_38ec6190435d.pdf">47216</a></li>
-<li><a href="./download/trabalhos/47225_38ec48c5f980.pdf">47225</a></li>
-<li><a href="./download/trabalhos/47235_38ec1c1d2951.pdf">47235</a></li>
-<li><a href="./download/trabalhos/47711_38ec5675deb5.pdf">47711</a></li>
-<li><a href="./download/trabalhos/47712_38ec540c830b.pdf">47712</a></li>
-<li><a href="./download/trabalhos/47720_38ec3d58094e.pdf">47720</a></li>
-<li><a href="./download/trabalhos/47772_38ec74cf5639.pdf">47772</a></li>
-<li><a href="./download/trabalhos/48458_38ec2f28a2fc.pdf">48458</a></li>
-<li><a href="./download/trabalhos/48463_38ec1d4b14e3.pdf">48463</a></li>
-<li><a href="./download/trabalhos/48498_38ec6d20a878.pdf">48498</a></li>
-<li><a href="./download/trabalhos/48506_38ec19098a20.pdf">48506</a></li>
-<li><a href="./download/trabalhos/49253_38ec1c56260e.pdf">49253</a></li>
-<li><a href="./download/trabalhos/49275_38ec7807869b.pdf">49275</a></li>
-<li><a href="./download/trabalhos/49286_38ec3f0e6af7.pdf">49286</a></li>
-<li><a href="./download/trabalhos/5793_38ec6ed008db.pdf">5793</a></li>
-<li><a href="./download/trabalhos/5940_38ec79504f78.pdf">5940</a></li>
-<li><a href="./download/trabalhos/5970_38ec78119543.pdf">5970</a></li>
-<li><a href="./download/trabalhos/6016_38ec1f8b2c82.pdf">6016</a></li>
-<li><a href="./download/trabalhos/6019_38ec46517ba0.pdf">6019</a></li>
-<li><a href="./download/trabalhos/6031_38ec3bcbeec9.pdf">6031</a></li>
-<li><a href="./download/trabalhos/6154_38ec77a67877.pdf">6154</a></li>
-<li><a href="./download/trabalhos/6164_38ec39c9d5f0.pdf">6164</a></li>
-<li><a href="./download/trabalhos/6203_38ec3e8cc3cb.pdf">6203</a></li>
-<li><a href="./download/trabalhos/6274_38ec5b571b4b.pdf">6274</a></li>
-<li><a href="./download/trabalhos/6387_38eca0c6d76.pdf">6387</a></li>
-<li><a href="./download/trabalhos/6598_38ec244e7f2d.pdf">6598</a></li>
-<li><a href="./download/trabalhos/6607_38ec242697ae.pdf">6607</a></li>
-<li><a href="./download/trabalhos/6612_38ec684fcdfc.pdf">6612</a></li>
-<li><a href="./download/trabalhos/7587_38ec33aeb859.pdf">7587</a></li>
-</ul>
+<!--- 
+**Download dos Trabalhos - Matrícula:**
+
+Obs.: Considere, para questão 1, que as medições estão em milímetros e que a tolerância da peça é de $\pm0.5mm$.
+
+* [12866](./download/trabalhos/12866_38ec207d34f7.pdf)
+* [12948](./download/trabalhos/12948_38ec4af9cd14.pdf)
+* [14347](./download/trabalhos/14347_38ec30d2bd8f.pdf)
+* [1754](./download/trabalhos/1754_38ec2672b959.pdf)
+* [186601](./download/trabalhos/186601_38ec545a129.pdf)
+* [186607](./download/trabalhos/186607_38ec14d03364.pdf)
+* [186677](./download/trabalhos/186677_38ec6218e508.pdf)
+* [186925](./download/trabalhos/186925_38ec1fd0b0e.pdf)
+* [186948](./download/trabalhos/186948_38ec4784b2ed.pdf)
+* [186988](./download/trabalhos/186988_38ec453349eb.pdf)
+* [187190](./download/trabalhos/187190_38ec5c04fc70.pdf)
+* [189198](./download/trabalhos/189198_38ec45731a0b.pdf)
+* [190322](./download/trabalhos/190322_38ecb90651b.pdf)
+* [193073](./download/trabalhos/193073_38ec7d2b43ba.pdf)
+* [193640](./download/trabalhos/193640_38ec28e0e849.pdf)
+* [193902](./download/trabalhos/193902_38ec461d4b0f.pdf)
+* [197124](./download/trabalhos/197124_38ec2e568264.pdf)
+* [197435](./download/trabalhos/197435_38ecf2409.pdf)
+* [197440](./download/trabalhos/197440_38ec3e7d9fc1.pdf)
+* [197619](./download/trabalhos/197619_38ecdb79937.pdf)
+* [197645](./download/trabalhos/197645_38ec296cef25.pdf)
+* [197651](./download/trabalhos/197651_38ec2c897535.pdf)
+* [197676](./download/trabalhos/197676_38ec7f644de.pdf)
+* [198395](./download/trabalhos/198395_38ec7e5d567.pdf)
+* [29890](./download/trabalhos/29890_38ec4e323502.pdf)
+* [29904](./download/trabalhos/29904_38ec5d3ebd02.pdf)
+* [30011](./download/trabalhos/30011_38ec6ccb420f.pdf)
+* [30043](./download/trabalhos/30043_38ec67ad89dc.pdf)
+* [30296](./download/trabalhos/30296_38ec52d46812.pdf)
+* [30305](./download/trabalhos/30305_38ec5a7cc655.pdf)
+* [30361](./download/trabalhos/30361_38ec5c15459.pdf)
+* [30365](./download/trabalhos/30365_38ec18879dab.pdf)
+* [30420](./download/trabalhos/30420_38ec1987f3eb.pdf)
+* [30425](./download/trabalhos/30425_38ec35ffea6b.pdf)
+* [30427](./download/trabalhos/30427_38ec71329dc1.pdf)
+* [30428](./download/trabalhos/30428_38ec3d4233dd.pdf)
+* [30433](./download/trabalhos/30433_38ec133ea76d.pdf)
+* [30444](./download/trabalhos/30444_38ec331a2568.pdf)
+* [30517](./download/trabalhos/30517_38ec59faedfb.pdf)
+* [30526](./download/trabalhos/30526_38ec16b337a5.pdf)
+* [30562](./download/trabalhos/30562_38ec465d5d64.pdf)
+* [30577](./download/trabalhos/30577_38ec5e88e745.pdf)
+* [31134](./download/trabalhos/31134_38ec5ee4fb0f.pdf)
+* [31406](./download/trabalhos/31406_38ec5106f148.pdf)
+* [32041](./download/trabalhos/32041_38ec49d1b8d8.pdf)
+* [32333](./download/trabalhos/32333_38ec4ea4a61e.pdf)
+* [32335](./download/trabalhos/32335_38ec56c5ea7f.pdf)
+* [32540](./download/trabalhos/32540_38ec23bc3130.pdf)
+* [39442](./download/trabalhos/39442_38ec33bbdc65.pdf)
+* [39449](./download/trabalhos/39449_38ec4734c90c.pdf)
+* [39454](./download/trabalhos/39454_38ec1d8b2234.pdf)
+* [39456](./download/trabalhos/39456_38ec45a74a9c.pdf)
+* [39458](./download/trabalhos/39458_38ec701bbed9.pdf)
+* [39459](./download/trabalhos/39459_38ec6a726c91.pdf)
+* [39465](./download/trabalhos/39465_38ec401255.pdf)
+* [39466](./download/trabalhos/39466_38ec17a5571b.pdf)
+* [39467](./download/trabalhos/39467_38ec7c0e7d93.pdf)
+* [39473](./download/trabalhos/39473_38ec159cb778.pdf)
+* [39475](./download/trabalhos/39475_38ec61186fa4.pdf)
+* [39491](./download/trabalhos/39491_38ec2ada2eeb.pdf)
+* [39507](./download/trabalhos/39507_38ec7260d74e.pdf)
+* [39513](./download/trabalhos/39513_38ec1bff2694.pdf)
+* [39564](./download/trabalhos/39564_38ecc566e91.pdf)
+* [39565](./download/trabalhos/39565_38ec64e56ca8.pdf)
+* [39747](./download/trabalhos/39747_38ec57aaa9d6.pdf)
+* [39789](./download/trabalhos/39789_38ec61896ff9.pdf)
+* [40975](./download/trabalhos/40975_38ec191dd567.pdf)
+* [40979](./download/trabalhos/40979_38ec1a591aff.pdf)
+* [40988](./download/trabalhos/40988_38ec51edc27f.pdf)
+* [40998](./download/trabalhos/40998_38ec7fcbcf6f.pdf)
+* [41000](./download/trabalhos/41000_38ec496f6755.pdf)
+* [41219](./download/trabalhos/41219_38ec49f56590.pdf)
+* [41222](./download/trabalhos/41222_38ec2be2e1b.pdf)
+* [47210](./download/trabalhos/47210_38ec6fe12886.pdf)
+* [47216](./download/trabalhos/47216_38ec6190435d.pdf)
+* [47225](./download/trabalhos/47225_38ec48c5f980.pdf)
+* [47235](./download/trabalhos/47235_38ec1c1d2951.pdf)
+* [47711](./download/trabalhos/47711_38ec5675deb5.pdf)
+* [47712](./download/trabalhos/47712_38ec540c830b.pdf)
+* [47720](./download/trabalhos/47720_38ec3d58094e.pdf)
+* [47772](./download/trabalhos/47772_38ec74cf5639.pdf)
+* [48458](./download/trabalhos/48458_38ec2f28a2fc.pdf)
+* [48463](./download/trabalhos/48463_38ec1d4b14e3.pdf)
+* [48498](./download/trabalhos/48498_38ec6d20a878.pdf)
+* [48506](./download/trabalhos/48506_38ec19098a20.pdf)
+* [49253](./download/trabalhos/49253_38ec1c56260e.pdf)
+* [49275](./download/trabalhos/49275_38ec7807869b.pdf)
+* [49286](./download/trabalhos/49286_38ec3f0e6af7.pdf)
+* [5793](./download/trabalhos/5793_38ec6ed008db.pdf)
+* [5940](./download/trabalhos/5940_38ec79504f78.pdf)
+* [5970](./download/trabalhos/5970_38ec78119543.pdf)
+* [6016](./download/trabalhos/6016_38ec1f8b2c82.pdf)
+* [6019](./download/trabalhos/6019_38ec46517ba0.pdf)
+* [6031](./download/trabalhos/6031_38ec3bcbeec9.pdf)
+* [6154](./download/trabalhos/6154_38ec77a67877.pdf)
+* [6164](./download/trabalhos/6164_38ec39c9d5f0.pdf)
+* [6203](./download/trabalhos/6203_38ec3e8cc3cb.pdf)
+* [6274](./download/trabalhos/6274_38ec5b571b4b.pdf)
+* [6387](./download/trabalhos/6387_38eca0c6d76.pdf)
+* [6598](./download/trabalhos/6598_38ec244e7f2d.pdf)
+* [6607](./download/trabalhos/6607_38ec242697ae.pdf)
+* [6612](./download/trabalhos/6612_38ec684fcdfc.pdf)
+* [7587](./download/trabalhos/7587_38ec33aeb859.pdf)
+-->
 
 <p>Copyright &copy; 2018 Guilherme Kunz, Inc. All rights reserved.</p>
 
