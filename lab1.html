@@ -79,9 +79,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -200,8 +198,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -275,6 +271,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -337,6 +342,9 @@ $(document).ready(function () {
     <li>
       <a href="limitecentral.html">Limite Central</a>
     </li>
+    <li>
+      <a href="exemplos_resolvidos.html">Exemplos Resolvidos</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -352,13 +360,14 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Laboratório 1: Incerteza em Medidas Diretas</h1>
-<h4 class="date"><em>12 de abril de 2018</em></h4>
+<h4 class="date">20 de março de 2019</h4>
 
 </div>
 
 
 <div id="procedimento-1-calibracao-da-balanca" class="section level2">
 <h2>Procedimento 1: Calibração da Balança</h2>
+<p>Utilize a massa padrão para calibrar uma balança digital. A massa padrão possui valor nominal de <span class="math inline">\(140g\)</span>, incerteza de <span class="math inline">\(0.2g\)</span>, correção de <span class="math inline">\(+1g\)</span> e <span class="math inline">\(4\)</span> graus de liberdade.</p>
 <p>Modelo Matemático:</p>
 <ul>
 <li><span class="math inline">\(U_{balança}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
@@ -414,7 +423,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_{rep}\)</span></td>
-<td align="right">0.2905933</td>
+<td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(U_{res}\)</span></td>
@@ -422,19 +431,19 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_c\)</span></td>
-<td align="right">0.8084734</td>
+<td align="right">0.7544433</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\nu_{eff}\)</span></td>
-<td align="right">7.0000000</td>
+<td align="right">5.0000000</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_{exp}\)</span></td>
-<td align="right">1.9636275</td>
+<td align="right">1.9982596</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(C_c\)</span></td>
-<td align="right">5.2000000</td>
+<td align="right">2.0000000</td>
 </tr>
 </tbody>
 </table>
@@ -447,14 +456,15 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Cb = 5 <span class="math inline">\(\pm\)</span> 2 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
-<td align="left">Cb = 5.2 <span class="math inline">\(\pm\)</span> 2.0 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">Cb = ( 2 <span class="math inline">\(\pm\)</span> 2 ) <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">Cb = ( 2.0 <span class="math inline">\(\pm\)</span> 2.0 ) <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="procedimento-2-calibracao-da-massa-desconhecida" class="section level2">
 <h2>Procedimento 2: Calibração da Massa Desconhecida</h2>
+<p>Uma vez calibrada a balança identifique a massa de um objeto. Sobre a balança conhecemos somente as informações de correção, incerteza e graus de liberdade resultantes do procedimento anterior.</p>
 <p>Modelo Matemático:</p>
 <ul>
 <li><span class="math inline">\(U_{massa}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
@@ -500,11 +510,11 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(U_{cal}\)</span></td>
-<td align="right">0.8084734</td>
+<td align="right">0.7544433</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_{rep}\)</span></td>
-<td align="right">0.2333333</td>
+<td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(U_{res}\)</span></td>
@@ -512,19 +522,19 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_c\)</span></td>
-<td align="right">0.8896106</td>
+<td align="right">0.8077859</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\nu_{eff}\)</span></td>
-<td align="right">10.2069878</td>
+<td align="right">6.5712591</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(U_{exp}\)</span></td>
-<td align="right">2.0258180</td>
+<td align="right">1.9891858</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\bar{M}+C_c\)</span></td>
-<td align="right">119.1000000</td>
+<td align="right">141.0000000</td>
 </tr>
 </tbody>
 </table>
@@ -537,17 +547,20 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">RM = 119 <span class="math inline">\(\pm\)</span> 2 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
-<td align="left">RM = 119.1 <span class="math inline">\(\pm\)</span> 2.0 <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = ( 141 <span class="math inline">\(\pm\)</span> 2 ) <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = ( 141.0 <span class="math inline">\(\pm\)</span> 2.0 ) <span class="math inline">\(g\)</span> com 95.45 % de confiança</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="procedimento-3-calibracao-pt100" class="section level2">
-<h2>Procedimento 3: Calibração PT100</h2>
+<div id="procedimento-3-calibracao-pt100-resistencias" class="section level2">
+<h2>Procedimento 3: Calibração PT100 (Resistências)</h2>
+<p>Com o sensor PT100 em <span class="math inline">\(0^oC\)</span> (forno calibrado) identifique a resistência do sensor levando em consideração as incertezas do calibrador CA71. Faça medições da resistência de modo que <span class="math inline">\(R=R_{PT100}-R_{FIOS}\)</span>.</p>
 <p>Modelo Matemático:</p>
 <ul>
-<li><span class="math inline">\(U_{PT100}=U_{calibração}+U_{resolução}+U_{repetividade}+U_{temperatura}\)</span></li>
+<li><p><span class="math inline">\(U_{PT100}=U_{calibração}+U_{resolução}+U_{repetividade}+U_{temperatura}\)</span></p></li>
+<li><p><span class="math inline">\(U_{FIOS}=U_{calibração}+U_{resolução}+U_{repetividade}+U_{temperatura}\)</span></p></li>
+<li><p><span class="math inline">\(U = U_{PT100} + U_{FIOS}\)</span></p></li>
 </ul>
 <table>
 <thead>
@@ -560,24 +573,30 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Repetitividade</td>
+<td>Repetitividade <span class="math inline">\(R_{PT100}\)</span></td>
 <td align="center">A</td>
 <td align="center">Normal</td>
 <td align="center">Amostrado</td>
 </tr>
 <tr class="even">
+<td>Repetitividade <span class="math inline">\(R_{FIOS}\)</span></td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="odd">
 <td>Calibração do CA71</td>
 <td align="center">B</td>
 <td align="center">Normal</td>
-<td align="center"><span class="math inline">\(\pm (0.05\%+0.6^oC)\)</span> para <span class="math inline">\((23\pm5)^oC\)</span></td>
+<td align="center"><span class="math inline">\(\pm (0.05\%+0.1\Omega)\)</span> para <span class="math inline">\((23\pm5)^oC\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Resolução do CA71</td>
 <td align="center">B</td>
 <td align="center">Uniforme</td>
-<td align="center"><span class="math inline">\(0.1^oC\)</span></td>
+<td align="center"><span class="math inline">\(0.01\Omega\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Temperatura do CA71</td>
 <td align="center">B</td>
 <td align="center">Normal</td>
@@ -587,9 +606,9 @@ $(document).ready(function () {
 </table>
 <p>Outras informações:</p>
 <ul>
-<li>Temperatura ambiente (máxima) considerada para fins de cálculo da incerteza <span class="math inline">\(T_{amb}=24^oC\)</span>.</li>
+<li>Temperatura ambiente (máxima) considerada para fins de cálculo da incerteza <span class="math inline">\(T_{amb}=24.6^oC\)</span>.</li>
 </ul>
-<p><img src="lab1_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="lab1_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /><img src="lab1_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" /></p>
 <table>
 <thead>
 <tr class="header">
@@ -599,36 +618,44 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal}\)</span></td>
-<td align="right">0.3250350</td>
+<td><span class="math inline">\(U_{cal-PT100}\)</span></td>
+<td align="right">0.0751985</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep}\)</span></td>
-<td align="right">0.2432192</td>
+<td><span class="math inline">\(U_{cal-FIOS}\)</span></td>
+<td align="right">0.0502160</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{rep-PT100}\)</span></td>
+<td align="right">0.0074833</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep-FIOS}\)</span></td>
+<td align="right">0.0229347</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(U_{res}\)</span></td>
-<td align="right">0.0288675</td>
+<td align="right">0.0028868</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{temp}\)</span></td>
-<td align="right">0.0650070</td>
+<td><span class="math inline">\(U_{temp-PT100}\)</span></td>
+<td align="right">0.0240635</td>
 </tr>
 <tr class="odd">
+<td><span class="math inline">\(U_{temp-FIOS}\)</span></td>
+<td align="right">0.0160691</td>
+</tr>
+<tr class="even">
 <td><span class="math inline">\(U_c\)</span></td>
-<td align="right">0.4121438</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
-<td align="right">74.0000000</td>
+<td align="right">0.0980428</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{exp}\)</span></td>
-<td align="right">0.8384460</td>
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">1320.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(Correção=V_{nominal}-\bar{M}\)</span></td>
-<td align="right">-0.1400000</td>
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">0.1962718</td>
 </tr>
 </tbody>
 </table>
@@ -641,14 +668,15 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">RM = 100.1 <span class="math inline">\(\pm\)</span> 0.8 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
-<td align="left">RM = 100.14 <span class="math inline">\(\pm\)</span> 0.84 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 99.9 <span class="math inline">\(\pm\)</span> 0.2 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 99.93 <span class="math inline">\(\pm\)</span> 0.20 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="procedimento-4-ohmimetro" class="section level2">
 <h2>Procedimento 4: Ohmímetro</h2>
+<p>Calibre o ohmímetro utilizando como referência a década resistiva.</p>
 <p>Modelo Matemático:</p>
 <ul>
 <li><span class="math inline">\(U_{ohmímetro}=U_{calibração}+U_{resolução~multímetro}+U_{resolução~década}+U_{temperatura}+U_{repetividade}\)</span></li>
@@ -815,6 +843,7 @@ $(document).ready(function () {
 </div>
 <div id="procedimento-5-conjunto-de-resistencias" class="section level2">
 <h2>Procedimento 5: Conjunto de Resistências</h2>
+<p>Utilizando o resultado do procedimento 4 identifique o valor de uma dada resistência.</p>
 <p>Modelo Matemático:</p>
 <ul>
 <li><span class="math inline">\(U_{resistências}=U_{calibração}+U_{resolução}+U_{repetividade}\)</span></li>
@@ -899,6 +928,107 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left">RM = 1000 <span class="math inline">\(\pm\)</span> 3 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
 <td align="left">RM = 1000.3 <span class="math inline">\(\pm\)</span> 2.8 <span class="math inline">\(\Omega\)</span> com 95.45 % de confiança</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="procedimento-3-regua-e-placa-de-orificio" class="section level2">
+<h2>Procedimento 3: Régua e Placa de Orifício</h2>
+<p>Utilize uma régua para dimensionar <span class="math inline">\(D=D_{EXTERNO}-D_{INTERNO}\)</span>.</p>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(U_{D}=U_{Incerteza Régua}+U_{Incerteza Régua}+U_{repetividade-D_{EXTERNO}}+U_{repetitividade-D_{INTERNO}}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetitividade <span class="math inline">\(D_{EXTERNO}\)</span></td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="even">
+<td>Repetitividade <span class="math inline">\(D_{INTERNO}\)</span></td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center">Amostrado</td>
+</tr>
+<tr class="odd">
+<td>Resolução Régua</td>
+<td align="center">B</td>
+<td align="center">Triangular</td>
+<td align="center"><span class="math inline">\(0.1cm\)</span> superior a <span class="math inline">\(10cm\)</span> (1/3)</td>
+</tr>
+<tr class="even">
+<td>Resolução Régua</td>
+<td align="center">B</td>
+<td align="center">Triangular</td>
+<td align="center"><span class="math inline">\(0.05cm\)</span> até <span class="math inline">\(10cm\)</span> (1/2)</td>
+</tr>
+</tbody>
+</table>
+<p>Outras informações:</p>
+<ul>
+<li>Temperatura ambiente (máxima) considerada para fins de cálculo da incerteza <span class="math inline">\(T_{amb}=24.6^oC\)</span>.</li>
+</ul>
+<p><img src="lab1_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /><img src="lab1_files/figure-html/unnamed-chunk-6-2.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(U_{rep-EXT}\)</span></td>
+<td align="right">0.0130384</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{rep-INT}\)</span></td>
+<td align="right">0.0032863</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{res-EXT}\)</span></td>
+<td align="right">0.0061237</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U_{res-INT}\)</span></td>
+<td align="right">0.0051031</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_c\)</span></td>
+<td align="right">0.0156314</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="right">8.0000000</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="right">0.0369905</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">1 Algarismo Significativo</th>
+<th align="left">2 Algarismos Significativos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RM = 14.25 <span class="math inline">\(\pm\)</span> 0.04 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
+<td align="left">RM = 14.252 <span class="math inline">\(\pm\)</span> 0.037 <span class="math inline">\(^oC\)</span> com 95.45 % de confiança</td>
 </tr>
 </tbody>
 </table>
