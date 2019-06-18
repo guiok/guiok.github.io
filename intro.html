@@ -79,9 +79,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -200,8 +198,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -275,6 +271,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -307,6 +312,9 @@ $(document).ready(function () {
     <li>
       <a href="wheatstone.html">Extensometria</a>
     </li>
+    <li>
+      <a href="controle_de_qualidade.html">Controle de Qualidade</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -337,6 +345,9 @@ $(document).ready(function () {
     <li>
       <a href="limitecentral.html">Limite Central</a>
     </li>
+    <li>
+      <a href="exemplos_resolvidos.html">Exemplos Resolvidos</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -356,18 +367,18 @@ $(document).ready(function () {
 </div>
 
 
-<p>Este documento foi desenvolvido para uso na disciplina de Metrologia e Medias Eletromecânicas para os cursos de Engenharia Mecânica e Engenharia Elétrica da Universidade Estadual do Oeste do Paraná - UNIOESTE<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, Campus Foz do Iguaçu<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Os exemplos foram fundamentados nos experimentos realizados em sala de aula e no Laboratório de Metrologia (Unioeste/Foz).</p>
-<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.4), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
-<p>Todos os cálculos descritos seguem a orientação do <em>Guide to the Expression of Uncertainty in Measurement (GUM)</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
+<p>Este documento foi desenvolvido para uso na disciplina de Metrologia e Medias Eletromecânicas para os cursos de Engenharia Mecânica e Engenharia Elétrica da Universidade Estadual do Oeste do Paraná - UNIOESTE<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, Campus Foz do Iguaçu<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Os exemplos foram fundamentados nos experimentos realizados em sala de aula e no Laboratório de Metrologia (Unioeste/Foz).</p>
+<p>Optou-se por apresentar o método resolutivo através da linguagem de programação R<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> (compilados com a versão 3.4.4), tendo em conta ser uma ferramenta otimizada para resolução de problemas de estatística.</p>
+<p>Todos os cálculos descritos seguem a orientação do <em>Guide to the Expression of Uncertainty in Measurement (GUM)</em><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="http://www.unioeste.br/" class="uri">http://www.unioeste.br/</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="http://www.foz.unioeste.br/" class="uri">http://www.foz.unioeste.br/</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a><a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p><a href="http://www.bipm.org/en/publications/guides/gum.html" class="uri">http://www.bipm.org/en/publications/guides/gum.html</a><a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p><em>Evaluation of measurement data - Guide to the expression of uncertainty in measurement</em>; JCGM 100:2008.<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p><em>Evaluation of measurement data - Supplement 1 to the “Guide to the expression of uncertainty in measurement” - Propagation of distributions using a Monte Carlo method</em>; JCGM 101:2008.<a href="#fnref6">↩</a></p></li>
+<li id="fn1"><p><a href="http://www.unioeste.br/" class="uri">http://www.unioeste.br/</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="http://www.foz.unioeste.br/" class="uri">http://www.foz.unioeste.br/</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="http://www.bipm.org/en/publications/guides/gum.html" class="uri">http://www.bipm.org/en/publications/guides/gum.html</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><em>Evaluation of measurement data - Guide to the expression of uncertainty in measurement</em>; JCGM 100:2008.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p><em>Evaluation of measurement data - Supplement 1 to the “Guide to the expression of uncertainty in measurement” - Propagation of distributions using a Monte Carlo method</em>; JCGM 101:2008.<a href="#fnref6" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 

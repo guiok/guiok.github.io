@@ -79,9 +79,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -200,8 +198,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -275,6 +271,15 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
@@ -307,6 +312,9 @@ $(document).ready(function () {
     <li>
       <a href="wheatstone.html">Extensometria</a>
     </li>
+    <li>
+      <a href="controle_de_qualidade.html">Controle de Qualidade</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -336,6 +344,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="limitecentral.html">Limite Central</a>
+    </li>
+    <li>
+      <a href="exemplos_resolvidos.html">Exemplos Resolvidos</a>
     </li>
   </ul>
 </li>
@@ -423,11 +434,11 @@ $(document).ready(function () {
 <li>Função Densidade de Probabilidade Normal Multivariada. ex.: aplicação para variáveis correlacionadas.
 <ul>
 <li>Sendo a matriz de correlação onde <span class="math inline">\(r(x_i,x_i) = 1\)</span>: <span class="math display">\[ R_{x} = 
-\begin{bmatrix}
-r(x_1,x_1) &amp; \cdots &amp; r(x_1, x_N)\\
-\vdots  &amp; \ddots &amp; \vdots  \\
-r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
-\end{bmatrix} \]</span></li>
+  \begin{bmatrix}
+  r(x_1,x_1) &amp; \cdots &amp; r(x_1, x_N)\\
+  \vdots  &amp; \ddots &amp; \vdots  \\
+  r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
+  \end{bmatrix} \]</span></li>
 <li>Sendo <span class="math inline">\(D_x\)</span> uma matriz diagonal de dimensões <span class="math inline">\(N x N\)</span> com elementos <span class="math inline">\(u(x_1), \cdots, u(x_n)\)</span>.</li>
 <li>Tem-se <span class="math inline">\(U_x = D_x R_x D_x\)</span> e, sendo <span class="math inline">\(z = (z_1, \cdots, z_N )^T\)</span> valores aleatórios de acordo com uma distribuição normal e <span class="math inline">\(R\)</span> a matriz resultante da fatoração de Cholesky (<span class="math inline">\(U_x = R^TR\)</span>), tem-se: <span class="math display">\[\xi = x + R^T z\]</span></li>
 </ul></li>
@@ -443,9 +454,11 @@ r(x_n,x_1) &amp; \cdots &amp; r(x_N,x_N)
 <li>Cálculo de <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>:
 <ul>
 <li>expressando <span class="math inline">\(z\)</span> na forma <span class="math inline">\(c\times 10^l\)</span>, onde <span class="math inline">\(c\)</span> é um <span class="math inline">\(n_{dig}\)</span> decimal inteiro e <span class="math inline">\(l\)</span> é um inteiro</li>
-<li><span class="math inline">\(\delta=\frac{1}{2}\times 10^l\)</span> sendo:</li>
+<li><span class="math inline">\(\delta=\frac{1}{2}\times 10^l\)</span> sendo:
+<ul>
 <li><span class="math inline">\(\delta_1\)</span>: Erro de arrendondamento (resolução) no <span class="math inline">\(U_c\)</span> quando apresentado com 1 Algarismo Significativo</li>
 <li><span class="math inline">\(\delta_2\)</span>: Erro de arrendondamento (resolução) no <span class="math inline">\(U_c\)</span> quando apresentado com 2 Algarismo Significativo</li>
+</ul></li>
 </ul></li>
 <li>Cálculo das diferenças:
 <ul>

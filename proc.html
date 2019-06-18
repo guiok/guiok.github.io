@@ -312,6 +312,9 @@ $(document).ready(function () {
     <li>
       <a href="wheatstone.html">Extensometria</a>
     </li>
+    <li>
+      <a href="controle_de_qualidade.html">Controle de Qualidade</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -377,11 +380,11 @@ $(document).ready(function () {
 <ul>
 <li>Desvio Padrão Experimental: <span class="math inline">\(s^2(q_k) = \frac{1}{n-1} \sum_{j=1}^n (q_j - \overline{q})^2\)</span></li>
 <li>Incerteza Padrão: <span class="math inline">\(u=s(q_k)\)</span></li>
-</ul></li>
 <li>Repetibilidade
 <ul>
 <li>Desvio Padrão Experimental da Média: <span class="math inline">\(s^2(\bar{q}) = \frac{s^2(q_k)}{n}\)</span></li>
 <li>Incerteza Padrão: <span class="math inline">\(u=s(\bar{q})\)</span></li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li>Identificação dos limites e das funções de distribuição das incertezas tipo B:
@@ -419,9 +422,11 @@ $(document).ready(function () {
 </ul></li>
 <li>Cálculo da correlação entre as variáveis:
 <ul>
-<li><span class="math inline">\(s(y_i,z_i)=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span></li>
+<li><span class="math inline">\(s(y_i,z_i)=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span>
+<ul>
 <li><span class="math inline">\(s(\bar{y}_i,\bar{z}_i)=\frac{1}{n(n-1)}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span></li>
 <li><span class="math inline">\(r(y_i,z_i) = \frac{s(y_i,z_i)}{s(y_i)s(z_i)} = r(\bar{y}_i,\bar{z}_i) = \frac{s(\bar{y}_i,\bar{z}_i)}{s(\bar{y}_i)s(\bar{z}_i)}\)</span></li>
+</ul></li>
 </ul></li>
 <li>Cálculo da incerteza combinada:
 <ul>

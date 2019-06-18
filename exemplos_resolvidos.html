@@ -11,7 +11,7 @@
 
 
 
-<title>Metrologia</title>
+<title>Exercícios Resolvidos</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -362,101 +362,97 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Metrologia</h1>
+<h1 class="title toc-ignore">Exercícios Resolvidos</h1>
 
 </div>
 
 
-<p>Material relativo as disciplinas de <em>Medidas Eletromecânicas e Metrologia e Controle de Processos e Medidas Elétricas e Metrologia</em> ministradas nos cursos de Engenharia Mecânica e Engenharia Elétrica da UNIOESTE, Campus de Foz do Iguaçu/PTI, Paraná, Brasil.</p>
-<p><strong>Programas:</strong></p>
+<div id="exemplo-1" class="section level2">
+<h2>Exemplo 1</h2>
+</div>
+<div id="exemplo-2" class="section level2">
+<h2>Exemplo 2</h2>
+<p>Para realizar a calibração de uma balança eletrônica na faixa de <span class="math inline">\(30g\)</span> foram utilizados três pesos padrão (‘K’, ‘N’ e ‘Z’) de valor nominal <span class="math inline">\(10.00g\)</span> cada. Determine as características metrológicas da balança considerando as seguintes informações.</p>
 <ul>
-<li><a href="http://www.r-project.org/">R Project</a> e <a href="http://www.rstudio.com/">RStudio</a></li>
-<li><a href="http://people.cs.aau.dk/~marius/stratego/">UPPAAL Stratego</a></li>
-<li><a href="https://www.gnu.org/software/octave/">GNU Octave</a></li>
-<li><a href="http://www.elipse.com.br/">Elipse SCADA</a></li>
+<li><p>A balança em questão apresenta indicador digital com resolução de <span class="math inline">\(0,01g\)</span>.</p></li>
+<li><p>A temperatura no local, durante o procedimento de medição, estava em <span class="math inline">\(23^oC\)</span>.</p></li>
+<li><p>Sabe-se que o peso ‘K’, segundo seu certificado de caliração, possui correção de <span class="math inline">\(-0.20g\)</span> e incerteza de <span class="math inline">\(\pm 0.15g\)</span> com abrangência de <span class="math inline">\(99.73\%\)</span>.</p></li>
+<li><p>Sabe-se que o peso ‘N’, segundo seu certificado de caliração, possui incerteza de <span class="math inline">\(\pm 0.15g\)</span>.</p></li>
+<li><p>Sabe-se que o peso ‘Z’, segundo seu certificado de caliração, possui correção de <span class="math inline">\(+0.24g\)</span> e incerteza de <span class="math inline">\(\pm 0.15g\)</span> e <span class="math inline">\(\nu=10\)</span>.</p></li>
+<li><p>O peso ‘K’ teve sua última calibração há 5 meses e o peso ‘Z’ teve sua última calibração há 3 meses. Sabe-se que ambos possuem deriva temporal de <span class="math inline">\(\pm 0,01g\)</span>/mês (sabe-se pouco sobre as características desta fonte de incerteza).</p></li>
+<li><p>O peso padrão ‘K’ apresenta deriva térmica de <span class="math inline">\(\pm 0.02g/^oC\)</span> (distribuição uniforme) para cada Kelvin de variação distante da referência de calibração (<span class="math inline">\(20^oC\)</span>).</p></li>
+<li><p>Foram efetuadas 12 medições independentes (dos três pesos em conjunto) listadas abaixo (não há necessidade de aplicar Chauvenet):</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(29,94g\)</span></th>
+<th><span class="math inline">\(30,00g\)</span></th>
+<th><span class="math inline">\(29,95g\)</span></th>
+<th><span class="math inline">\(29,96g\)</span></th>
+<th><span class="math inline">\(29,95g\)</span></th>
+<th><span class="math inline">\(29,99g\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(29,92g\)</span></td>
+<td><span class="math inline">\(29,94g\)</span></td>
+<td><span class="math inline">\(30,00g\)</span></td>
+<td><span class="math inline">\(29,99g\)</span></td>
+<td><span class="math inline">\(29,92g\)</span></td>
+<td><span class="math inline">\(29,99g\)</span></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Apresente a correção e a incerteza da balança com 2 algarismos significativos e 99.73% de confiança e:</p></li>
 </ul>
-<p><strong>Dicas de Programação:</strong></p>
+<pre><code>## RC = ( 0.08 +/- 0.37 ) g</code></pre>
 <ul>
-<li><a href="https://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf">Conversão R / Matlab</a></li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheets</a></li>
-<li><a href="http://www.wolframalpha.com/calculators/derivative-calculator/">Derivadas</a></li>
+<li>Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?</li>
 </ul>
-<p><strong>Tabelas:</strong></p>
+<pre><code>## Incerteza da Massa Padrão N</code></pre>
 <ul>
-<li><a href="tstud.html">Coeficientes t-student</a></li>
-<li><a href="chauvenet.html">Teste de Chauvenet</a></li>
-<li><a href="download/dixon_q_test.pdf">Teste de Dixon</a></li>
-<li><a href="http://srdata.nist.gov/its90/download/all.tab">Termopares</a> <a href="http://srdata.nist.gov/its90/download/all.tab">(Coeficientes)</a></li>
+<li>Considere que na conclusão da etapa de calibração com os pesos padrão não houve ajuste ou regulagem da balança. Ao utilizar a balança em uma fábrica para avaliar o peso de uma peça, o <em>display</em> da balança apresentou o valor de <span class="math inline">\(28.71g\)</span>. Apresente abaixo o resultado desta medição considerando os informações metrológicas resultantes da calibração anterior.</li>
 </ul>
-<p><strong>Relatórios de Laboratório:</strong></p>
+<pre><code>## RM = 28.79 +/- 0.37</code></pre>
+</div>
+<div id="exemplo-3" class="section level2">
+<h2>Exemplo 3</h2>
+<p>Determine a incerteza da medição da massa de um objeto quando utilizada uma balança eletrônica.</p>
 <ul>
-<li><a href="http:///guiok.github.io/download/relatorio.docx">Modelo de Relatório (doc)</a></li>
-<li><a href="http:///guiok.github.io/download/relatorio.pdf">Modelo de Relatório (pdf)</a></li>
+<li>A balança em questão apresenta um indicador digital com resolução de <span class="math inline">\(0,02g\)</span>.</li>
+<li>A temperatura no local onde a medição foi efetuada oscila entre <span class="math inline">\(24,0\)</span> e <span class="math inline">\(26,0^oC\)</span> e é controlada por um termostato (considere que esta oscilação é melhor representada por uma distribuição tipo ``U’’). Sabe-se que a balança apresenta deriva térmica, isto é, acresce o valor de indicação de <span class="math inline">\(+0,008g\)</span> para cada Kelvin de variação de temperatura ambiente acima da temperatura de calibração (<span class="math inline">\(20^oC\)</span>).</li>
+<li>A calibração da balança foi realizada há cinco meses. Sabe-se que a estabilidade do zero da balança em função do tempo, permanece dentro dos limite <span class="math inline">\(\pm 0,01g\)</span>/m^es, o que corresponde à sua deriva temporal (sabe-se pouco sobre as características desta fonte de incerteza).</li>
+<li><p>Foram efetuadas 12 medições independentes (do mesmo objeto) listadas abaixo (não há necessidade de aplicar ):</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(19,94g\)</span></th>
+<th><span class="math inline">\(19,92g\)</span></th>
+<th><span class="math inline">\(19,98g\)</span></th>
+<th><span class="math inline">\(19,96g\)</span></th>
+<th><span class="math inline">\(19,90g\)</span></th>
+<th><span class="math inline">\(19,94g\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(19,94g\)</span></td>
+<td><span class="math inline">\(19,96g\)</span></td>
+<td><span class="math inline">\(20,00g\)</span></td>
+<td><span class="math inline">\(19,99g\)</span></td>
+<td><span class="math inline">\(19,92g\)</span></td>
+<td><span class="math inline">\(19,99g\)</span></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Para faixa de <span class="math inline">\(20g\)</span>, segundo o certificado de calibração, a balança possui correção de <span class="math inline">\(-0,15g\)</span> e incerteza de <span class="math inline">\(0,04g\)</span>.</p></li>
 </ul>
-<p><strong>Normas, Referências e Livros:</strong></p>
-<ul>
-<li><a href="http://www.inmetro.gov.br/inovacao/publicacoes/vim_2012.pdf">Vocabulário Internacional de Metrologia</a></li>
-<li><a href="https://www.feis.unesp.br/Home/departamentos/engenhariacivil/nepae/extensometria-basica.pdf">Apostila de Extensometria</a></li>
-<li><a href="http://www.ti.com/lit/an/sboa092b/sboa092b.pdf">Handbook of Operational Amplifier Applications</a></li>
-<li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/Instrumentacaobasica1_pdf.pdf">Instrumentação: Vazão e Temperatura</a></li>
-<li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/Instrumentacaobasica2_pdf.pdf">Instrumentação: Pressão e Nível</a></li>
-<li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/MedidasEletricas.pdf">Medidas Elétrica</a></li>
-<li><a href="http://www.inmetro.gov.br/noticias/conteudo/iso_gum_versao_site.pdf">Guia para a expressão de incerteza de medição</a></li>
-<li><a href="http://www.labmetro.ufsc.br/livroFMCI/">Fundamentos de Metrologia Científica e Industrial (2a edição)</a></li>
-</ul>
-<p><strong>Manuais:</strong></p>
-<ul>
-<li><a href="http:///guiok.github.io/download/paquimetro.pdf">Paquímetro Digital</a></li>
-<li><a href="http:///guiok.github.io/download/yokogawa.pdf">Década Resistiva</a></li>
-<li><a href="http:///guiok.github.io/download/calibrador.pdf">Handy Calibrator</a></li>
-<li><a href="http:///guiok.github.io/download/fonte.pdf">Fonte GPC-1850D</a></li>
-<li><a href="http:///guiok.github.io/download/multimetro.pdf">Multímetro Digital ET-2042</a> <!--- * [Multímetro Digital HM-1000](http://mastechturkiye.com/wp-content/uploads/2016/07/MS6520C-Manual.pdf) --></li>
-<li><a href="http:///guiok.github.io/download/mastech.pdf">Termômetro Infravermelho</a></li>
-</ul>
-<p><strong>Resultado dos Laboratórios:</strong></p>
-<ul>
-<li><a href="lab1.html">Incerteza em Medidas Diretas</a></li>
-<li><a href="lab2.html">Incerteza em Medidas Indiretas (MC)</a></li>
-<li><a href="lab3.html">Incerteza em Medidas Indiretas (MC) - Resistência</a></li>
-</ul>
-<!--- **Download dos Trabalhos:**
-
-Data de entrega: 15 de maio de 2019 (impresso)
-
-Horário: 13h30 às 15h (presencial)
-
-Avaliação: Individual (de acordo com o número de matrícula) valendo até 10 pontos a serem acrescentados na P1 respeitando o limite de 100 pontos da prova em questão.
-
-* [12948.pdf](./download/trabalhos/MET_EM4/12948.pdf)
-* [186988.pdf](./download/trabalhos/MET_EM4/186988.pdf)
-* [187190.pdf](./download/trabalhos/MET_EM4/187190.pdf)
-* [189198.pdf](./download/trabalhos/MET_EM4/189198.pdf)
-* [190322.pdf](./download/trabalhos/MET_EM4/190322.pdf)
-* [193073.pdf](./download/trabalhos/MET_EM4/193073.pdf)
-* [193640.pdf](./download/trabalhos/MET_EM4/193640.pdf)
-* [193902.pdf](./download/trabalhos/MET_EM4/193902.pdf)
-* [197679.pdf](./download/trabalhos/MET_EM4/197679.pdf)
-* [30425.pdf](./download/trabalhos/MET_EM4/30425.pdf)
-* [30427.pdf](./download/trabalhos/MET_EM4/30427.pdf)
-* [39458.pdf](./download/trabalhos/MET_EM4/39458.pdf)
-* [39747.pdf](./download/trabalhos/MET_EM4/39747.pdf)
-* [40998.pdf](./download/trabalhos/MET_EM4/40998.pdf)
-* [47467.pdf](./download/trabalhos/MET_EM4/47467.pdf)
-* [47480.pdf](./download/trabalhos/MET_EM4/47480.pdf)
-* [47515.pdf](./download/trabalhos/MET_EM4/47515.pdf)
-* [47526.pdf](./download/trabalhos/MET_EM4/47526.pdf)
-* [47541.pdf](./download/trabalhos/MET_EM4/47541.pdf)
-* [47551.pdf](./download/trabalhos/MET_EM4/47551.pdf)
-* [47571.pdf](./download/trabalhos/MET_EM4/47571.pdf)
-* [47615.pdf](./download/trabalhos/MET_EM4/47615.pdf)
-* [47616.pdf](./download/trabalhos/MET_EM4/47616.pdf)
-* [48455.pdf](./download/trabalhos/MET_EM4/48455.pdf)
-* [48464.pdf](./download/trabalhos/MET_EM4/48464.pdf)
-* [6019.pdf](./download/trabalhos/MET_EM4/6019.pdf)
-* [6598.pdf](./download/trabalhos/MET_EM4/6598.pdf)
-* [6607.pdf](./download/trabalhos/MET_EM4/6607.pdf)
-* [7587.pdf](./download/trabalhos/MET_EM4/7587.pdf)
-* [8027.pdf](./download/trabalhos/MET_EM4/8027.pdf)-->
+<p>Tendo em vista que deseja-se reduzir ao máximo a incerteza, defina o resultado de medição da massa com 2 algarismos significativos e 99% de confiança.</p>
+<pre><code>## RM = ( 19.76 +/- 0.11 ) g</code></pre>
+<p>Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?</p>
+<pre><code>## Deriva Temporal</code></pre>
+</div>
 
 <p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
 
