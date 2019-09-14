@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +94,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -254,18 +254,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -392,6 +380,7 @@ $(document).ready(function () {
 <ul>
 <li><a href="http:///guiok.github.io/download/relatorio.docx">Modelo de Relatório (doc)</a></li>
 <li><a href="http:///guiok.github.io/download/relatorio.pdf">Modelo de Relatório (pdf)</a></li>
+<li><a href="https://forms.gle/nBBQoFaGhPx5EhAu9">Sumissão de Relatório</a></li>
 </ul>
 <p><strong>Normas, Referências e Livros:</strong></p>
 <ul>
@@ -403,6 +392,7 @@ $(document).ready(function () {
 <li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/Instrumentacaobasica2_pdf.pdf">Instrumentação: Pressão e Nível</a></li>
 <li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/Instrumentacaobasica1_pdf.pdf">Instrumentação: Vazão e Temperatura</a></li>
 <li><a href="ftp://ftp.ufv.br/dta/disciplinas/tal420/2002/MANUTEN%C7%C3O/PNQC/MedidasEletricas.pdf">Medidas Elétrica</a></li>
+<li><a href="http://www.tij.co.jp/jp/lit/an/sloa034/sloa034.pdf">Signal Conditioning Wheatstone Resistive Bridge Sensors</a></li>
 <li><a href="https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf">The Matrix Cookbook</a></li>
 <li><a href="http://www.inmetro.gov.br/inovacao/publicacoes/vim_2012.pdf">Vocabulário Internacional de Metrologia</a></li>
 </ul>
@@ -478,6 +468,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
