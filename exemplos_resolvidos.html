@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -367,92 +355,91 @@ $(document).ready(function () {
 </div>
 
 
-<div id="exemplo-1" class="section level2">
-<h2>Exemplo 1</h2>
-</div>
-<div id="exemplo-2" class="section level2">
-<h2>Exemplo 2</h2>
-<p>Para realizar a calibração de uma balança eletrônica na faixa de <span class="math inline">\(30g\)</span> foram utilizados três pesos padrão (‘K’, ‘N’ e ‘Z’) de valor nominal <span class="math inline">\(10.00g\)</span> cada. Determine as características metrológicas da balança considerando as seguintes informações.</p>
+<p><strong>Resultados dos Laboratórios:</strong></p>
 <ul>
-<li><p>A balança em questão apresenta indicador digital com resolução de <span class="math inline">\(0,01g\)</span>.</p></li>
-<li><p>A temperatura no local, durante o procedimento de medição, estava em <span class="math inline">\(23^oC\)</span>.</p></li>
-<li><p>Sabe-se que o peso ‘K’, segundo seu certificado de caliração, possui correção de <span class="math inline">\(-0.20g\)</span> e incerteza de <span class="math inline">\(\pm 0.15g\)</span> com abrangência de <span class="math inline">\(99.73\%\)</span>.</p></li>
-<li><p>Sabe-se que o peso ‘N’, segundo seu certificado de caliração, possui incerteza de <span class="math inline">\(\pm 0.15g\)</span>.</p></li>
-<li><p>Sabe-se que o peso ‘Z’, segundo seu certificado de caliração, possui correção de <span class="math inline">\(+0.24g\)</span> e incerteza de <span class="math inline">\(\pm 0.15g\)</span> e <span class="math inline">\(\nu=10\)</span>.</p></li>
-<li><p>O peso ‘K’ teve sua última calibração há 5 meses e o peso ‘Z’ teve sua última calibração há 3 meses. Sabe-se que ambos possuem deriva temporal de <span class="math inline">\(\pm 0,01g\)</span>/mês (sabe-se pouco sobre as características desta fonte de incerteza).</p></li>
-<li><p>O peso padrão ‘K’ apresenta deriva térmica de <span class="math inline">\(\pm 0.02g/^oC\)</span> (distribuição uniforme) para cada Kelvin de variação distante da referência de calibração (<span class="math inline">\(20^oC\)</span>).</p></li>
-<li><p>Foram efetuadas 12 medições independentes (dos três pesos em conjunto) listadas abaixo (não há necessidade de aplicar Chauvenet):</p>
-<table>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(29,94g\)</span></th>
-<th><span class="math inline">\(30,00g\)</span></th>
-<th><span class="math inline">\(29,95g\)</span></th>
-<th><span class="math inline">\(29,96g\)</span></th>
-<th><span class="math inline">\(29,95g\)</span></th>
-<th><span class="math inline">\(29,99g\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(29,92g\)</span></td>
-<td><span class="math inline">\(29,94g\)</span></td>
-<td><span class="math inline">\(30,00g\)</span></td>
-<td><span class="math inline">\(29,99g\)</span></td>
-<td><span class="math inline">\(29,92g\)</span></td>
-<td><span class="math inline">\(29,99g\)</span></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Apresente a correção e a incerteza da balança com 2 algarismos significativos e 99.73% de confiança e:</p></li>
+<li><a href="lab1.html">Incerteza em Medidas Diretas</a></li>
+<li><a href="lab2.html">Incerteza em Medidas Indiretas (MC)</a></li>
+<li><a href="lab3.html">Incerteza em Medidas Indiretas (MC) - Resistência</a></li>
 </ul>
-<pre><code>## RC = ( 0.08 +/- 0.37 ) g</code></pre>
-<ul>
-<li>Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?</li>
-</ul>
-<pre><code>## Incerteza da Massa Padrão N</code></pre>
-<ul>
-<li>Considere que na conclusão da etapa de calibração com os pesos padrão não houve ajuste ou regulagem da balança. Ao utilizar a balança em uma fábrica para avaliar o peso de uma peça, o <em>display</em> da balança apresentou o valor de <span class="math inline">\(28.71g\)</span>. Apresente abaixo o resultado desta medição considerando os informações metrológicas resultantes da calibração anterior.</li>
-</ul>
-<pre><code>## RM = 28.79 +/- 0.37</code></pre>
-</div>
-<div id="exemplo-3" class="section level2">
-<h2>Exemplo 3</h2>
-<p>Determine a incerteza da medição da massa de um objeto quando utilizada uma balança eletrônica.</p>
-<ul>
-<li>A balança em questão apresenta um indicador digital com resolução de <span class="math inline">\(0,02g\)</span>.</li>
-<li>A temperatura no local onde a medição foi efetuada oscila entre <span class="math inline">\(24,0\)</span> e <span class="math inline">\(26,0^oC\)</span> e é controlada por um termostato (considere que esta oscilação é melhor representada por uma distribuição tipo ``U’’). Sabe-se que a balança apresenta deriva térmica, isto é, acresce o valor de indicação de <span class="math inline">\(+0,008g\)</span> para cada Kelvin de variação de temperatura ambiente acima da temperatura de calibração (<span class="math inline">\(20^oC\)</span>).</li>
-<li>A calibração da balança foi realizada há cinco meses. Sabe-se que a estabilidade do zero da balança em função do tempo, permanece dentro dos limite <span class="math inline">\(\pm 0,01g\)</span>/m^es, o que corresponde à sua deriva temporal (sabe-se pouco sobre as características desta fonte de incerteza).</li>
-<li><p>Foram efetuadas 12 medições independentes (do mesmo objeto) listadas abaixo (não há necessidade de aplicar ):</p>
-<table>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(19,94g\)</span></th>
-<th><span class="math inline">\(19,92g\)</span></th>
-<th><span class="math inline">\(19,98g\)</span></th>
-<th><span class="math inline">\(19,96g\)</span></th>
-<th><span class="math inline">\(19,90g\)</span></th>
-<th><span class="math inline">\(19,94g\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(19,94g\)</span></td>
-<td><span class="math inline">\(19,96g\)</span></td>
-<td><span class="math inline">\(20,00g\)</span></td>
-<td><span class="math inline">\(19,99g\)</span></td>
-<td><span class="math inline">\(19,92g\)</span></td>
-<td><span class="math inline">\(19,99g\)</span></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Para faixa de <span class="math inline">\(20g\)</span>, segundo o certificado de calibração, a balança possui correção de <span class="math inline">\(-0,15g\)</span> e incerteza de <span class="math inline">\(0,04g\)</span>.</p></li>
-</ul>
-<p>Tendo em vista que deseja-se reduzir ao máximo a incerteza, defina o resultado de medição da massa com 2 algarismos significativos e 99% de confiança.</p>
-<pre><code>## RM = ( 19.76 +/- 0.11 ) g</code></pre>
-<p>Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?</p>
-<pre><code>## Deriva Temporal</code></pre>
-</div>
+<!--
+## Exemplo 1
+    
+
+    
+## Exemplo 2
+    
+Para realizar a calibração de uma balança eletrônica na faixa de $30g$ foram utilizados três pesos padrão ('K', 'N' e 'Z') de valor nominal $10.00g$ cada. Determine as características metrológicas da balança considerando as seguintes informações.
+
+- A balança em questão apresenta indicador digital com resolução de $0,01g$. 
+
+- A temperatura no local, durante o procedimento de medição, estava em $23^oC$.
+
+- Sabe-se que o peso 'K', segundo seu certificado de caliração, possui correção de $-0.20g$ e incerteza de $\pm 0.15g$ com abrangência de $99.73\%$. 
+
+- Sabe-se que o peso 'N', segundo seu certificado de caliração, possui incerteza de $\pm 0.15g$.
+
+- Sabe-se que o peso 'Z', segundo seu certificado de caliração, possui correção de $+0.24g$ e incerteza de $\pm 0.15g$ e $\nu=10$.
+
+- O peso 'K' teve sua última calibração há 5 meses e o peso 'Z' teve sua última calibração há 3 meses. Sabe-se que ambos possuem deriva temporal de $\pm 0,01g$/mês (sabe-se pouco sobre as características desta fonte de incerteza). 
+
+- O peso padrão 'K' apresenta deriva térmica de $\pm 0.02g/^oC$ (distribuição uniforme) para cada Kelvin de variação distante da referência de calibração ($20^oC$).
+
+- Foram efetuadas 12 medições independentes (dos três pesos em conjunto) listadas abaixo (não há necessidade de aplicar Chauvenet): 
+    
+    $29,94g$ | $30,00g$ | $29,95g$ | $29,96g$ | $29,95g$ | $29,99g$
+    -------- | -------- | -------- | -------- | -------- | --------
+    $29,92g$ | $29,94g$ | $30,00g$ | $29,99g$ | $29,92g$ | $29,99g$
+
+
+
+
+- Apresente a correção e a incerteza da balança com 2 algarismos significativos e 99.73\% de confiança e:
+
+```
+## RC = ( 0.08 +/- 0.37 ) g
+```
+
+- Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?
+
+```
+## Incerteza da Massa Padrão N
+```
+
+- Considere que na conclusão da etapa de calibração com os pesos padrão não houve ajuste ou regulagem da balança. Ao utilizar a balança em uma fábrica para avaliar o peso de uma peça, o *display*  da balança apresentou o valor de $28.71g$. Apresente abaixo o resultado desta medição considerando os informações metrológicas resultantes da calibração anterior.
+
+```
+## RM = 28.79 +/- 0.37
+```
+
+## Exemplo 3
+
+Determine a incerteza da medição da massa de um objeto quando utilizada uma balança eletrônica. 
+
+- A balança em questão apresenta um indicador digital com resolução de $0,02g$. 
+- A temperatura no local onde a medição foi efetuada oscila entre $24,0$ e $26,0^oC$ e é controlada por um termostato (considere que esta oscilação é melhor representada por uma distribuição tipo ``U''). Sabe-se que a balança apresenta deriva térmica, isto é, acresce o valor de indicação de $+0,008g$ para cada Kelvin de variação de temperatura ambiente acima da temperatura de calibração ($20^oC$).
+- A calibração da balança foi realizada há cinco meses. Sabe-se que a estabilidade do zero da balança em função do tempo, permanece dentro dos limite $\pm 0,01g$/m\^es, o que corresponde à sua deriva temporal (sabe-se pouco sobre as características desta fonte de incerteza). 
+- Foram efetuadas 12 medições independentes (do mesmo objeto) listadas abaixo (não há necessidade de aplicar \textit{Chauvenet}):
+
+    $19,94g$ | $19,92g$ | $19,98g$ | $19,96g$ | $19,90g$ | $19,94g$
+    -------- | -------- | -------- | -------- | -------- | --------
+    $19,94g$ | $19,96g$ | $20,00g$ | $19,99g$ | $19,92g$ | $19,99g$
+
+- Para faixa de $20g$, segundo o certificado de calibração, a balança possui correção de $-0,15g$ e incerteza de $0,04g$. 
+
+
+
+Tendo em vista que deseja-se reduzir ao máximo a incerteza, defina o resultado de medição da massa com 2 algarismos significativos e 99\% de confiança.
+
+```
+## RM = ( 19.76 +/- 0.11 ) g
+```
+
+Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?
+
+```
+## Deriva Temporal
+```
+-->
 
 <p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
 
@@ -472,6 +459,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
