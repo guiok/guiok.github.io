@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -368,7 +356,7 @@ $(document).ready(function () {
 </div>
 
 
-<div id="calculo-de-resistencia" class="section level2">
+<div id="cálculo-de-resistência" class="section level2">
 <h2>Cálculo de Resistência</h2>
 <p>Modelo Matemático:</p>
 <ul>
@@ -471,101 +459,101 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(V_{res}\)</span></td>
+<td align="left"><span class="math inline">\(V_{res}\)</span></td>
 <td align="right">0.0000289</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(V_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(V_{cal}\)</span></td>
 <td align="right">0.0001500</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(V_{temp}\)</span></td>
+<td align="left"><span class="math inline">\(V_{temp}\)</span></td>
 <td align="right">0.0000346</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(I_{res}\)</span></td>
+<td align="left"><span class="math inline">\(I_{res}\)</span></td>
 <td align="right">0.0000003</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(I_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(I_{cal}\)</span></td>
 <td align="right">0.0000021</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(I_{temp}\)</span></td>
+<td align="left"><span class="math inline">\(I_{temp}\)</span></td>
 <td align="right">0.0000005</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(I_{rep}\)</span></td>
+<td align="left"><span class="math inline">\(I_{rep}\)</span></td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(R1_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(R1_{cal}\)</span></td>
 <td align="right">0.0065556</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R1_{temp}\)</span></td>
+<td align="left"><span class="math inline">\(R1_{temp}\)</span></td>
 <td align="right">0.0023983</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(C1_{tmp}\)</span></td>
+<td align="left"><span class="math inline">\(C1_{tmp}\)</span></td>
 <td align="right">-0.0008380</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R1_{res}\)</span></td>
+<td align="left"><span class="math inline">\(R1_{res}\)</span></td>
 <td align="right">0.0002887</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(R2_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(R2_{cal}\)</span></td>
 <td align="right">0.0065556</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R2_{temp}\)</span></td>
+<td align="left"><span class="math inline">\(R2_{temp}\)</span></td>
 <td align="right">0.0023983</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(C1_{tmp}\)</span></td>
+<td align="left"><span class="math inline">\(C1_{tmp}\)</span></td>
 <td align="right">-0.0008380</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R2_{res}\)</span></td>
+<td align="left"><span class="math inline">\(R2_{res}\)</span></td>
 <td align="right">0.0002887</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\frac{\partial R3}{\partial V}\)</span></td>
+<td align="left"><span class="math inline">\(\frac{\partial R3}{\partial V}\)</span></td>
 <td align="right">1785.7142857</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\frac{\partial R3}{\partial I}\)</span></td>
+<td align="left"><span class="math inline">\(\frac{\partial R3}{\partial I}\)</span></td>
 <td align="right">-3188775.5102041</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\frac{\partial R3}{\partial R1}\)</span></td>
+<td align="left"><span class="math inline">\(\frac{\partial R3}{\partial R1}\)</span></td>
 <td align="right">-1.0000000</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\frac{\partial R3}{\partial R2}\)</span></td>
+<td align="left"><span class="math inline">\(\frac{\partial R3}{\partial R2}\)</span></td>
 <td align="right">-1.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">6.8424797</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(t_{std}\)</span></td>
+<td align="left"><span class="math inline">\(t_{std}\)</span></td>
 <td align="right">2.0000024</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">13.6849760</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R_3\)</span></td>
+<td align="left"><span class="math inline">\(R_3\)</span></td>
 <td align="right">1563.4939617</td>
 </tr>
 </tbody>
@@ -573,45 +561,45 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">1550.24049186122</td>
 </tr>
 <tr class="even">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">1577.10802901412</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.5</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.05</td>
 </tr>
 <tr class="odd">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.0709087259942862</td>
 </tr>
 <tr class="even">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.431506172760464</td>
 </tr>
 <tr class="odd">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">1560 +/- 10 <span class="math inline">\(\Omega\)</span></td>
 </tr>
 </tbody>
@@ -619,7 +607,7 @@ $(document).ready(function () {
 <p><img src="lab3_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="lab3_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="lab3_files/figure-html/unnamed-chunk-3-3.png" width="672" /><img src="lab3_files/figure-html/unnamed-chunk-3-4.png" width="672" /></p>
 </div>
 
-<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
@@ -637,6 +625,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -368,7 +356,7 @@ $(document).ready(function () {
 </div>
 
 
-<div id="procedimento-1-calibracao-da-balanca" class="section level2">
+<div id="procedimento-1-calibração-da-balança" class="section level2">
 <h2>Procedimento 1: Calibração da Balança</h2>
 <p>Utilize a massa padrão para calibrar uma balança digital. A massa padrão possui valor nominal de <span class="math inline">\(140g\)</span>, incerteza de <span class="math inline">\(0.2g\)</span>, correção de <span class="math inline">\(+1g\)</span> e <span class="math inline">\(4\)</span> graus de liberdade.</p>
 <p>Modelo Matemático:</p>
@@ -415,42 +403,46 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal}\)</span></td>
 <td align="right">0.6970304</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep}\)</span></td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res}\)</span></td>
 <td align="right">0.2886751</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">0.7544433</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">5.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">1.9982596</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(C_c\)</span></td>
+<td align="left"><span class="math inline">\(C_c\)</span></td>
 <td align="right">2.0000000</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -465,7 +457,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="procedimento-2-calibracao-da-massa-desconhecida" class="section level2">
+<div id="procedimento-2-calibração-da-massa-desconhecida" class="section level2">
 <h2>Procedimento 2: Calibração da Massa Desconhecida</h2>
 <p>Uma vez calibrada a balança identifique a massa de um objeto. Sobre a balança conhecemos somente as informações de correção, incerteza e graus de liberdade resultantes do procedimento anterior.</p>
 <p>Modelo Matemático:</p>
@@ -506,42 +498,46 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal}\)</span></td>
 <td align="right">0.7544433</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep}\)</span></td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res}\)</span></td>
 <td align="right">0.2886751</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">0.8077859</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">6.5712591</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">1.9891858</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\bar{M}+C_c\)</span></td>
+<td align="left"><span class="math inline">\(\bar{M}+C_c\)</span></td>
 <td align="right">141.0000000</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="48%" />
+<col width="51%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -556,7 +552,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="procedimento-3-calibracao-pt100-resistencias" class="section level2">
+<div id="procedimento-3-calibração-pt100-resistências" class="section level2">
 <h2>Procedimento 3: Calibração PT100 (Resistências)</h2>
 <p>Com o sensor PT100 em <span class="math inline">\(0^oC\)</span> (forno calibrado) identifique a resistência do sensor levando em consideração as incertezas do calibrador CA71. Faça medições da resistência de modo que <span class="math inline">\(R=R_{PT100}-R_{FIOS}\)</span>.</p>
 <p>Modelo Matemático:</p>
@@ -615,54 +611,58 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal-PT100}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal-PT100}\)</span></td>
 <td align="right">0.0751985</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{cal-FIOS}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal-FIOS}\)</span></td>
 <td align="right">0.0502160</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{rep-PT100}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep-PT100}\)</span></td>
 <td align="right">0.0074833</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep-FIOS}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep-FIOS}\)</span></td>
 <td align="right">0.0229347</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res}\)</span></td>
 <td align="right">0.0028868</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{temp-PT100}\)</span></td>
+<td align="left"><span class="math inline">\(U_{temp-PT100}\)</span></td>
 <td align="right">0.0240635</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{temp-FIOS}\)</span></td>
+<td align="left"><span class="math inline">\(U_{temp-FIOS}\)</span></td>
 <td align="right">0.0160691</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">0.0980428</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">1320.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">0.1962718</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="49%" />
+<col width="50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -677,7 +677,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="procedimento-4-ohmimetro" class="section level2">
+<div id="procedimento-4-ohmímetro" class="section level2">
 <h2>Procedimento 4: Ohmímetro</h2>
 <p>Calibre o ohmímetro utilizando como referência a década resistiva.</p>
 <p>Modelo Matemático:</p>
@@ -765,6 +765,12 @@ $(document).ready(function () {
 <li><span class="math inline">\(R_{20}\)</span>: resistência <span class="math inline">\(20^oC\)</span></li>
 </ul>
 <table>
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="23%" />
+<col width="26%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Menor Resistência para <span class="math inline">\(23^oC\)</span></th>
@@ -786,50 +792,54 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal}\)</span></td>
 <td align="right">0.0510000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep}\)</span></td>
 <td align="right">0.0000000</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res mult}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res mult}\)</span></td>
 <td align="right">0.2886751</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{res dec}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res dec}\)</span></td>
 <td align="right">0.0002887</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{temp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{temp}\)</span></td>
 <td align="right">0.0158457</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">0.2935737</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">Inf</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">0.5871480</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(C_c\)</span></td>
+<td align="left"><span class="math inline">\(C_c\)</span></td>
 <td align="right">-0.0071415</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="48%" />
+<col width="51%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -844,7 +854,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="procedimento-5-conjunto-de-resistencias" class="section level2">
+<div id="procedimento-5-conjunto-de-resistências" class="section level2">
 <h2>Procedimento 5: Conjunto de Resistências</h2>
 <p>Utilizando o resultado do procedimento 4 identifique o valor de uma dada resistência.</p>
 <p>Modelo Matemático:</p>
@@ -885,42 +895,46 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{cal}\)</span></td>
+<td align="left"><span class="math inline">\(U_{cal}\)</span></td>
 <td align="right">0.2935737</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep}\)</span></td>
 <td align="right">1.1595018</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res}\)</span></td>
 <td align="right">0.2886751</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">1.2304321</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">11.0000000</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">2.7744596</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(C_c\)</span></td>
+<td align="left"><span class="math inline">\(C_c\)</span></td>
 <td align="right">-0.0071415</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="48%" />
+<col width="51%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -935,7 +949,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="procedimento-6-regua-e-placa-de-orificio" class="section level2">
+<div id="procedimento-6-régua-e-placa-de-orifício" class="section level2">
 <h2>Procedimento 6: Régua e Placa de Orifício</h2>
 <p>Utilize uma régua para dimensionar <span class="math inline">\(D=D_{EXTERNO}-D_{INTERNO}\)</span>.</p>
 <p>Modelo Matemático:</p>
@@ -986,42 +1000,46 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(U_{rep-EXT}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep-EXT}\)</span></td>
 <td align="right">0.0130384</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{rep-INT}\)</span></td>
+<td align="left"><span class="math inline">\(U_{rep-INT}\)</span></td>
 <td align="right">0.0032863</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{res-EXT}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res-EXT}\)</span></td>
 <td align="right">0.0061237</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{res-INT}\)</span></td>
+<td align="left"><span class="math inline">\(U_{res-INT}\)</span></td>
 <td align="right">0.0051031</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_c\)</span></td>
+<td align="left"><span class="math inline">\(U_c\)</span></td>
 <td align="right">0.0156314</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu_{eff}\)</span></td>
+<td align="left"><span class="math inline">\(\nu_{eff}\)</span></td>
 <td align="right">8.0000000</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="right">0.0369905</td>
 </tr>
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="49%" />
+<col width="50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">1 Algarismo Significativo</th>
@@ -1037,7 +1055,7 @@ $(document).ready(function () {
 </table>
 </div>
 
-<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
@@ -1055,6 +1073,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -369,7 +357,7 @@ $(document).ready(function () {
 
 
 <p>Laboratório de avaliação do cálculo de incertezas indiretas através do método de Monte Carlo fundamento nos casos abordados no livro “Theory and Applications of Monte Carlo Simulations” de Victor (Wai Kin) Chan (ver <a href="http://dx.doi.org/10.5772/53014" class="uri">http://dx.doi.org/10.5772/53014</a>).</p>
-<div id="eficiencia-celula-de-combustivel" class="section level2">
+<div id="eficiência-célula-de-combustível" class="section level2">
 <h2>Eficiência Célula de Combustível</h2>
 <p>Modelo Matemático:</p>
 <ul>
@@ -414,88 +402,88 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\eta_R\)</span></td>
+<td align="left"><span class="math inline">\(\eta_R\)</span></td>
 <td align="left">0.494115557033459</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*U\Delta G\)</span></td>
+<td align="left"><span class="math inline">\(c*U\Delta G\)</span></td>
 <td align="left">0.000120319590832581</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*U\Delta H\)</span></td>
+<td align="left"><span class="math inline">\(c*U\Delta H\)</span></td>
 <td align="left">-0.0000998172672722357</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*UE_r\)</span></td>
+<td align="left"><span class="math inline">\(c*UE_r\)</span></td>
 <td align="left">0.000194861851000034</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*UE_i\)</span></td>
+<td align="left"><span class="math inline">\(c*UE_i\)</span></td>
 <td align="left">-0.000232121846919487</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">0.000341016104570283</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">Inf</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.0000024438996</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">0.000682033042549688</td>
 </tr>
 <tr class="even">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">0.493452016601167</td>
 </tr>
 <tr class="odd">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">0.494778754432065</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.00005</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.000005</td>
 </tr>
 <tr class="even">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.000018835643943893</td>
 </tr>
 <tr class="odd">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.0000184926102576588</td>
 </tr>
 <tr class="even">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="odd">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">0.4941 +/- 0.0007</td>
 </tr>
 </tbody>
 </table>
 <p><img src="lab2_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
 </div>
-<div id="medida-de-torque-versao-1" class="section level1">
+<div id="medida-de-torque-versão-1" class="section level1">
 <h1>Medida de Torque (Versão 1)</h1>
 <p>Modelo Matemático:</p>
 <ul>
@@ -541,87 +529,87 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(Torque\)</span></td>
+<td align="left"><span class="math inline">\(Torque\)</span></td>
 <td align="left">700.103220907229</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uM_{Re}\)</span></td>
+<td align="left"><span class="math inline">\(c*uM_{Re}\)</span></td>
 <td align="left">0.00185704085408498</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uM_{Cal}\)</span></td>
+<td align="left"><span class="math inline">\(c*uM_{Cal}\)</span></td>
 <td align="left">0.000978746467815493</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uG\)</span></td>
+<td align="left"><span class="math inline">\(c*uG\)</span></td>
 <td align="left">0.00001430608781123</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uL\)</span></td>
+<td align="left"><span class="math inline">\(c*uL\)</span></td>
 <td align="left">0.00140020959228604</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">0.00252335826795964</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">30</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.08684705353665</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">0.00526586276650893</td>
 </tr>
 <tr class="even">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">700.097778483575</td>
 </tr>
 <tr class="odd">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">700.108681077913</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.0005</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.00005</td>
 </tr>
 <tr class="even">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.000194307918036429</td>
 </tr>
 <tr class="odd">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.000176560886870902</td>
 </tr>
 <tr class="even">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="odd">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">700.103 +/- 0.005 Nm</td>
 </tr>
 </tbody>
 </table>
 <p><img src="lab2_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
-<div id="medida-de-torque-versao-2" class="section level2">
+<div id="medida-de-torque-versão-2" class="section level2">
 <h2>Medida de Torque (Versão 2)</h2>
 <ul>
 <li><span class="math inline">\(T=m_cgL\)</span></li>
@@ -666,88 +654,88 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(Torque\)</span></td>
+<td align="left"><span class="math inline">\(Torque\)</span></td>
 <td align="left">700.10479614302</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uM_{Re}\)</span></td>
+<td align="left"><span class="math inline">\(c*uM_{Re}\)</span></td>
 <td align="left">0.00185704503243631</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uM_{Cal}\)</span></td>
+<td align="left"><span class="math inline">\(c*uM_{Cal}\)</span></td>
 <td align="left">0.00097874867</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uG\)</span></td>
+<td align="left"><span class="math inline">\(c*uG\)</span></td>
 <td align="left">0.00001430612</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uL\)</span></td>
+<td align="left"><span class="math inline">\(c*uL\)</span></td>
 <td align="left">0.10105142312853</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">0.101073225367443</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">78976388</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.00000247555473</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">0.202146700947187</td>
 </tr>
 <tr class="even">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">699.937743310318</td>
 </tr>
 <tr class="odd">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">700.271826361037</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.05</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.005</td>
 </tr>
 <tr class="even">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.0351164829297659</td>
 </tr>
 <tr class="odd">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.0350938682453261</td>
 </tr>
 <tr class="even">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="odd">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">700.1 +/- 0.2 Nm</td>
 </tr>
 </tbody>
 </table>
 <p><img src="lab2_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
 </div>
-<div id="concentracao-de-cadmio" class="section level2">
+<div id="concentração-de-cádmio" class="section level2">
 <h2>Concentração de Cádmio</h2>
 <p>Modelo Matemático:</p>
 <ul>
@@ -798,85 +786,85 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(C_{Cd}\)</span></td>
+<td align="left"><span class="math inline">\(C_{Cd}\)</span></td>
 <td align="left">1002.69972</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uP\)</span></td>
+<td align="left"><span class="math inline">\(c*uP\)</span></td>
 <td align="left">0.0578966849943357</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*um\)</span></td>
+<td align="left"><span class="math inline">\(c*um\)</span></td>
 <td align="left">0.49995</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uVf\)</span></td>
+<td align="left"><span class="math inline">\(c*uVf\)</span></td>
 <td align="left">-0.409350446538594</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uVr\)</span></td>
+<td align="left"><span class="math inline">\(c*uVr\)</span></td>
 <td align="left">-0.200539944</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uVt\)</span></td>
+<td align="left"><span class="math inline">\(c*uVt\)</span></td>
 <td align="left">-0.486283520737024</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">0.835199226768439</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">1203</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.00208270628628</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">1.67213792821676</td>
 </tr>
 <tr class="odd">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">1001.05092252361</td>
 </tr>
 <tr class="even">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">1004.35384543814</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.05</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.005</td>
 </tr>
 <tr class="odd">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.0180124900732608</td>
 </tr>
 <tr class="even">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.0233404518231737</td>
 </tr>
 <tr class="odd">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">1003 +/- 2 mg/L</td>
 </tr>
 </tbody>
@@ -922,77 +910,77 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(HB\)</span></td>
+<td align="left"><span class="math inline">\(HB\)</span></td>
 <td align="left">414.472921031433</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uFo\)</span></td>
+<td align="left"><span class="math inline">\(c*uFo\)</span></td>
 <td align="left">4.14472921031433</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uD\)</span></td>
+<td align="left"><span class="math inline">\(c*uD\)</span></td>
 <td align="left">0.010006378658829</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*udf\)</span></td>
+<td align="left"><span class="math inline">\(c*udf\)</span></td>
 <td align="left">-7.06955940816935</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">8.19497105425532</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">16</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.16894299567741</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">17.7744250679062</td>
 </tr>
 <tr class="odd">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">396.683897592822</td>
 </tr>
 <tr class="even">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">433.217530546097</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.5</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.05</td>
 </tr>
 <tr class="odd">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.970184446757628</td>
 </tr>
 <tr class="even">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.0145983707044479</td>
 </tr>
 <tr class="odd">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">414 +/- ? HB</td>
 </tr>
 </tbody>
@@ -1003,77 +991,77 @@ $(document).ready(function () {
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="left">Valores</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(HB\)</span></td>
+<td align="left"><span class="math inline">\(HB\)</span></td>
 <td align="left">414.472921031433</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*uFo\)</span></td>
+<td align="left"><span class="math inline">\(c*uFo\)</span></td>
 <td align="left">4.14472921031433</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(c*uD\)</span></td>
+<td align="left"><span class="math inline">\(c*uD\)</span></td>
 <td align="left">0.010006378658829</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c*udf\)</span></td>
+<td align="left"><span class="math inline">\(c*udf\)</span></td>
 <td align="left">-4.99893339751771</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(U\)</span></td>
+<td align="left"><span class="math inline">\(U\)</span></td>
 <td align="left">6.49370583467288</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu\)</span></td>
+<td align="left"><span class="math inline">\(\nu\)</span></td>
 <td align="left">54</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(t\)</span></td>
+<td align="left"><span class="math inline">\(t\)</span></td>
 <td align="left">2.04736751036537</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
 <td align="left">13.2950023477793</td>
 </tr>
 <tr class="odd">
-<td>LEP</td>
+<td align="left">LEP</td>
 <td align="left">401.181396711389</td>
 </tr>
 <tr class="even">
-<td>HEP</td>
+<td align="left">HEP</td>
 <td align="left">428.181059151272</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\delta_1\)</span></td>
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
 <td align="left">0.5</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\delta_2\)</span></td>
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
 <td align="left">0.05</td>
 </tr>
 <tr class="odd">
-<td>DH</td>
+<td align="left">DH</td>
 <td align="left">0.413135772060059</td>
 </tr>
 <tr class="even">
-<td>DL</td>
+<td align="left">DL</td>
 <td align="left">0.00347802773507055</td>
 </tr>
 <tr class="odd">
-<td>1 Algarismo Significativo</td>
+<td align="left">1 Algarismo Significativo</td>
 <td align="left">TRUE</td>
 </tr>
 <tr class="even">
-<td>2 Algarismos Significativos</td>
+<td align="left">2 Algarismos Significativos</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
-<td>RM</td>
+<td align="left">RM</td>
 <td align="left">410 +/- 10 HB</td>
 </tr>
 </tbody>
@@ -1082,7 +1070,7 @@ $(document).ready(function () {
 </div>
 </div>
 
-<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
@@ -1100,6 +1088,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -369,9 +357,9 @@ $(document).ready(function () {
 
 <p>Segue a sequência de passos necessários para simulação numérica visando a identificação da qualidade do resultado do método analítico.</p>
 <ul>
-<li>Definição do Modelo Matemático (<span class="math inline">\(f_{mc}=f_a\)</span>)</li>
-<li>Cálculo da quantidade de valores aleatórios (<span class="math inline">\(M=\frac{10^4}{1-\%}\)</span>) de acordo com o grau de confiança desejado.</li>
-<li>Cálculo das incertezas tipo A e identificação dos limites e das funções de distribuição para as incertezas tipo B tal qual:
+<li><p>Definição do Modelo Matemático (<span class="math inline">\(f_{mc}=f_a\)</span>)</p></li>
+<li><p>Cálculo da quantidade de valores aleatórios (<span class="math inline">\(M=\frac{10^4}{1-\%}\)</span>) de acordo com o grau de confiança desejado.</p></li>
+<li><p>Cálculo das incertezas tipo A e identificação dos limites e das funções de distribuição para as incertezas tipo B tal qual:</p>
 <ul>
 <li>Função Densidade de Probabilidade Normal. ex.: certificados de calibração.
 <ul>
@@ -444,14 +432,14 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <p><img src="proc_mc_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p></li>
-<li>Geração dos vetores de valores aleatório para as variáveis de <span class="math inline">\(f_{mc}\)</span> com base em seus valores médios e limites de incerteza.</li>
-<li>Cálculo do vetor <span class="math inline">\(f_{mc}\)</span>.</li>
-<li>Identificação dos limites para o % desejado (quantil):
+<li><p>Geração dos vetores de valores aleatório para as variáveis de <span class="math inline">\(f_{mc}\)</span> com base em seus valores médios e limites de incerteza.</p></li>
+<li><p>Cálculo do vetor <span class="math inline">\(f_{mc}\)</span>.</p></li>
+<li><p>Identificação dos limites para o % desejado (quantil):</p>
 <ul>
 <li>Se <span class="math inline">\(95\%\)</span>: <span class="math inline">\(y_{baixo}=quantile(f_{mc}, 0.025)\)</span> e <span class="math inline">\(y_{alto}=quantile(f_{mc}, 0.975)\)</span> (para uso no R).</li>
 <li>Se <span class="math inline">\(99\%\)</span>: <span class="math inline">\(y_{baixo}=quantile(f_{mc}, 0.005)\)</span> e <span class="math inline">\(y_{alto}=quantile(f_{mc}, 0.995)\)</span> (para uso no R).</li>
 </ul></li>
-<li>Cálculo de <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>:
+<li><p>Cálculo de <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>:</p>
 <ul>
 <li>expressando <span class="math inline">\(z\)</span> na forma <span class="math inline">\(c\times 10^l\)</span>, onde <span class="math inline">\(c\)</span> é um <span class="math inline">\(n_{dig}\)</span> decimal inteiro e <span class="math inline">\(l\)</span> é um inteiro</li>
 <li><span class="math inline">\(\delta=\frac{1}{2}\times 10^l\)</span> sendo:
@@ -460,12 +448,12 @@ $(document).ready(function () {
 <li><span class="math inline">\(\delta_2\)</span>: Erro de arrendondamento (resolução) no <span class="math inline">\(U_c\)</span> quando apresentado com 2 Algarismo Significativo</li>
 </ul></li>
 </ul></li>
-<li>Cálculo das diferenças:
+<li><p>Cálculo das diferenças:</p>
 <ul>
 <li><span class="math inline">\(D_{baixo}=|f_a - U_{exp} - y_{baixo}|\)</span></li>
 <li><span class="math inline">\(D_{alto} = | f_a + U_{exp} - y_{alto}|\)</span></li>
 </ul></li>
-<li>Comparação entre <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> e <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span>
+<li><p>Comparação entre <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> e <span class="math inline">\(\delta_1\)</span> e <span class="math inline">\(\delta_2\)</span></p>
 <ul>
 <li>Se <span class="math inline">\(\delta_2\)</span> for superior a <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> pode apresentar o resultado com 2 Algarismos Significativos</li>
 <li>Se <span class="math inline">\(\delta_1\)</span> for superior a <span class="math inline">\(D_{baixo}\)</span> e <span class="math inline">\(D_{alto}\)</span> pode apresentar o resultado com 1 Algarismos Significativos</li>
@@ -473,7 +461,7 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 
-<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
@@ -491,6 +479,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -93,7 +93,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -242,6 +241,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,18 +253,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -370,9 +358,22 @@ $(document).ready(function () {
 <p>Distribuição Chi-Quadrado (monocaudal). Para obtenção dos valores no R sugere-se a seguinte função: <span class="math inline">\(qchisq(1-\%, \nu)\)</span>.</p>
 <p><img src="chi_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <table>
+<colgroup>
+<col width="7%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.995</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.99</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.975</th>
@@ -387,7 +388,7 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 1</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 1</td>
 <td align="right">0.000</td>
 <td align="right">0.000</td>
 <td align="right">0.001</td>
@@ -400,7 +401,7 @@ $(document).ready(function () {
 <td align="right">7.879</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 2</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 2</td>
 <td align="right">0.010</td>
 <td align="right">0.020</td>
 <td align="right">0.051</td>
@@ -413,7 +414,7 @@ $(document).ready(function () {
 <td align="right">10.597</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 3</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 3</td>
 <td align="right">0.072</td>
 <td align="right">0.115</td>
 <td align="right">0.216</td>
@@ -426,7 +427,7 @@ $(document).ready(function () {
 <td align="right">12.838</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 4</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 4</td>
 <td align="right">0.207</td>
 <td align="right">0.297</td>
 <td align="right">0.484</td>
@@ -439,7 +440,7 @@ $(document).ready(function () {
 <td align="right">14.860</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 5</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 5</td>
 <td align="right">0.412</td>
 <td align="right">0.554</td>
 <td align="right">0.831</td>
@@ -452,7 +453,7 @@ $(document).ready(function () {
 <td align="right">16.750</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 6</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 6</td>
 <td align="right">0.676</td>
 <td align="right">0.872</td>
 <td align="right">1.237</td>
@@ -465,7 +466,7 @@ $(document).ready(function () {
 <td align="right">18.548</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 7</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 7</td>
 <td align="right">0.989</td>
 <td align="right">1.239</td>
 <td align="right">1.690</td>
@@ -478,7 +479,7 @@ $(document).ready(function () {
 <td align="right">20.278</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 8</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 8</td>
 <td align="right">1.344</td>
 <td align="right">1.646</td>
 <td align="right">2.180</td>
@@ -491,7 +492,7 @@ $(document).ready(function () {
 <td align="right">21.955</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 9</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 9</td>
 <td align="right">1.735</td>
 <td align="right">2.088</td>
 <td align="right">2.700</td>
@@ -504,7 +505,7 @@ $(document).ready(function () {
 <td align="right">23.589</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 10</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 10</td>
 <td align="right">2.156</td>
 <td align="right">2.558</td>
 <td align="right">3.247</td>
@@ -517,7 +518,7 @@ $(document).ready(function () {
 <td align="right">25.188</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 11</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 11</td>
 <td align="right">2.603</td>
 <td align="right">3.053</td>
 <td align="right">3.816</td>
@@ -530,7 +531,7 @@ $(document).ready(function () {
 <td align="right">26.757</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 12</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 12</td>
 <td align="right">3.074</td>
 <td align="right">3.571</td>
 <td align="right">4.404</td>
@@ -543,7 +544,7 @@ $(document).ready(function () {
 <td align="right">28.300</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 13</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 13</td>
 <td align="right">3.565</td>
 <td align="right">4.107</td>
 <td align="right">5.009</td>
@@ -556,7 +557,7 @@ $(document).ready(function () {
 <td align="right">29.819</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 14</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 14</td>
 <td align="right">4.075</td>
 <td align="right">4.660</td>
 <td align="right">5.629</td>
@@ -569,7 +570,7 @@ $(document).ready(function () {
 <td align="right">31.319</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 15</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 15</td>
 <td align="right">4.601</td>
 <td align="right">5.229</td>
 <td align="right">6.262</td>
@@ -582,7 +583,7 @@ $(document).ready(function () {
 <td align="right">32.801</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 16</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 16</td>
 <td align="right">5.142</td>
 <td align="right">5.812</td>
 <td align="right">6.908</td>
@@ -595,7 +596,7 @@ $(document).ready(function () {
 <td align="right">34.267</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 17</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 17</td>
 <td align="right">5.697</td>
 <td align="right">6.408</td>
 <td align="right">7.564</td>
@@ -608,7 +609,7 @@ $(document).ready(function () {
 <td align="right">35.718</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 18</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 18</td>
 <td align="right">6.265</td>
 <td align="right">7.015</td>
 <td align="right">8.231</td>
@@ -621,7 +622,7 @@ $(document).ready(function () {
 <td align="right">37.156</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 19</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 19</td>
 <td align="right">6.844</td>
 <td align="right">7.633</td>
 <td align="right">8.907</td>
@@ -634,7 +635,7 @@ $(document).ready(function () {
 <td align="right">38.582</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 20</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 20</td>
 <td align="right">7.434</td>
 <td align="right">8.260</td>
 <td align="right">9.591</td>
@@ -647,7 +648,7 @@ $(document).ready(function () {
 <td align="right">39.997</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 21</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 21</td>
 <td align="right">8.034</td>
 <td align="right">8.897</td>
 <td align="right">10.283</td>
@@ -660,7 +661,7 @@ $(document).ready(function () {
 <td align="right">41.401</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 22</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 22</td>
 <td align="right">8.643</td>
 <td align="right">9.542</td>
 <td align="right">10.982</td>
@@ -673,7 +674,7 @@ $(document).ready(function () {
 <td align="right">42.796</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 23</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 23</td>
 <td align="right">9.260</td>
 <td align="right">10.196</td>
 <td align="right">11.689</td>
@@ -686,7 +687,7 @@ $(document).ready(function () {
 <td align="right">44.181</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 24</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 24</td>
 <td align="right">9.886</td>
 <td align="right">10.856</td>
 <td align="right">12.401</td>
@@ -699,7 +700,7 @@ $(document).ready(function () {
 <td align="right">45.559</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 25</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 25</td>
 <td align="right">10.520</td>
 <td align="right">11.524</td>
 <td align="right">13.120</td>
@@ -712,7 +713,7 @@ $(document).ready(function () {
 <td align="right">46.928</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 26</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 26</td>
 <td align="right">11.160</td>
 <td align="right">12.198</td>
 <td align="right">13.844</td>
@@ -725,7 +726,7 @@ $(document).ready(function () {
 <td align="right">48.290</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 27</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 27</td>
 <td align="right">11.808</td>
 <td align="right">12.879</td>
 <td align="right">14.573</td>
@@ -738,7 +739,7 @@ $(document).ready(function () {
 <td align="right">49.645</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 28</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 28</td>
 <td align="right">12.461</td>
 <td align="right">13.565</td>
 <td align="right">15.308</td>
@@ -751,7 +752,7 @@ $(document).ready(function () {
 <td align="right">50.993</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 29</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 29</td>
 <td align="right">13.121</td>
 <td align="right">14.256</td>
 <td align="right">16.047</td>
@@ -764,7 +765,7 @@ $(document).ready(function () {
 <td align="right">52.336</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 30</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 30</td>
 <td align="right">13.787</td>
 <td align="right">14.953</td>
 <td align="right">16.791</td>
@@ -777,7 +778,7 @@ $(document).ready(function () {
 <td align="right">53.672</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 40</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 40</td>
 <td align="right">20.707</td>
 <td align="right">22.164</td>
 <td align="right">24.433</td>
@@ -790,7 +791,7 @@ $(document).ready(function () {
 <td align="right">66.766</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 50</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 50</td>
 <td align="right">27.991</td>
 <td align="right">29.707</td>
 <td align="right">32.357</td>
@@ -803,7 +804,7 @@ $(document).ready(function () {
 <td align="right">79.490</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 60</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 60</td>
 <td align="right">35.534</td>
 <td align="right">37.485</td>
 <td align="right">40.482</td>
@@ -816,7 +817,7 @@ $(document).ready(function () {
 <td align="right">91.952</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 70</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 70</td>
 <td align="right">43.275</td>
 <td align="right">45.442</td>
 <td align="right">48.758</td>
@@ -829,7 +830,7 @@ $(document).ready(function () {
 <td align="right">104.215</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 80</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 80</td>
 <td align="right">51.172</td>
 <td align="right">53.540</td>
 <td align="right">57.153</td>
@@ -842,7 +843,7 @@ $(document).ready(function () {
 <td align="right">116.321</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\nu=\)</span> 90</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 90</td>
 <td align="right">59.196</td>
 <td align="right">61.754</td>
 <td align="right">65.647</td>
@@ -855,7 +856,7 @@ $(document).ready(function () {
 <td align="right">128.299</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\nu=\)</span> 100</td>
+<td align="left"><span class="math inline">\(\nu=\)</span> 100</td>
 <td align="right">67.328</td>
 <td align="right">70.065</td>
 <td align="right">74.222</td>
@@ -870,7 +871,7 @@ $(document).ready(function () {
 </tbody>
 </table>
 
-<p>Copyright &copy; 2019 Guilherme Kunz, Inc. All rights reserved.</p>
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 
 
 
@@ -888,6 +889,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
