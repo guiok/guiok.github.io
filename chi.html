@@ -357,19 +357,21 @@ $(document).ready(function () {
 
 <p>Distribuição Chi-Quadrado (monocaudal). Para obtenção dos valores no R sugere-se a seguinte função: <span class="math inline">\(qchisq(1-\%, \nu)\)</span>.</p>
 <p><img src="chi_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<table>
+<table style="width:100%;">
 <colgroup>
+<col width="6%" />
+<col width="8%" />
 <col width="7%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
 <col width="8%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
 <col width="8%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
+<col width="7%" />
+<col width="8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -379,6 +381,8 @@ $(document).ready(function () {
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.975</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.95</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.9</th>
+<th align="right"><span class="math inline">\(\chi^2\)</span> 0.8</th>
+<th align="right"><span class="math inline">\(\chi^2\)</span> 0.2</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.1</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.05</th>
 <th align="right"><span class="math inline">\(\chi^2\)</span> 0.025</th>
@@ -394,6 +398,8 @@ $(document).ready(function () {
 <td align="right">0.001</td>
 <td align="right">0.004</td>
 <td align="right">0.016</td>
+<td align="right">0.064</td>
+<td align="right">1.642</td>
 <td align="right">2.706</td>
 <td align="right">3.841</td>
 <td align="right">5.024</td>
@@ -407,6 +413,8 @@ $(document).ready(function () {
 <td align="right">0.051</td>
 <td align="right">0.103</td>
 <td align="right">0.211</td>
+<td align="right">0.446</td>
+<td align="right">3.219</td>
 <td align="right">4.605</td>
 <td align="right">5.991</td>
 <td align="right">7.378</td>
@@ -420,6 +428,8 @@ $(document).ready(function () {
 <td align="right">0.216</td>
 <td align="right">0.352</td>
 <td align="right">0.584</td>
+<td align="right">1.005</td>
+<td align="right">4.642</td>
 <td align="right">6.251</td>
 <td align="right">7.815</td>
 <td align="right">9.348</td>
@@ -433,6 +443,8 @@ $(document).ready(function () {
 <td align="right">0.484</td>
 <td align="right">0.711</td>
 <td align="right">1.064</td>
+<td align="right">1.649</td>
+<td align="right">5.989</td>
 <td align="right">7.779</td>
 <td align="right">9.488</td>
 <td align="right">11.143</td>
@@ -446,6 +458,8 @@ $(document).ready(function () {
 <td align="right">0.831</td>
 <td align="right">1.145</td>
 <td align="right">1.610</td>
+<td align="right">2.343</td>
+<td align="right">7.289</td>
 <td align="right">9.236</td>
 <td align="right">11.070</td>
 <td align="right">12.833</td>
@@ -459,6 +473,8 @@ $(document).ready(function () {
 <td align="right">1.237</td>
 <td align="right">1.635</td>
 <td align="right">2.204</td>
+<td align="right">3.070</td>
+<td align="right">8.558</td>
 <td align="right">10.645</td>
 <td align="right">12.592</td>
 <td align="right">14.449</td>
@@ -472,6 +488,8 @@ $(document).ready(function () {
 <td align="right">1.690</td>
 <td align="right">2.167</td>
 <td align="right">2.833</td>
+<td align="right">3.822</td>
+<td align="right">9.803</td>
 <td align="right">12.017</td>
 <td align="right">14.067</td>
 <td align="right">16.013</td>
@@ -485,6 +503,8 @@ $(document).ready(function () {
 <td align="right">2.180</td>
 <td align="right">2.733</td>
 <td align="right">3.490</td>
+<td align="right">4.594</td>
+<td align="right">11.030</td>
 <td align="right">13.362</td>
 <td align="right">15.507</td>
 <td align="right">17.535</td>
@@ -498,6 +518,8 @@ $(document).ready(function () {
 <td align="right">2.700</td>
 <td align="right">3.325</td>
 <td align="right">4.168</td>
+<td align="right">5.380</td>
+<td align="right">12.242</td>
 <td align="right">14.684</td>
 <td align="right">16.919</td>
 <td align="right">19.023</td>
@@ -511,6 +533,8 @@ $(document).ready(function () {
 <td align="right">3.247</td>
 <td align="right">3.940</td>
 <td align="right">4.865</td>
+<td align="right">6.179</td>
+<td align="right">13.442</td>
 <td align="right">15.987</td>
 <td align="right">18.307</td>
 <td align="right">20.483</td>
@@ -524,6 +548,8 @@ $(document).ready(function () {
 <td align="right">3.816</td>
 <td align="right">4.575</td>
 <td align="right">5.578</td>
+<td align="right">6.989</td>
+<td align="right">14.631</td>
 <td align="right">17.275</td>
 <td align="right">19.675</td>
 <td align="right">21.920</td>
@@ -537,6 +563,8 @@ $(document).ready(function () {
 <td align="right">4.404</td>
 <td align="right">5.226</td>
 <td align="right">6.304</td>
+<td align="right">7.807</td>
+<td align="right">15.812</td>
 <td align="right">18.549</td>
 <td align="right">21.026</td>
 <td align="right">23.337</td>
@@ -550,6 +578,8 @@ $(document).ready(function () {
 <td align="right">5.009</td>
 <td align="right">5.892</td>
 <td align="right">7.042</td>
+<td align="right">8.634</td>
+<td align="right">16.985</td>
 <td align="right">19.812</td>
 <td align="right">22.362</td>
 <td align="right">24.736</td>
@@ -563,6 +593,8 @@ $(document).ready(function () {
 <td align="right">5.629</td>
 <td align="right">6.571</td>
 <td align="right">7.790</td>
+<td align="right">9.467</td>
+<td align="right">18.151</td>
 <td align="right">21.064</td>
 <td align="right">23.685</td>
 <td align="right">26.119</td>
@@ -576,6 +608,8 @@ $(document).ready(function () {
 <td align="right">6.262</td>
 <td align="right">7.261</td>
 <td align="right">8.547</td>
+<td align="right">10.307</td>
+<td align="right">19.311</td>
 <td align="right">22.307</td>
 <td align="right">24.996</td>
 <td align="right">27.488</td>
@@ -589,6 +623,8 @@ $(document).ready(function () {
 <td align="right">6.908</td>
 <td align="right">7.962</td>
 <td align="right">9.312</td>
+<td align="right">11.152</td>
+<td align="right">20.465</td>
 <td align="right">23.542</td>
 <td align="right">26.296</td>
 <td align="right">28.845</td>
@@ -602,6 +638,8 @@ $(document).ready(function () {
 <td align="right">7.564</td>
 <td align="right">8.672</td>
 <td align="right">10.085</td>
+<td align="right">12.002</td>
+<td align="right">21.615</td>
 <td align="right">24.769</td>
 <td align="right">27.587</td>
 <td align="right">30.191</td>
@@ -615,6 +653,8 @@ $(document).ready(function () {
 <td align="right">8.231</td>
 <td align="right">9.390</td>
 <td align="right">10.865</td>
+<td align="right">12.857</td>
+<td align="right">22.760</td>
 <td align="right">25.989</td>
 <td align="right">28.869</td>
 <td align="right">31.526</td>
@@ -628,6 +668,8 @@ $(document).ready(function () {
 <td align="right">8.907</td>
 <td align="right">10.117</td>
 <td align="right">11.651</td>
+<td align="right">13.716</td>
+<td align="right">23.900</td>
 <td align="right">27.204</td>
 <td align="right">30.144</td>
 <td align="right">32.852</td>
@@ -641,6 +683,8 @@ $(document).ready(function () {
 <td align="right">9.591</td>
 <td align="right">10.851</td>
 <td align="right">12.443</td>
+<td align="right">14.578</td>
+<td align="right">25.038</td>
 <td align="right">28.412</td>
 <td align="right">31.410</td>
 <td align="right">34.170</td>
@@ -654,6 +698,8 @@ $(document).ready(function () {
 <td align="right">10.283</td>
 <td align="right">11.591</td>
 <td align="right">13.240</td>
+<td align="right">15.445</td>
+<td align="right">26.171</td>
 <td align="right">29.615</td>
 <td align="right">32.671</td>
 <td align="right">35.479</td>
@@ -667,6 +713,8 @@ $(document).ready(function () {
 <td align="right">10.982</td>
 <td align="right">12.338</td>
 <td align="right">14.041</td>
+<td align="right">16.314</td>
+<td align="right">27.301</td>
 <td align="right">30.813</td>
 <td align="right">33.924</td>
 <td align="right">36.781</td>
@@ -680,6 +728,8 @@ $(document).ready(function () {
 <td align="right">11.689</td>
 <td align="right">13.091</td>
 <td align="right">14.848</td>
+<td align="right">17.187</td>
+<td align="right">28.429</td>
 <td align="right">32.007</td>
 <td align="right">35.172</td>
 <td align="right">38.076</td>
@@ -693,6 +743,8 @@ $(document).ready(function () {
 <td align="right">12.401</td>
 <td align="right">13.848</td>
 <td align="right">15.659</td>
+<td align="right">18.062</td>
+<td align="right">29.553</td>
 <td align="right">33.196</td>
 <td align="right">36.415</td>
 <td align="right">39.364</td>
@@ -706,6 +758,8 @@ $(document).ready(function () {
 <td align="right">13.120</td>
 <td align="right">14.611</td>
 <td align="right">16.473</td>
+<td align="right">18.940</td>
+<td align="right">30.675</td>
 <td align="right">34.382</td>
 <td align="right">37.652</td>
 <td align="right">40.646</td>
@@ -719,6 +773,8 @@ $(document).ready(function () {
 <td align="right">13.844</td>
 <td align="right">15.379</td>
 <td align="right">17.292</td>
+<td align="right">19.820</td>
+<td align="right">31.795</td>
 <td align="right">35.563</td>
 <td align="right">38.885</td>
 <td align="right">41.923</td>
@@ -732,6 +788,8 @@ $(document).ready(function () {
 <td align="right">14.573</td>
 <td align="right">16.151</td>
 <td align="right">18.114</td>
+<td align="right">20.703</td>
+<td align="right">32.912</td>
 <td align="right">36.741</td>
 <td align="right">40.113</td>
 <td align="right">43.195</td>
@@ -745,6 +803,8 @@ $(document).ready(function () {
 <td align="right">15.308</td>
 <td align="right">16.928</td>
 <td align="right">18.939</td>
+<td align="right">21.588</td>
+<td align="right">34.027</td>
 <td align="right">37.916</td>
 <td align="right">41.337</td>
 <td align="right">44.461</td>
@@ -758,6 +818,8 @@ $(document).ready(function () {
 <td align="right">16.047</td>
 <td align="right">17.708</td>
 <td align="right">19.768</td>
+<td align="right">22.475</td>
+<td align="right">35.139</td>
 <td align="right">39.087</td>
 <td align="right">42.557</td>
 <td align="right">45.722</td>
@@ -771,6 +833,8 @@ $(document).ready(function () {
 <td align="right">16.791</td>
 <td align="right">18.493</td>
 <td align="right">20.599</td>
+<td align="right">23.364</td>
+<td align="right">36.250</td>
 <td align="right">40.256</td>
 <td align="right">43.773</td>
 <td align="right">46.979</td>
@@ -784,6 +848,8 @@ $(document).ready(function () {
 <td align="right">24.433</td>
 <td align="right">26.509</td>
 <td align="right">29.051</td>
+<td align="right">32.345</td>
+<td align="right">47.269</td>
 <td align="right">51.805</td>
 <td align="right">55.758</td>
 <td align="right">59.342</td>
@@ -797,6 +863,8 @@ $(document).ready(function () {
 <td align="right">32.357</td>
 <td align="right">34.764</td>
 <td align="right">37.689</td>
+<td align="right">41.449</td>
+<td align="right">58.164</td>
 <td align="right">63.167</td>
 <td align="right">67.505</td>
 <td align="right">71.420</td>
@@ -810,6 +878,8 @@ $(document).ready(function () {
 <td align="right">40.482</td>
 <td align="right">43.188</td>
 <td align="right">46.459</td>
+<td align="right">50.641</td>
+<td align="right">68.972</td>
 <td align="right">74.397</td>
 <td align="right">79.082</td>
 <td align="right">83.298</td>
@@ -823,6 +893,8 @@ $(document).ready(function () {
 <td align="right">48.758</td>
 <td align="right">51.739</td>
 <td align="right">55.329</td>
+<td align="right">59.898</td>
+<td align="right">79.715</td>
 <td align="right">85.527</td>
 <td align="right">90.531</td>
 <td align="right">95.023</td>
@@ -836,6 +908,8 @@ $(document).ready(function () {
 <td align="right">57.153</td>
 <td align="right">60.391</td>
 <td align="right">64.278</td>
+<td align="right">69.207</td>
+<td align="right">90.405</td>
 <td align="right">96.578</td>
 <td align="right">101.879</td>
 <td align="right">106.629</td>
@@ -849,6 +923,8 @@ $(document).ready(function () {
 <td align="right">65.647</td>
 <td align="right">69.126</td>
 <td align="right">73.291</td>
+<td align="right">78.558</td>
+<td align="right">101.054</td>
 <td align="right">107.565</td>
 <td align="right">113.145</td>
 <td align="right">118.136</td>
@@ -862,6 +938,8 @@ $(document).ready(function () {
 <td align="right">74.222</td>
 <td align="right">77.929</td>
 <td align="right">82.358</td>
+<td align="right">87.945</td>
+<td align="right">111.667</td>
 <td align="right">118.498</td>
 <td align="right">124.342</td>
 <td align="right">129.561</td>
