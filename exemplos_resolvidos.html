@@ -11,7 +11,7 @@
 
 
 
-<title>Método Analítico (Law of Propagation of Uncertainty - LPU)</title>
+<title>Exercícios Resolvidos</title>
 
 <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -320,91 +320,96 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Método Analítico (<em>Law of Propagation of Uncertainty</em> - LPU)</h1>
+<h1 class="title toc-ignore">Exercícios Resolvidos</h1>
 
 </div>
 
 
-<p>Segue a sequência de passos necessários para cálculo experimental de incertezas de medições diretas e indiretas e detalhadas nas seções e exemplos apresentados posteriormente.</p>
+<p><strong>Resultados dos Laboratórios:</strong></p>
 <ul>
-<li>Definição do Modelo Matemático:
-<ul>
-<li><span class="math inline">\(y=f_{a}(x_1,x_2,\dots,x_n\)</span>)</li>
-</ul></li>
-<li>Cálculo das incertezas tipo A de <span class="math inline">\(n\)</span> amostras:
-<ul>
-<li>Cálculo da Média: <span class="math inline">\(\bar{q} = \frac{1}{n}\cdot\sum_{i=1}^n{q_k}\)</span></li>
-<li>Reprodutibilidade:
-<ul>
-<li>Desvio Padrão Experimental: <span class="math inline">\(s^2(q_k) = \frac{1}{n-1} \sum_{j=1}^n (q_j - \overline{q})^2\)</span></li>
-<li>Incerteza Padrão: <span class="math inline">\(u=s(q_k)\)</span></li>
-<li>Repetibilidade
-<ul>
-<li>Desvio Padrão Experimental da Média: <span class="math inline">\(s^2(\bar{q}) = \frac{s^2(q_k)}{n}\)</span></li>
-<li>Incerteza Padrão: <span class="math inline">\(u=s(\bar{q})\)</span></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Identificação dos limites e das funções de distribuição das incertezas tipo B:
-<ul>
-<li>Normal. ex.: certificados de calibração.
-<ul>
-<li>Sendo <span class="math inline">\(a\)</span> é a meia largura de um intervalo tendo um nível da confiança de <span class="math inline">\(95.45\%\)</span> tem uma variância de <span class="math inline">\(a^2/4\)</span>.</li>
-<li>Sendo <span class="math inline">\(a\)</span> é a meia largura de um intervalo tendo um nível da confiança de <span class="math inline">\(99.73\%\)</span> tem uma variância de <span class="math inline">\(a^2/9\)</span>.</li>
-</ul></li>
-<li>Uniforme. ex.: resolução do dispositivo mostrador.
-<ul>
-<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/3\)</span></li>
-</ul></li>
-<li>Triangular. ex.: indicador em instrumentos analógicos.
-<ul>
-<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/6\)</span>.</li>
-</ul></li>
-<li>Tipo “U”. ex.: temperatura ambiental contralada por termostato.
-<ul>
-<li>Sendo a meia largura <span class="math inline">\(a\)</span> tem-se uma variância <span class="math inline">\(a^2/2\)</span>.</li>
-</ul></li>
-<li><em>t-student</em>. ex.: quando conhecidos o fator de abrangência <span class="math inline">\(k_p\)</span>, os graus de liberdade efetivos <span class="math inline">\(\nu_{eff}\)</span> e a incerteza expandida <span class="math inline">\(U_p\)</span>.
-<ul>
-<li>Sendo <span class="math inline">\(a\)</span> a meia largura de um determinado nível da confiança tem uma variância de <span class="math inline">\((a/k_p)^2\)</span>.</li>
-</ul></li>
-</ul></li>
-<li>Identificação dos graus de liberdade das incertezas:
-<ul>
-<li>tipo A: <span class="math inline">\(\nu = n - 1\)</span></li>
-<li>tipo B: <span class="math inline">\(\nu = \infty\)</span> ou <span class="math inline">\(\nu = \nu_{eff}\)</span> (no caso de haver o conhecimento prévio dos graus de liberdade)</li>
-</ul></li>
-<li>Cálculo das derivadas parciais para cada variável de <span class="math inline">\(f_a\)</span>
-<ul>
-<li><span class="math inline">\(c_i=\frac{\partial f}{\partial x_i}\)</span></li>
-</ul></li>
-<li>Cálculo da correlação entre as variáveis:
-<ul>
-<li><span class="math inline">\(s(y_i,z_i)=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span>
-<ul>
-<li><span class="math inline">\(s(\bar{y}_i,\bar{z}_i)=\frac{1}{n(n-1)}\sum_{i=1}^{n}\left(y_{i}-\bar{y} \right)\left(z_{i}-\bar{z}\right)\)</span></li>
-<li><span class="math inline">\(r(y_i,z_i) = \frac{s(y_i,z_i)}{s(y_i)s(z_i)} = r(\bar{y}_i,\bar{z}_i) = \frac{s(\bar{y}_i,\bar{z}_i)}{s(\bar{y}_i)s(\bar{z}_i)}\)</span></li>
-</ul></li>
-</ul></li>
-<li>Cálculo da incerteza combinada:
-<ul>
-<li><span class="math inline">\(u_c^2(y) = \sum_{i=1}^n{\left(\frac{\partial f}{\partial x_i}\right)^2}u^2(x_i)+2\sum_{i=1}^{n-1}{\sum_{j=i+1}^{n}{\frac{\partial f}{\partial x_i}\frac{\partial f}{\partial x_j}u(x_i)u(x_j)r(x_i,x_j)}}\)</span></li>
-</ul></li>
-<li>Cálculo dos graus de liberdade efetivos (obs.: este valor deve ser truncado e não arrendondado e é válido somente para dados não-correlacionados):
-<ul>
-<li><span class="math inline">\(\nu_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{n}\frac{u_i^4(y)}{\nu_i}},~onde~u_i^2(y)=c_i^2u^2(x_i)\)</span></li>
-</ul></li>
-<li>Para dados correlacionados deve-se verificar se a resultante é uma função normal de acordo com o método de Monte Carlo e aplicar os valores de fator de abrangência correpondentes.</li>
-<li>Seleção do coeficiente de t-student (fator de abrangência) para o grau de confiança desejado:
-<ul>
-<li>Ver tabela <em>t-student</em>, ou</li>
-<li><span class="math inline">\(t=qt(1-(1-\%)/2, \nu_{eff})\)</span>, para uso no R.</li>
-</ul></li>
-<li>Cálculo da Incerteza expandida:
-<ul>
-<li><span class="math inline">\(U_{exp} = U_c.t\)</span></li>
-</ul></li>
+<li><a href="lab1.html">Incerteza em Medidas Diretas</a></li>
+<li><a href="lab2.html">Incerteza em Medidas Indiretas (MC)</a></li>
+<li><a href="lab3.html">Incerteza em Medidas Indiretas (MC) - Resistência</a></li>
 </ul>
+<!--
+## Exemplo 1
+    
+
+    
+## Exemplo 2
+    
+Para realizar a calibração de uma balança eletrônica na faixa de $30g$ foram utilizados três pesos padrão ('K', 'N' e 'Z') de valor nominal $10.00g$ cada. Determine as características metrológicas da balança considerando as seguintes informações.
+
+- A balança em questão apresenta indicador digital com resolução de $0,01g$. 
+
+- A temperatura no local, durante o procedimento de medição, estava em $23^oC$.
+
+- Sabe-se que o peso 'K', segundo seu certificado de caliração, possui correção de $-0.20g$ e incerteza de $\pm 0.15g$ com abrangência de $99.73\%$. 
+
+- Sabe-se que o peso 'N', segundo seu certificado de caliração, possui incerteza de $\pm 0.15g$.
+
+- Sabe-se que o peso 'Z', segundo seu certificado de caliração, possui correção de $+0.24g$ e incerteza de $\pm 0.15g$ e $\nu=10$.
+
+- O peso 'K' teve sua última calibração há 5 meses e o peso 'Z' teve sua última calibração há 3 meses. Sabe-se que ambos possuem deriva temporal de $\pm 0,01g$/mês (sabe-se pouco sobre as características desta fonte de incerteza). 
+
+- O peso padrão 'K' apresenta deriva térmica de $\pm 0.02g/^oC$ (distribuição uniforme) para cada Kelvin de variação distante da referência de calibração ($20^oC$).
+
+- Foram efetuadas 12 medições independentes (dos três pesos em conjunto) listadas abaixo (não há necessidade de aplicar Chauvenet): 
+    
+    $29,94g$ | $30,00g$ | $29,95g$ | $29,96g$ | $29,95g$ | $29,99g$
+    -------- | -------- | -------- | -------- | -------- | --------
+    $29,92g$ | $29,94g$ | $30,00g$ | $29,99g$ | $29,92g$ | $29,99g$
+
+
+
+
+- Apresente a correção e a incerteza da balança com 2 algarismos significativos e 99.73\% de confiança e:
+
+```
+## RC = ( 0.08 +/- 0.37 ) g
+```
+
+- Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?
+
+```
+## Incerteza da Massa Padrão N
+```
+
+- Considere que na conclusão da etapa de calibração com os pesos padrão não houve ajuste ou regulagem da balança. Ao utilizar a balança em uma fábrica para avaliar o peso de uma peça, o *display*  da balança apresentou o valor de $28.71g$. Apresente abaixo o resultado desta medição considerando os informações metrológicas resultantes da calibração anterior.
+
+```
+## RM = 28.79 +/- 0.37
+```
+
+## Exemplo 3
+
+Determine a incerteza da medição da massa de um objeto quando utilizada uma balança eletrônica. 
+
+- A balança em questão apresenta um indicador digital com resolução de $0,02g$. 
+- A temperatura no local onde a medição foi efetuada oscila entre $24,0$ e $26,0^oC$ e é controlada por um termostato (considere que esta oscilação é melhor representada por uma distribuição tipo ``U''). Sabe-se que a balança apresenta deriva térmica, isto é, acresce o valor de indicação de $+0,008g$ para cada Kelvin de variação de temperatura ambiente acima da temperatura de calibração ($20^oC$).
+- A calibração da balança foi realizada há cinco meses. Sabe-se que a estabilidade do zero da balança em função do tempo, permanece dentro dos limite $\pm 0,01g$/m\^es, o que corresponde à sua deriva temporal (sabe-se pouco sobre as características desta fonte de incerteza). 
+- Foram efetuadas 12 medições independentes (do mesmo objeto) listadas abaixo (não há necessidade de aplicar \textit{Chauvenet}):
+
+    $19,94g$ | $19,92g$ | $19,98g$ | $19,96g$ | $19,90g$ | $19,94g$
+    -------- | -------- | -------- | -------- | -------- | --------
+    $19,94g$ | $19,96g$ | $20,00g$ | $19,99g$ | $19,92g$ | $19,99g$
+
+- Para faixa de $20g$, segundo o certificado de calibração, a balança possui correção de $-0,15g$ e incerteza de $0,04g$. 
+
+
+
+Tendo em vista que deseja-se reduzir ao máximo a incerteza, defina o resultado de medição da massa com 2 algarismos significativos e 99\% de confiança.
+
+```
+## RM = ( 19.76 +/- 0.11 ) g
+```
+
+Visando a melhoria neste procedimento de medição, qual fonte incerteza, prioritariamente deveria ser reduzida?
+
+```
+## Deriva Temporal
+```
+-->
 
 <p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
 

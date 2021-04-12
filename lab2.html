@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Laboratório 2: Incerteza em Medidas Indiretas e Monte Carlo</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-462411-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-462411-4');
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Dr. Guilherme Kunz</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Principal</a>
+</li>
+<li>
+  <a href="conf.html">Confiabilidade</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Metrologia
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="metr.html">Laboratório</a>
+    </li>
+    <li>
+      <a href="wheatstone.html">Extensometria</a>
+    </li>
+    <li>
+      <a href="controle_de_qualidade.html">Controle de Qualidade</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    GUM
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="intro.html">Procedimento</a>
+    </li>
+    <li>
+      <a href="proc.html">Law of Propagation of Uncertainty (LPU)</a>
+    </li>
+    <li>
+      <a href="proc_mc.html">Monte Carlo Method (MCM)</a>
+    </li>
+    <li>
+      <a href="apresentacao.html">Resultado de Medição</a>
+    </li>
+    <li>
+      <a href="chauvenet.html">Técnica de Descarte</a>
+    </li>
+    <li>
+      <a href="tstud.html">Tabela t-student</a>
+    </li>
+    <li>
+      <a href="limitecentral.html">Limite Central</a>
+    </li>
+    <li>
+      <a href="exemplos_resolvidos.html">Exemplos Resolvidos</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Laboratório 2: Incerteza em Medidas Indiretas e Monte Carlo</h1>
+<h4 class="date">25 de abril de 2018</h4>
+
+</div>
+
+
+<p>Laboratório de avaliação do cálculo de incertezas indiretas através do método de Monte Carlo fundamento nos casos abordados no livro “Theory and Applications of Monte Carlo Simulations” de Victor (Wai Kin) Chan (ver <a href="http://dx.doi.org/10.5772/53014" class="uri">http://dx.doi.org/10.5772/53014</a>).</p>
+<div id="eficiência-célula-de-combustível" class="section level2">
+<h2>Eficiência Célula de Combustível</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(\eta_R=\frac{\Delta G}{\Delta H}\frac{E_r}{E_i}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Energia livre de Gibbs (<span class="math inline">\(\Delta G\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\((237.1\pm0.1)~kJ/mol\)</span></td>
+</tr>
+<tr class="even">
+<td>Entalpia padrão (<span class="math inline">\(\Delta H\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\((285.8\pm0.1)~kJ/mol\)</span></td>
+</tr>
+<tr class="odd">
+<td>Voltagem real (<span class="math inline">\(E_r\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(0.7320~V\)</span>; Resolução: <span class="math inline">\(0.001~V\)</span></td>
+</tr>
+<tr class="even">
+<td>Voltagem ideal (<span class="math inline">\(E_i\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\((1.229\pm0.001)~V\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\eta_R\)</span></td>
+<td align="left">0.494115557033459</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*U\Delta G\)</span></td>
+<td align="left">0.000120319590832581</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*U\Delta H\)</span></td>
+<td align="left">-0.0000998172672722357</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*UE_r\)</span></td>
+<td align="left">0.000194861851000034</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*UE_i\)</span></td>
+<td align="left">-0.000232121846919487</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">0.000341016104570283</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">Inf</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.0000024438996</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">0.000682033042549688</td>
+</tr>
+<tr class="even">
+<td align="left">LEP</td>
+<td align="left">0.493452016601167</td>
+</tr>
+<tr class="odd">
+<td align="left">HEP</td>
+<td align="left">0.494778754432065</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.00005</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.000005</td>
+</tr>
+<tr class="even">
+<td align="left">DH</td>
+<td align="left">0.000018835643943893</td>
+</tr>
+<tr class="odd">
+<td align="left">DL</td>
+<td align="left">0.0000184926102576588</td>
+</tr>
+<tr class="even">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">RM</td>
+<td align="left">0.4941 +/- 0.0007</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
+</div>
+<div id="medida-de-torque-versão-1" class="section level1">
+<h1>Medida de Torque (Versão 1)</h1>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(T=m_cgL\)</span></li>
+</ul>
+<p>onde: <span class="math inline">\(m_c=m_{Re}+m_{Cal}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Massa (<span class="math inline">\(m_{Re}\)</span>)</td>
+<td align="center">A</td>
+<td align="center">t-Student</td>
+<td align="center"><span class="math inline">\(35.7653~kg\)</span>; <span class="math inline">\(s=0.3~g\)</span>; <span class="math inline">\(N=10\)</span></td>
+</tr>
+<tr class="even">
+<td>Massa (<span class="math inline">\(m_{Cal}\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(\pm0.1~g\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="odd">
+<td>Gravidade (<span class="math inline">\(g\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\((9.7874867\pm0.0000004)~m/s^2\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="even">
+<td>Comprimento (<span class="math inline">\(L\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\((1999.9955\pm0.008)~mm\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Torque\)</span></td>
+<td align="left">700.103220907229</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uM_{Re}\)</span></td>
+<td align="left">0.00185704085408498</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uM_{Cal}\)</span></td>
+<td align="left">0.000978746467815493</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uG\)</span></td>
+<td align="left">0.00001430608781123</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uL\)</span></td>
+<td align="left">0.00140020959228604</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">0.00252335826795964</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.08684705353665</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">0.00526586276650893</td>
+</tr>
+<tr class="even">
+<td align="left">LEP</td>
+<td align="left">700.097778483575</td>
+</tr>
+<tr class="odd">
+<td align="left">HEP</td>
+<td align="left">700.108681077913</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.0005</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.00005</td>
+</tr>
+<tr class="even">
+<td align="left">DH</td>
+<td align="left">0.000194307918036429</td>
+</tr>
+<tr class="odd">
+<td align="left">DL</td>
+<td align="left">0.000176560886870902</td>
+</tr>
+<tr class="even">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">RM</td>
+<td align="left">700.103 +/- 0.005 Nm</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
+<div id="medida-de-torque-versão-2" class="section level2">
+<h2>Medida de Torque (Versão 2)</h2>
+<ul>
+<li><span class="math inline">\(T=m_cgL\)</span></li>
+</ul>
+<p>onde: <span class="math inline">\(m_c=m_{Re}+m_{Cal}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Massa (<span class="math inline">\(m_{Re}\)</span>)</td>
+<td align="center">A</td>
+<td align="center">t-Student</td>
+<td align="center"><span class="math inline">\(35.7653~kg\)</span>; <span class="math inline">\(s=0.3~g\)</span>; <span class="math inline">\(N=10\)</span></td>
+</tr>
+<tr class="even">
+<td>Massa (<span class="math inline">\(m_{Cal}\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(\pm0.1~g\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="odd">
+<td>Gravidade (<span class="math inline">\(g\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\((9.7874867\pm0.0000004)~m/s^2\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="even">
+<td>Comprimento (<span class="math inline">\(L\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(2000.0~mm\)</span>; Resolução: <span class="math inline">\(1~mm\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(Torque\)</span></td>
+<td align="left">700.10479614302</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uM_{Re}\)</span></td>
+<td align="left">0.00185704503243631</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uM_{Cal}\)</span></td>
+<td align="left">0.00097874867</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uG\)</span></td>
+<td align="left">0.00001430612</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uL\)</span></td>
+<td align="left">0.10105142312853</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">0.101073225367443</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">78976388</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.00000247555473</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">0.202146700947187</td>
+</tr>
+<tr class="even">
+<td align="left">LEP</td>
+<td align="left">699.937743310318</td>
+</tr>
+<tr class="odd">
+<td align="left">HEP</td>
+<td align="left">700.271826361037</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.05</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.005</td>
+</tr>
+<tr class="even">
+<td align="left">DH</td>
+<td align="left">0.0351164829297659</td>
+</tr>
+<tr class="odd">
+<td align="left">DL</td>
+<td align="left">0.0350938682453261</td>
+</tr>
+<tr class="even">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">RM</td>
+<td align="left">700.1 +/- 0.2 Nm</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-9-1.png" width="960" /></p>
+</div>
+<div id="concentração-de-cádmio" class="section level2">
+<h2>Concentração de Cádmio</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(C_{Cd}=\frac{1000 m P}{V_f+V_r+V_t}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pureza (<span class="math inline">\(P\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(99.99\%\pm0.01\%\)</span></td>
+</tr>
+<tr class="even">
+<td>Massa (<span class="math inline">\(m\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(100.28~mg\)</span>; <span class="math inline">\(s=0.05~mg\)</span></td>
+</tr>
+<tr class="odd">
+<td>Volume (<span class="math inline">\(V_f\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Triangular</td>
+<td align="center"><span class="math inline">\(100.0\pm0.1~mL\)</span></td>
+</tr>
+<tr class="even">
+<td>Volume (<span class="math inline">\(V_r\)</span>)</td>
+<td align="center">A</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(s=0.02~mL\)</span>; <span class="math inline">\(\nu=4\)</span></td>
+</tr>
+<tr class="odd">
+<td>Volume (<span class="math inline">\(V_t\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Uniforme</td>
+<td align="center"><span class="math inline">\(\pm0.084~mL\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(C_{Cd}\)</span></td>
+<td align="left">1002.69972</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uP\)</span></td>
+<td align="left">0.0578966849943357</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*um\)</span></td>
+<td align="left">0.49995</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uVf\)</span></td>
+<td align="left">-0.409350446538594</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uVr\)</span></td>
+<td align="left">-0.200539944</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uVt\)</span></td>
+<td align="left">-0.486283520737024</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">0.835199226768439</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">1203</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.00208270628628</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">1.67213792821676</td>
+</tr>
+<tr class="odd">
+<td align="left">LEP</td>
+<td align="left">1001.05092252361</td>
+</tr>
+<tr class="even">
+<td align="left">HEP</td>
+<td align="left">1004.35384543814</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.05</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.005</td>
+</tr>
+<tr class="odd">
+<td align="left">DH</td>
+<td align="left">0.0180124900732608</td>
+</tr>
+<tr class="even">
+<td align="left">DL</td>
+<td align="left">0.0233404518231737</td>
+</tr>
+<tr class="odd">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">RM</td>
+<td align="left">1003 +/- 2 mg/L</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-12-1.png" width="960" /></p>
+</div>
+<div id="brinell-hb" class="section level2">
+<h2>Brinell (HB)</h2>
+<p>Modelo Matemático:</p>
+<ul>
+<li><span class="math inline">\(HB=\frac{0.204 F}{\pi D (D - \sqrt{(D^2-d^2)})}\)</span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Fontes</th>
+<th align="center">Tipos</th>
+<th align="center">FDP</th>
+<th align="center">Parâmetros das FDP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Força (<span class="math inline">\(F\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\(29400~N\pm2\%\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="even">
+<td>Diâmetro (<span class="math inline">\(D\)</span>)</td>
+<td align="center">B</td>
+<td align="center">Normal</td>
+<td align="center"><span class="math inline">\((10.00\pm0.01)~mm\)</span> e <span class="math inline">\(k=2\)</span></td>
+</tr>
+<tr class="odd">
+<td>Marcação (<span class="math inline">\(d\)</span>)</td>
+<td align="center">B</td>
+<td align="center">t-Student</td>
+<td align="center"><span class="math inline">\(3~mm\)</span>; <span class="math inline">\(s=0.079~mm\)</span>; <span class="math inline">\(N=10\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(HB\)</span></td>
+<td align="left">414.472921031433</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uFo\)</span></td>
+<td align="left">4.14472921031433</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uD\)</span></td>
+<td align="left">0.010006378658829</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*udf\)</span></td>
+<td align="left">-7.06955940816935</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">8.19497105425532</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">16</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.16894299567741</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">17.7744250679062</td>
+</tr>
+<tr class="odd">
+<td align="left">LEP</td>
+<td align="left">396.683897592822</td>
+</tr>
+<tr class="even">
+<td align="left">HEP</td>
+<td align="left">433.217530546097</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.05</td>
+</tr>
+<tr class="odd">
+<td align="left">DH</td>
+<td align="left">0.970184446757628</td>
+</tr>
+<tr class="even">
+<td align="left">DL</td>
+<td align="left">0.0145983707044479</td>
+</tr>
+<tr class="odd">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">RM</td>
+<td align="left">414 +/- ? HB</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-15-1.png" width="960" /></p>
+<p>Neste caso tem-se que verificar qual ou quais as incertezas devem ser reduzidas para permitir ao menos a apresentação do resultado com 1 Algarismo Significativo. Como primeira hipótese sugere-se testar o sensor que mais influencia na incerteza combinada que neste caso é relativo ao sensor da medida <span class="math inline">\(d\)</span>.</p>
+<p>No caso abaixo foram realizadas 20 medidas do diâmetro <span class="math inline">\(d\)</span>. A proposta de alteração de sensor mais adequada depende do resultado da simetria do resultado final em Monte Carlo e a disponibilidade de sensores com a incerteza desejada.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(HB\)</span></td>
+<td align="left">414.472921031433</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*uFo\)</span></td>
+<td align="left">4.14472921031433</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(c*uD\)</span></td>
+<td align="left">0.010006378658829</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(c*udf\)</span></td>
+<td align="left">-4.99893339751771</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">6.49370583467288</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\nu\)</span></td>
+<td align="left">54</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(t\)</span></td>
+<td align="left">2.04736751036537</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U_{exp}\)</span></td>
+<td align="left">13.2950023477793</td>
+</tr>
+<tr class="odd">
+<td align="left">LEP</td>
+<td align="left">401.181396711389</td>
+</tr>
+<tr class="even">
+<td align="left">HEP</td>
+<td align="left">428.181059151272</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\delta_1\)</span></td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\delta_2\)</span></td>
+<td align="left">0.05</td>
+</tr>
+<tr class="odd">
+<td align="left">DH</td>
+<td align="left">0.413135772060059</td>
+</tr>
+<tr class="even">
+<td align="left">DL</td>
+<td align="left">0.00347802773507055</td>
+</tr>
+<tr class="odd">
+<td align="left">1 Algarismo Significativo</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">2 Algarismos Significativos</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">RM</td>
+<td align="left">410 +/- 10 HB</td>
+</tr>
+</tbody>
+</table>
+<p><img src="lab2_files/figure-html/unnamed-chunk-18-1.png" width="960" /></p>
+</div>
+</div>
+
+<p>Copyright &copy; 2020 Guilherme Kunz, Inc. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
